@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gestor de incidencias - DonDigital</title>
+
+    <link href="/css/estilos_mostrar_material.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+
+    <script type="module" src="/js/diseno/barra_superior.js"></script>
+
+    <div id="layoutSidenav">
+
+        <script type="module" src="/js/scripts_trabajador/obtener_info_user.js"></script>
+        <script type="module" src="/js/diseno/menu_lateral.js"></script>
+
+        <!----------------------- Cuerpo interno de la pagina ----------------------->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="container-fluid px-1" style="display: grid; place-items: center;">
+                        <img src="/assets/img/logo_dondigital.png" alt="logo_empresa" class="img-fluid">
+                    </div>
+                    <h1 class="mt-4">Consultar partes de trabajo</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active" id="subtitle-ver-partes-tb">Consultar partes de trabajo
+                        </li>
+                    </ol>
+                    <!-- Tabla listado de partes de trabajo -->
+                    <div class="card mb-4" id="tablaListadoPartesTb" style="display: block;">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Listado de partes de trabajo
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Id incidencia</th>
+                                        <th>Motivo</th>
+                                        <th>Diagnóstico</th>
+                                        <th>Trabajo realizado</th>
+                                        <th>Observaciones</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Id incidencia</th>
+                                        <th>Motivo</th>
+                                        <th>Diagnóstico</th>
+                                        <th>Trabajo realizado</th>
+                                        <th>Observaciones</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <!--
+                                    <tr>
+                                        <td>01</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh hola</td>
+                                        <td>Trabajo 01</td>
+                                        <td>Todo perfecto</td>
+                                        <td>
+                                            <button onclick="verDetallesParteTb(this)" type="button"
+                                                class="btn btn-sm btn-primary" id="btn_detalles_parte_tb">Ver
+                                                detalles</button>
+                                            <button onclick="generarPDFParteTb(this)" type="button"
+                                                class="btn btn-sm btn-info" id="btn_pdf_parte_tb">Generar PDF</button>
+                                            <button onclick="editarParteTb(this)" type="button"
+                                                class="btn btn-sm btn-warning" id="btn_edit_parte_tb">Editar</button>
+                                            <button onclick="eliminarParteTb(this)" type="button"
+                                                class="btn btn-sm btn-danger" id="btn_delete_parte_tb">Eliminar</button>
+                                        </td>
+                                    </tr>
+                                    -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Fin Tabla listado de partes de trabajo -->
+
+                    <!-- Esto es la caja de detalles de parte de trabajo -->
+                    <div id="detallesParteTb" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-info">Detalles del parte de trabajo</h5>
+                                <div class="card-text">
+                                    <p><strong>Datos del tecnico: </strong></p>
+                                    <table class="table border">
+                                        <thead>
+                                            <tr>
+                                                <th>DNI del tecnico</th>
+                                                <th>Nombre y apellidos</th>
+                                                <th>Email</th>
+                                                <th>Telefono</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablaInfoTecnicoParteTb">
+                                            <!-- Aquí se mostrarán los datos del tecnico -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-text">
+                                    <p><strong>Datos de la incidencia: </strong></p>
+                                    <table class="table border">
+                                        <thead>
+                                            <tr>
+                                                <th>ID incidencia</th>
+                                                <th>Titulo</th>
+                                                <th>Descripción</th>
+                                                <th>Estado</th>
+                                                <th>Prioridad</th>
+                                                <th>Ver incidencias</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablaInfoIncidenciaParteTb">
+                                            <!-- Aquí se mostrarán los datos de la incidencia -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <p class="card-text"><strong> parte de trabajo: </strong><span id="idParteTb"></span></p>
+                                <p class="card-text"><strong>Motivo: </strong><span id="motivoParteTb"></span></p>
+                                <p class="card-text"><strong>Diagnóstico: </strong><span id="diagnosticoParteTb"></span></p>
+                                <p class="card-text"><strong>Trabajo realizado: </strong><span id="tbRealizadoParteTb"></span></p>
+                                <p class="card-text"><strong>Observaciones: </strong><span id="observacionesParteTb"></span></p>
+                                <div class="card-text">
+                                    <p><strong>Material utilizado: </strong></p>
+                                    <table class="table border">
+                                        <thead>
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Cantidad</th>
+                                                <th>Coste</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablaMaterialesParteTb">
+                                            <!-- Aquí se mostrarán los materiales -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-text">
+                                    <p><strong>Tiempo empleado: </strong></p>
+                                    <table class="table border">
+                                        <thead>
+                                            <tr>
+                                                <th>Fecha</th>
+                                                <th>Hora entrada</th>
+                                                <th>Hora salida</th>
+                                                <th>Modo de resolución</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tablaTiemposParteTb">
+                                            <!-- Aquí se mostrarán los tiempos empleados -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <button onclick="volverListadoPartesTb()" class="btn btn-primary">Volver al
+                                    listado</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin caja detalles de parte de trabajo -->
+
+                    <!-- Form editar parte de trabajo -->
+                    <div class="container" id="editarParteTbForm" style="display: none;">
+                        <form>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="id-incidencia" class="form-label">ID incidencia</label>
+                                    <input type="text" class="form-control" id="idIncidenciaParteTb-edit"
+                                        value="Id de la incidencia existente" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="id-incidencia" class="form-label">Id parte de trabajo</label>
+                                    <input type="text" class="form-control" id="idparteTb-edit"
+                                        value="Id del parte de trabajo" readonly>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="diagnostico" class="form-label">Motivo</label>
+                                <textarea class="form-control" id="motivo-edit" rows="3" readonly></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="diagnostico" class="form-label">Diagnóstico</label>
+                                <textarea class="form-control" id="diagnostico-edit" rows="3"></textarea>
+                                <div id="msgErrorDiagnostico" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="trabajo_realizado" class="form-label">Trabajo Realizado</label>
+                                <textarea class="form-control" id="trabajoRealizado-edit" rows="3"></textarea>
+                                <div id="msgErrorTbRealizado" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="material_utilizado" class="form-label">Material Utilizado</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="material_utilizado_edit"
+                                        placeholder="Material">
+                                    <input type="number" class="form-control" id="cantidad_utilizada_edit"
+                                        placeholder="Cantidad">
+                                    <input type="number" class="form-control" id="costo_material_edit" placeholder="Costo">
+                                    <button id="btnAgregarMaterial-Edit" class="btn btn-outline-secondary"
+                                        type="button">Agregar</button>
+                                </div>
+                                <div id="lista_materiales"></div>
+                                <div id="error-message"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="observaciones" class="form-label">Observaciones</label>
+                                <textarea class="form-control" id="observaciones-edit" rows="3"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                            <button type="button" class="btn btn-secondary" onclick="volverListaPartesTb()">Volver al
+                                listado</button>
+                        </form>
+                    </div>
+                    <!-- Fin Form editar parte de trabajo -->
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div>
+                            <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
+                            &middot;
+                            <a href="https://dondigital.es/politica-de-privacidad/">Política de Privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!----------------------- Fin Cuerpo interno de la pagina ----------------------->
+    </div>
+    <!--====== Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/js/diseno/scripts.js"></script>
+    <script src="/js/diseno/simple_datatables_min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--====== Scripts de funcionalidades de la app ======-->
+    <script src="/js/scripts_trabajador/cargar_editar_parte_trabajo.js"></script>
+    <script src="/js/scripts_trabajador/ver_detalles_parte_tb.js"></script>
+    <script type="module" src="/js/scripts_trabajador/ver_parte_trabajo.js"></script>
+    <script src="/js/scripts_trabajador/pdf.js"></script>
+
+</body>
+
+</html>

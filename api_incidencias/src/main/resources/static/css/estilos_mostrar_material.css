@@ -1,0 +1,18 @@
+/* Estilo para las filas de materiales */
+.material-row {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+
+/* Estilo para el botón de eliminar material */
+.eliminar-material-btn {
+    margin-left: 10px;
+}
+
+/* Estilo para el mensaje de error */
+#error-message {
+    color: red;
+    margin-top: 5px;
+}

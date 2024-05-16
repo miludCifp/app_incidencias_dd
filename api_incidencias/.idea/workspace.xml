@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Generando el JAR del servidor">
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Entidades/Clases/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Entidades/Clases/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Entidades/Clases/Trabajador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Entidades/Clases/Trabajador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Pdf/GenerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Pdf/GenerarPDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/Version_Mohamed" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;miludCifp&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="635db1bd-010a-4d9e-93c1-09882540058f" />
+        <option name="url" value="https://github.com/kevinRodriguezCastro/api_incidencias.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2eaRo1WL6ABqagqGw35h929DsAW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "versionMohamed",
+    "last_opened_file_path": "C:/Users/MEDO/Documents/GitHub/App_Incidencias_dd/api_incidencias",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\imgUsuarios" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\src\main\resources\templates\app_trabajador" />
+      <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\src\main\resources\static" />
+      <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\src\main\resources\static\css" />
+      <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\src\main\java\api_incidencias\api_incidencias\Pdf" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ApiIncidenciasApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="api_incidencias.api_incidencias.ApiIncidenciasApplication" />
+      <module name="api_incidencias" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="api_incidencias.api_incidencias.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="api_incidencias.api_incidencias.ApiIncidenciasApplication" />
+      <module name="api_incidencias" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ApiIncidenciasApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="" />
+      <created>1712140874987</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712140874987</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Añadiendo el controlador Usuario - Mohamed">
+      <option name="closed" value="true" />
+      <created>1712141181895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712141181895</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Hola">
+      <option name="closed" value="true" />
+      <created>1712141268766</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1712141268766</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Controlador Usuario Hecho">
+      <option name="closed" value="true" />
+      <created>1712141972772</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1712141972772</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Controladores terminados">
+      <option name="closed" value="true" />
+      <created>1712153907360</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1712153907360</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Controladores terminados Listo">
+      <option name="closed" value="true" />
+      <created>1712155672889</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712155672889</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Listo">
+      <option name="closed" value="true" />
+      <created>1712156240110</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712156240110</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Listo">
+      <option name="closed" value="true" />
+      <created>1712156271937</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1712156271937</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Ultimos cambios - Hecho">
+      <option name="closed" value="true" />
+      <created>1712217867180</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1712217867180</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ultimos cambios - cambios en las clases">
+      <option name="closed" value="true" />
+      <created>1712220487619</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1712220487619</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Creando el Controlador de Incidencias Reabiertas">
+      <option name="closed" value="true" />
+      <created>1712222671442</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1712222671442</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Añadiendo clases">
+      <option name="closed" value="true" />
+      <created>1712242137706</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1712242137706</updated>
+    </task>
+    <task id="LOCAL-00012" summary="ultimos cambios en las clases">
+      <option name="closed" value="true" />
+      <created>1712242464395</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1712242464395</updated>
+    </task>
+    <task id="LOCAL-00013" summary="cambios añadidos">
+      <option name="closed" value="true" />
+      <created>1712245427206</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1712245427206</updated>
+    </task>
+    <task id="LOCAL-00014" summary="cambios ultimos">
+      <option name="closed" value="true" />
+      <created>1712246408060</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1712246408060</updated>
+    </task>
+    <task id="LOCAL-00015" summary="cambios ultimos">
+      <option name="closed" value="true" />
+      <created>1712249408867</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1712249408867</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Controladores arreglados">
+      <option name="closed" value="true" />
+      <created>1712305091191</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1712305091191</updated>
+    </task>
+    <task id="LOCAL-00017" summary="ultimos cambios del dia de hoy">
+      <option name="closed" value="true" />
+      <created>1712563788698</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1712563788698</updated>
+    </task>
+    <task id="LOCAL-00018" summary="metodo obtener imagen">
+      <option name="closed" value="true" />
+      <created>1712565414712</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1712565414712</updated>
+    </task>
+    <task id="LOCAL-00019" summary="metodo obtener imagen">
+      <option name="closed" value="true" />
+      <created>1712565494886</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1712565494886</updated>
+    </task>
+    <task id="LOCAL-00020" summary="arreglar ruta metodo subir imagen">
+      <option name="closed" value="true" />
+      <created>1712568557219</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1712568557219</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Config Spring Security">
+      <option name="closed" value="true" />
+      <created>1712651279597</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1712651279597</updated>
+    </task>
+    <task id="LOCAL-00022" summary="ultimos cambios">
+      <option name="closed" value="true" />
+      <created>1712913595722</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1712913595722</updated>
+    </task>
+    <task id="LOCAL-00023" summary="ultimos cambios del servidor - Mohamed">
+      <option name="closed" value="true" />
+      <created>1712918906981</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1712918906981</updated>
+    </task>
+    <task id="LOCAL-00024" summary="ultimos cambios del servidor - Mohamed -">
+      <option name="closed" value="true" />
+      <created>1712933921849</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1712933921849</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ultimo cambio">
+      <option name="closed" value="true" />
+      <created>1713190572789</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1713190572789</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Cambios de ayer">
+      <option name="closed" value="true" />
+      <created>1713257613852</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1713257613852</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Cambios de hoy">
+      <option name="closed" value="true" />
+      <created>1713259346624</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1713259346624</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Crear carpeta Generar PDF">
+      <option name="closed" value="true" />
+      <created>1713347823353</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1713347823353</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Crear carpeta Generar PDF ultimos cambios">
+      <option name="closed" value="true" />
+      <created>1713534793025</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1713534793025</updated>
+    </task>
+    <task id="LOCAL-00030" summary="cambios rotos">
+      <option name="closed" value="true" />
+      <created>1713801763974</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1713801763974</updated>
+    </task>
+    <task id="LOCAL-00031" summary="cambios no seguros">
+      <option name="closed" value="true" />
+      <created>1713891149449</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1713891149449</updated>
+    </task>
+    <task id="LOCAL-00032" summary="cambios de esta mañana">
+      <option name="closed" value="true" />
+      <created>1713954687861</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1713954687861</updated>
+    </task>
+    <task id="LOCAL-00033" summary="cambios basura">
+      <option name="closed" value="true" />
+      <created>1714386476064</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1714386476064</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Modificacion del Generador del PDF">
+      <option name="closed" value="true" />
+      <created>1714574602192</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1714574602192</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Modificaciones nuevas en el Generador del PDF">
+      <option name="closed" value="true" />
+      <created>1714575373281</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1714575373281</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Cambios correo">
+      <option name="closed" value="true" />
+      <created>1715096525558</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1715096525559</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Cambios ligeros">
+      <option name="closed" value="true" />
+      <created>1715250707857</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1715250707857</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Cambiando el orden Tipo documento">
+      <option name="closed" value="true" />
+      <created>1715586524016</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1715586524017</updated>
+    </task>
+    <task id="LOCAL-00039" summary="cambiando enum">
+      <option name="closed" value="true" />
+      <created>1715682833518</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1715682833518</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Cargando el Front desde el servidor">
+      <option name="closed" value="true" />
+      <created>1715780780001</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1715780780001</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Cargando el Front desde el servidor">
+      <option name="closed" value="true" />
+      <created>1715780829903</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1715780829903</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Cargando el Front desde el servidor Fallos">
+      <option name="closed" value="true" />
+      <created>1715781713117</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1715781713117</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Frontend integrado en el Servidor - Listo">
+      <option name="closed" value="true" />
+      <created>1715851735550</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1715851735550</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Generando el JAR del servidor">
+      <option name="closed" value="true" />
+      <created>1715856886199</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1715856886199</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="metodo obtener imagen" />
+    <MESSAGE value="arreglar ruta metodo subir imagen" />
+    <MESSAGE value="Config Spring Security" />
+    <MESSAGE value="ultimos cambios" />
+    <MESSAGE value="ultimos cambios del servidor - Mohamed" />
+    <MESSAGE value="ultimos cambios del servidor - Mohamed -" />
+    <MESSAGE value="ultimo cambio" />
+    <MESSAGE value="Cambios de ayer" />
+    <MESSAGE value="Cambios de hoy" />
+    <MESSAGE value="Crear carpeta Generar PDF" />
+    <MESSAGE value="Crear carpeta Generar PDF ultimos cambios" />
+    <MESSAGE value="cambios rotos" />
+    <MESSAGE value="cambios no seguros" />
+    <MESSAGE value="cambios de esta mañana" />
+    <MESSAGE value="cambios basura" />
+    <MESSAGE value="Modificacion del Generador del PDF" />
+    <MESSAGE value="Modificaciones nuevas en el Generador del PDF" />
+    <MESSAGE value="Cambios correo" />
+    <MESSAGE value="Cambios ligeros" />
+    <MESSAGE value="Cambiando el orden Tipo documento" />
+    <MESSAGE value="cambiando enum" />
+    <MESSAGE value="Cargando el Front desde el servidor" />
+    <MESSAGE value="Cargando el Front desde el servidor Fallos" />
+    <MESSAGE value="Frontend integrado en el Servidor - Listo" />
+    <MESSAGE value="Generando el JAR del servidor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generando el JAR del servidor" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gestor de incidencias - DonDigital</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+    <link rel="stylesheet" href="/css/barra_fuerza_password.css">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <script type="module" src="/js/diseno/barra_superior.js"></script>
+
+    <div id="layoutSidenav">
+
+        <script type="module" src="/js/scripts_trabajador/obtener_info_user.js"></script>
+        <script type="module" src="/js/diseno/menu_lateral.js"></script>
+
+        <!----------------------- Cuerpo interno de la pagina ----------------------->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="container-fluid px-1" style="display: grid; place-items: center;">
+                        <img src="/assets/img/logo_dondigital.png" alt="logo_empresa" class="img-fluid">
+                    </div>
+                    <h1 class="mt-4">Panel Administración</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Añadir cliente</li>
+                    </ol>
+
+                    <!-- Formulario de creación de usuarios clientes -->
+                    <form id="addUserClienteForm">
+                        <!-- Tipo documento + Documento -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="comboTipoDoc" class="form-label">Tipo de documento</label>
+                                <select class="form-select" id="comboTipoDoc">
+                                    <option value="DNI">DNI</option>
+                                    <option value="CIF">CIF</option>
+                                    <option value="NIE">NIE</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputDoc" class="form-label">Documento</label>
+                                <input class="form-control" type="text" id="inputDoc">
+                                <div id="errorMsgDoc" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Genero + Nombre + Apellidos -->
+                        <div class="row">
+                            <div class="col-md-3 mb-3">
+                                <label for="comboGenero" class="form-label">Genero</label>
+                                <select class="form-select" id="comboGenero" aria-label="Seleccione su genero">
+                                    <option value="hombre" selected>Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <label for="inputNombre" class="form-label">Nombre</label>
+                                <input class="form-control" type="text" id="inputNombre">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="inputApellidos" class="form-label">Apellidos</label>
+                                <input class="form-control" type="text" id="inputApellidos">
+                            </div>
+                        </div>
+
+                        <!-- Telefono + Email -->
+                        <div class="row mb-3">
+                            <!-- Teléfono -->
+                            <div class="col-md-6">
+                                <label for="inputTlfn" class="form-label">Teléfono</label>
+                                <input class="form-control" type="text" id="inputTlfn">
+                                <div id="errorMsgTlfn" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <input class="form-control" type="email" id="inputEmail">
+                                <div id="errorMsgEmail" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Contraseña + Confirmar Contraseña -->
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="inputPassword" class="form-label">Contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="inputPassword">
+                                    <button class="btn btn-outline-secondary" type="button" id="showPasswordBtn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div id="contIconoAndBarra">
+                                    <span class="me-2" data-bs-toggle="tooltip" data-bs-html="true"
+                                        title="
+                                        <ul class='mb-0'>
+                                            <li>Al menos 8 caracteres</li>
+                                            <li>Una letra mayúscula</li>
+                                            <li>Una letra minúscula</li>
+                                            <li>Un número</li>
+                                            <li>Un carácter especial (e.g. !@#$%)</li>
+                                        </ul>
+                                    ">
+                                        <i class="bi bi-info-circle"></i>
+                                    </span>
+                                    <div id="strength-meter">
+                                        <div class="strength-bar"></div>
+                                    </div>
+                                </div>
+                                <div id="errorMsgPasswd" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- Confirmar contraseña -->
+                            <div class="col-md-6">
+                                <label for="inputPasswdConfirm" class="form-label">Confirmar contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="inputPasswdConfirm">
+                                    <button class="btn btn-outline-secondary" type="button" id="showConfirmPasswordBtn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div id="errorMsgConfirmPasswd" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!------------------------ Campos de la direccion del cliente ------------------------>
+                        <div class="row">
+                            <!-- Calle -->
+                            <div class="col-md-6 mb-3">
+                                <label for="inputCalle" class="form-label">Calle</label>
+                                <input type="text" class="form-control" id="inputCalle" placeholder="Ingrese su calle">
+                                <div id="errorMsgCalle" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- Ciudad -->
+                            <div class="col-md-6 mb-3">
+                                <label for="inputCiudad" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="inputCiudad"
+                                    placeholder="Ingrese su ciudad">
+                                <div id="errorMsgCiudad" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Provincia -->
+                            <div class="col-md-6 mb-3">
+                                <label for="inputProvincia" class="form-label">Provincia</label>
+                                <input type="text" class="form-control" id="inputProvincia"
+                                    placeholder="Ingrese su provincia">
+                                <div id="errorMsgProvincia" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- Código Postal -->
+                            <div class="col-md-3 mb-3">
+                                <label for="inputCp" class="form-label">Código Postal</label>
+                                <input type="text" class="form-control" id="inputCp"
+                                    placeholder="Ingrese su código postal">
+                                <div id="errorMsgCp" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- País -->
+                            <div class="col-md-3 mb-3">
+                                <label for="comboPais" class="form-label">País</label>
+                                <select class="form-select" id="comboPais" aria-label="Seleccione su país">
+                                    <option value="sinPais" selected>Selecciona tu país</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Brazil">Brasil</option>
+                                    <option value="Canada">Canadá</option>
+                                    <option value="France">Francia</option>
+                                    <option value="Germany">Alemania</option>
+                                    <option value="Italy">Italia</option>
+                                    <option value="Japan">Japón</option>
+                                    <option value="Mexico">México</option>
+                                    <option value="Spain">España</option>
+                                    <option value="United Kingdom">Reino Unido</option>
+                                    <option value="United States">Estados Unidos</option>
+                                </select>
+                                <div id="errorMsgPais" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="mb-3">
+                            <button id="btnCrearUserCliente" type="submit" class="btn btn-primary">Crear
+                                usuario</button>
+                            <a href="gestion_users_clientes" class="btn btn-secondary">Gestionar usuarios</a>
+                        </div>
+                    </form>
+                    <!-- Fin del formulario de usuarios clientes -->
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div>
+                            <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
+                            &middot;
+                            <a href="https://dondigital.es/politica-de-privacidad/">Política de Privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Fin Cuerpo interno de la pagina -->
+    </div>
+    <!--====== Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/js/diseno/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--====== Scripts de funcionalidades de la app ======-->
+    <script type="module" src="/js/scripts_trabajador/add_users_clientes.js"></script>
+</body>
+
+</html>

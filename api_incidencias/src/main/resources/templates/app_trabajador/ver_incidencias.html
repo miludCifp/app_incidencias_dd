@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gestor de incidencias - DonDigital</title>
+
+    <link href="/css/estilos_mostrar_material.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+
+    <script type="module" src="/js/diseno/barra_superior.js"></script>
+
+    <div id="layoutSidenav">
+
+        <script type="module" src="/js/scripts_trabajador/obtener_info_user.js"></script>
+        <script type="module" src="/js/diseno/menu_lateral.js"></script>
+
+        <!----------------------- Cuerpo interno de la pagina ----------------------->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="container-fluid px-1" style="display: grid; place-items: center;">
+                        <img src="/assets/img/logo_dondigital.png" alt="logo_empresa" class="img-fluid">
+                    </div>
+                    <h1 class="mt-4">Ver incidencias</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active" id="subtitle-ver-incidencias">Ver incidencias</li>
+                    </ol>
+                    <!--<button type="button" class="btn btn-primary" style="margin-bottom: 15px;">Nueva incidencia</button>-->
+                    <!--
+                    <div id="contBtnNuevaIncidencia" style="display: block;">
+                        <a href="add_incidencias.html" class="btn btn-primary" style="margin-bottom: 15px;">Nueva incidencia</a>
+                    </div>
+                    -->
+                    <a id="btnNuevaIncidencia" href="add_incidencias" class="btn btn-primary" style="margin-bottom: 15px; display: inline-block;">Nueva incidencia</a>
+                    <!-- Tabla listado de incidencias -->
+                    <div class="card mb-4" id="tablaListadoIncidencias" style="display: block;">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Listado de incidencias
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Titulo</th>
+                                        <th>Fecha_creación</th>
+                                        <th>Prioridad</th>
+                                        <th>Estado</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <!--
+                                <tfoot>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Titulo</th>
+                                        <th>Fecha_creación</th>
+                                        <th>Prioridad</th>
+                                        <th>Estado</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </tfoot>
+                                -->
+                                <tbody>
+                                    <!--
+                                    <tr>
+                                        <td>01</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>2011/04/25</td>
+                                        <td>
+                                            <span class="btn btn-sm btn-secondary">Baja</span>
+                                        </td>
+                                        <td>
+                                            <span class="btn btn-sm btn-success">Cerrada</span>
+                                        </td>
+                                        <td>
+                                            <button onclick="mostrarDetallesIncidencia(this)" type="button"
+                                                class="btn btn-sm btn-primary" id="btn_detalles_incidencia">Ver
+                                                detalles</button>
+                                            <button onclick="editarIncidencia(this)" type="button"
+                                                class="btn btn-sm btn-warning" id="btn_edit_incidencia">Editar</button>
+                                            <button type="button" class="btn btn-sm btn-danger"
+                                                id="btn_delete_incidencia">Eliminar</button>
+                                            <button onclick="crearParteTb(this)" type="button"
+                                                class="btn btn-sm btn-info" id="btn_parte_tb">Crear parte
+                                                trabajo</button>
+                                        </td>
+                                    </tr>
+                                    -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Fin Tabla listado de incidencias -->
+
+                    <!-- Esto es la caja de los detalles de la incidencia -->
+                    <div id="detallesIncidencia" style="display: none;">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-info">Detalles de la incidencia</h5>
+                                <p class="card-text"><strong>ID Incidencia: </strong><span id="idIncidencia"></span></p>
+                                <p class="card-text"><strong>Título: </strong><span id="tituloIncidencia"></span></p>
+                                <p class="card-text"><strong>Descripción: </strong><span
+                                        id="descripcionIncidencia"></span></p>
+                                <p class="card-text"><strong>Fecha de creación: </strong><span
+                                        id="fechaCreacionIncidencia"></span></p>
+                                <p class="card-text"><strong>Prioridad: </strong><span id="prioridadIncidencia"></span>
+                                </p>
+                                <p class="card-text"><strong>Estado: </strong><span id="estadoIncidencia"></span></p>
+                                <p class="card-text"><strong>Modo de resolución: </strong><span
+                                        id="modoResolucionIncidencia">
+                                        <span id="modoResolucionIncidencia">
+                                            <select id="selectModoResolucion">
+                                                <option value="sinModoResolucion">Sin seleccionar</option>
+                                                <option value="remota">Remota</option>
+                                                <option value="presencial">Presencial</option>
+                                                <option value="telefonica">Telefónica</option>
+                                            </select>
+                                        </span></p>
+
+                                <div class="d-flex justify-content-between">
+                                    <!-- Utilizando la clase para alinear los botones -->
+                                    <div id="botonesIzquierda">
+                                        <button id="btnEmpezarTrabajo" class="btn btn-success">Empezar trabajo</button>
+                                        <!-- <button id="btnReabrirIncidencia" class="btn btn-warning">Reabrir incidencia</button> -->
+                                    </div>
+                                    <div>
+                                        <button onclick="volverListadoIncidencias()" class="btn btn-secondary">Volver al
+                                            listado</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fin caja detalles de la incidencia -->
+
+                    <!-- Form editar incidencia -->
+                    <div class="container" id="editarIncidenciaForm" style="display: none;">
+                        <form>
+                            <div class="mb-3">
+                                <label for="id-incidencia" class="form-label">Id incidencia</label>
+                                <input type="text" class="form-control" id="idIncidencia-edit"
+                                    value="Id de la incidencia existente" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="titulo" class="form-label">Título</label>
+                                <input type="text" class="form-control" id="tituloIncid-edit"
+                                    value="Título de la incidencia existente">
+                            </div>
+                            <div class="mb-3">
+                                <label for="descripcion" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="descIncid-edit"
+                                    rows="3">Descripción de la incidencia existente</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fecha_creacion" class="form-label">Fecha de creación</label>
+                                <input type="date" class="form-control" id="fechaIncid-edit" name="fecha_creacion"
+                                    readonly>
+                            </div>
+
+                            <div class="row mb-3">
+                                <!-- Estado -->
+                                <div class="col-md-6">
+                                    <label for="estado" class="form-label">Estado</label>
+                                    <select class="form-select" id="estadoIncid-edit" name="estado">
+                                        <option value="pendiente">Pendiente</option>
+                                        <option value="tramite">En trámite</option>
+                                        <option value="proceso_soluccion">En proceso de solución</option>
+                                        <option value="espera_recursos">En espera de recursos</option>
+                                        <option value="revision">En revisión</option>
+                                        <option value="espera_aprobacion">En espera de aprobación</option>
+                                        <option value="espera_validacion">En espera de validación</option>
+                                        <option value="pendiente_pieza">Pendiente de pieza</option>
+                                        <option value="espera_cliente">Espera de cliente</option>
+                                        <option value="espera_presupuesto">Espera de situación de
+                                            presupuesto</option>
+                                        <option value="seguimiento">Seguimiento</option>
+                                        <option value="terminado">Terminado</option>
+                                        <option value="cancelado">Cancelado</option>
+                                    </select>
+                                </div>
+
+                                <!-- Prioridad -->
+                                <div class="col-md-6">
+                                    <label for="prioridad" class="form-label">Prioridad</label>
+                                    <select class="form-select" id="prioridadIncid-edit" name="prioridad">
+                                        <option value="baja">Baja</option>
+                                        <option value="media">Media</option>
+                                        <option value="alta">Alta</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            <button type="button" class="btn btn-secondary"
+                                onclick="volverListaIncidenciasEditIncid()">Volver al listado</button>
+                        </form>
+                    </div>
+                    <!-- Fin Form editar incidencia -->
+
+                    <!-- Form crear parte trabajo -->
+                    <div class="container" id="crearParteTbForm" style="display: none;">
+                        <form>
+                            <div class="mb-3">
+                                <label for="diagnostico" class="form-label">ID incidencia</label>
+                                <input type="text" class="form-control" id="idIncidenciaParteTb" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label for="diagnostico" class="form-label">Motivo</label>
+                                <textarea class="form-control" id="motivo" rows="3" readonly></textarea>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="diagnostico" class="form-label">Diagnóstico</label>
+                                <textarea class="form-control" id="diagnostico" rows="3"></textarea>
+                                <div id="msgErrorDiagnostico" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="trabajo_realizado" class="form-label">Trabajo Realizado</label>
+                                <textarea class="form-control" id="trabajo_realizado" rows="3"></textarea>
+                                <div id="msgErrorTbRealizado" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="material_utilizado" class="form-label">Material Utilizado</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="material_utilizado"
+                                        placeholder="Material">
+                                    <input type="number" class="form-control" id="cantidad_utilizada"
+                                        placeholder="Cantidad">
+                                    <input type="number" class="form-control" id="costo_material" placeholder="Costo">
+                                    <button id="btnAgregarMaterial" class="btn btn-outline-secondary"
+                                        type="button">Agregar</button>
+                                </div>
+                                <div id="lista_materiales"></div>
+                                <div id="error-message"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="observaciones" class="form-label">Observaciones</label>
+                                <textarea class="form-control" id="observaciones" rows="3"></textarea>
+                            </div>
+                            <div id="modoResolucionIncidenciaFormParteTb" class="mb-3">
+                                <div id="contenedorLabelModResol"></div>
+                                
+                            </div>
+    
+                            <!--
+                            <div id="contenedorBtnsFormParteTb">
+                                <button id="btnFinalizarTrabajo" type="button"
+                                    class="btnCrearParteTb btn btn-primary">Finalizar el trabajo</button>
+                                <button id="btnPausaTrabajo" type="button" class="btn btn-dark"
+                                    style="display: block;">Pausar trabajo ggg</button>
+                                <button id="btnVolverCrearParteTb" type="button" class="btn btn-secondary">Volver al
+                                    listado</button>
+                            </div>
+                            -->
+
+                            <div class="d-flex justify-content-between">
+                                <!-- Utilizando la clase para alinear los botones -->
+                                <div id="containerBtnsIzqFormParteTb">
+                                    <button id="btnFinalizarTrabajo" type="button"
+                                        class="btn btn-primary me-2">Finalizar el trabajo</button>
+                                    <!--<button id="btnPausaTrabajo" type="button" class="btn btn-dark me-2">Pausar
+                                        trabajo</button>-->
+                                </div>
+                                <div>
+                                    <button id="btnVolverCrearParteTb" type="button" class="btn btn-secondary">Volver al
+                                        listado</button>
+                                </div>
+                            </div>
+
+                            <!--
+                            <div class="row">
+                                <div class="col" id="containerBtnsIzqFormParteTb">
+                                    <button id="btnFinalizarTrabajo" type="button"
+                                        class="btn btn-primary me-2">Finalizar el trabajo</button>
+                                    <button id="btnPausaTrabajo" type="button" class="btn btn-dark me-2">Pausar
+                                        trabajo</button>
+                                    <button id="btnVolverCrearParteTb" type="button" class="btn btn-secondary">Volver al
+                                        listado</button>
+                                </div>
+                            </div>
+                            -->
+
+                        </form>
+                    </div>
+                    <!-- Fin Form crear parte trabajo -->
+
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div>
+                            <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
+                            &middot;
+                            <a href="https://dondigital.es/politica-de-privacidad/">Política de Privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!----------------------- Fin Cuerpo interno de la pagina ----------------------->
+    </div>
+    <!--====== Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/js/diseno/scripts.js"></script>
+    <script src="/js/diseno/simple_datatables_min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--====== Scripts de funcionalidades de la app ======-->
+    <script type="module" src="/js/scripts_trabajador/ver_incidencias.js"></script>
+    <script src="/js/scripts_trabajador/ver_detalles_incidencia.js"></script>
+    <script src="/js/scripts_trabajador/cargar_editar_incidencia.js"></script>
+    <script type="module" src="/js/scripts_trabajador/crear_form_parte_trabajo.js"></script>
+
+
+</body>
+
+</html>

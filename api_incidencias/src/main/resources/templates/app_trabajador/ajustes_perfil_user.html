@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gestor de incidencias - DonDigital</title>
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <script type="module" src="/js/diseno/barra_superior.js"></script>
+
+    <div id="layoutSidenav">
+
+        <script type="module" src="/js/scripts_trabajador/obtener_info_user.js"></script>
+        <script type="module" src="/js/diseno/menu_lateral.js"></script>
+
+        <!----------------------- Cuerpo interno de la pagina ----------------------->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="container-fluid px-1" style="display: grid; place-items: center;">
+                        <img src="/assets/img/logo_dondigital.png" alt="logo_empresa" class="img-fluid">
+                    </div>
+                    <h1 class="mt-4">Ajustes de cuenta</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Mi perfil</li>
+                    </ol>
+                    <!-- Formulario ajustes cuenta usuario -->
+                    <form id="ajustesPerfilForm">
+                        <!-- Imagen de perfil -->
+                        <div class="mb-3">
+                            <!-- Elemento img para mostrar la imagen seleccionada -->
+                            <div id="cajaImgPerfil" class="text-center"
+                                style="display: none; border: 2px solid #ccc; padding: 5px;">
+                                <img class="" id="previewImagenPerfil"
+                                    src="/assets/img/business-person-icon-png_3794123.png"
+                                    alt="Vista previa de la imagen"
+                                    style="max-width: 200px; max-height: 200px; display: none; margin: 0 auto;">
+                            </div>
+                            <div>
+                                <label for="inputImagenPerfil" class="form-label">Imagen de perfil</label>
+                            </div>
+                            <input type="file" class="form-control" id="inputImagenPerfil" accept="image/*">
+                        </div>
+                        <!-- ID usuario + Rol -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="inputIdUser" class="form-label">ID usuario</label>
+                                <input class="form-control" type="text" id="inputIdUser" readonly>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="inputRol" class="form-label">Rol</label>
+                                <input class="form-control" type="text" id="inputRol" readonly>
+                            </div>
+                        </div>
+                        <!-- Tipo de documento + Documento -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="comboTipoDoc" class="form-label">Tipo de documento</label>
+                                <select class="form-select" id="comboTipoDoc">
+                                    <option value="DNI">DNI</option>
+                                    <option value="CIF">CIF</option>
+                                    <option value="NIE">NIE</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="inputDoc" class="form-label">Documento</label>
+                                <input class="form-control" type="text" id="inputDoc">
+                                <div id="errorMsgDoc" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Genero + Nombre -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="comboGenero" class="form-label">Genero</label>
+                                <select class="form-select" id="comboGenero" aria-label="Seleccione su genero">
+                                    <option value="hombre" selected>Hombre</option>
+                                    <option value="mujer">Mujer</option>
+                                    <option value="sinGenero">Sin genero</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="inputNombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="inputNombre"
+                                    placeholder="Ingrese su nombre">
+                            </div>
+                        </div>
+
+                        <!-- Apellidos + Telefono -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="inputApellidos" class="form-label">Apellidos</label>
+                                <input type="text" class="form-control" id="inputApellidos"
+                                    placeholder="Ingrese su primer apellido">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="inputTelefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="inputTelefono"
+                                    placeholder="Ingrese su número de teléfono">
+                                <div id="errorMsgTlfn" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;"></div>
+                            </div>
+                        </div>
+
+                        <!-- Email + Contraseña-->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail"
+                                    placeholder="Ingrese su correo electrónico">
+                                <div id="errorMsgEmail" class="alert alert-danger" role="alert"
+                                    style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;"></div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Contraseña</label>
+                                <div class="input-group">
+                                    <!-- Botón para redirigir a la página de recuperación de contraseña -->
+                                    <button id="btnCambiarPasswd" class="btn btn-outline-secondary"
+                                        type="button">Cambiar
+                                        contraseña</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones -->
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                            <a href="inicio" class="btn btn-secondary">Volver al inicio</a>
+                        </div>
+                    </form>
+                    <!-- Fin formulario ajustes cuenta usuario -->
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div>
+                            <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
+                            &middot;
+                            <a href="https://dondigital.es/politica-de-privacidad/">Política de Privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!----------------------- Fin Cuerpo interno de la pagina ----------------------->
+    </div>
+    <!--====== Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/js/diseno/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--====== Scripts de funcionalidades de la app ======-->
+    <script type="module" src="/js/scripts_trabajador/ajustes_perfil_trabajador.js"></script>
+
+</body>
+
+</html>

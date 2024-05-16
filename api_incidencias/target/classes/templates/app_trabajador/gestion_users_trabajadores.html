@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Gestor de incidencias - DonDigital</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Poppins';
+        }
+    </style>
+
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="sb-nav-fixed">
+    <script type="module" src="/js/diseno/barra_superior.js"></script>
+
+    <div id="layoutSidenav">
+
+        <script type="module" src="/js/scripts_trabajador/obtener_info_user.js"></script>
+        <script type="module" src="/js/diseno/menu_lateral.js"></script>
+
+        <!----------------------- Cuerpo interno de la pagina ----------------------->
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <div class="container-fluid px-1" style="display: grid; place-items: center;">
+                        <img src="/assets/img/logo_dondigital.png" alt="logo_empresa" class="img-fluid">
+                    </div>
+                    <h1 class="mt-4">Panel Administración</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active" id="subtitle-gestion-user">Gestión de trabajadores</li>
+                    </ol>
+
+                    <!-- Tabla Gestion usuarios -->
+                    <div class="card mb-4" id="tablaListaUsers" style="display: block;">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Listado de usuarios
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple" class="table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Documento</th>
+                                        <th>Nombre</th>
+                                        <th>Apellidos</th>
+                                        <th>Email</th>
+                                        <th>Telefono</th>
+                                        <th>Tipo de rol</th>
+                                        <th>Opciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <script src="/js/generar_filas_tabla.js"></script> -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Fin Tabla Gestion usuarios -->
+
+                    <!-- Form editar usuarios -->
+                    <div class="container" id="editarUsersForm" style="display: none;">
+                        <form>
+                            <!-- Imagen de perfil -->
+                            <div class="mb-3">
+                                <label for="imagenPerfil" class="form-label">Imagen de perfil</label>
+                                <input class="form-control" type="file" id="imagenPerfil">
+                            </div>
+                            <!-- Id usuario + Genero -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="idUseEdit" class="form-label">Id usuario</label>
+                                    <input type="text" class="form-control" id="idUseEdit"
+                                        value="Id de la incidencia existente" readonly>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="comboGeneroEdit" class="form-label">Genero</label>
+                                    <select class="form-select" id="comboGeneroEdit" aria-label="Seleccione su genero">
+                                        <option value="hombre" selected>Hombre</option>
+                                        <option value="mujer">Mujer</option>
+                                        <option value="sinGenero">Sin genero</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Tipo documento + Documento -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="comboTipoDocEdit" class="form-label">Tipo de documento</label>
+                                    <select class="form-select" id="comboTipoDocEdit">
+                                        <option value="DNI">DNI</option>
+                                        <option value="CIF">CIF</option>
+                                        <option value="NIE">NIE</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputDocEdit" class="form-label">Documento</label>
+                                    <input class="form-control" type="text" id="inputDocEdit">
+                                    <div id="errorMsgDoc" class="alert alert-danger" role="alert"
+                                        style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Nombre + Apellidos -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="nombreUserEdit" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombreUserEdit"
+                                        value="Nombre del usuario existente">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="apellidosUserEdit" class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="apellidosUserEdit"
+                                        value="Apellidos del usuario existente">
+                                </div>
+                            </div>
+                            <!--Telefono + Email -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="telfUserEdit" class="form-label">Telefono</label>
+                                    <input type="text" class="form-control" id="telfUserEdit"
+                                        value="Telefono del usuario existente">
+                                    <div id="errorMsgTlfn" class="alert alert-danger" role="alert"
+                                        style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="emailUserEdit" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="emailUserEdit"
+                                        value="Email del usuario existente">
+                                    <div id="errorMsgEmail" class="alert alert-danger" role="alert"
+                                        style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Rol + Nueva Contraseña -->
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="rolUserEdit" class="form-label">Tipo de rol</label>
+                                    <select class="form-select" id="rolUserEdit" name="rol">
+                                        <option value="Admin">Admin</option>
+                                        <option value="Técnico Jefe">Técnico Jefe</option>
+                                        <option value="Técnico">Técnico</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="contraseña" class="form-label">Nueva contraseña</label>
+                                    <div class="input-group" id="contenedorNewPasswd">
+                                        <!--
+                                        <input type="password" class="form-control" id="passwdUser-edit">
+                                        <button class="btn btn-outline-secondary" type="button" id="showPasswordButton">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                        -->
+                                        <button id="btnCambiarPasswd" class="btn btn-outline-secondary" type="button"
+                                            style="display: block;">Cambiar contraseña</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Botones -->
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            <button type="button" class="btn btn-secondary" id="btnVolverListaUsers">Volver al
+                                listado</button>
+                        </form>
+                    </div>
+                    <!-- Fin form editar usuarios -->
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div>
+                            <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
+                            &middot;
+                            <a href="https://dondigital.es/politica-de-privacidad/">Política de Privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- FIn Cuerpo interno de la pagina -->
+    </div>
+    <!--====== Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/js/diseno/scripts.js"></script>
+    <script src="/js/diseno/simple_datatables_min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!--====== Scripts de funcionalidades de la app ======-->
+    <script type="module" src="/js/scripts_trabajador/gestion_trabajadores.js"></script>
+
+</body>
+
+</html>
