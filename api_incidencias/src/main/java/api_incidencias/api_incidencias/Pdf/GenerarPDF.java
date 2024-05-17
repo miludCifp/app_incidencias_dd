@@ -3,7 +3,9 @@ package api_incidencias.api_incidencias.Pdf;
 import java.io.*;
 
 import api_incidencias.api_incidencias.Entidades.Clases.*;
-import api_incidencias.api_incidencias.Entidades.Enum.*;
+import api_incidencias.api_incidencias.Entidades.Enum.Estado;
+import api_incidencias.api_incidencias.Entidades.Enum.ModoResolucion;
+import api_incidencias.api_incidencias.Entidades.Enum.Prioridad;
 import com.itextpdf.html2pdf.ConverterProperties;
 import com.itextpdf.html2pdf.HtmlConverter;
 import org.springframework.http.HttpHeaders;
@@ -19,7 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenerarPDF {
-    private static final String rutaLogo = "src\\main\\java\\api_incidencias\\api_incidencias\\Pdf\\logo_DonDigital.png";
+    //private static final String rutaLogo = "src\\main\\java\\api_incidencias\\api_incidencias\\Pdf\\logo_DonDigital.png";
+    private static final String rutaLogo = ".\\img\\logo_DonDigital.png";
     private static final String ruta = "./pdf_generados/Pdf_ParteTrabajo_DonDigital.pdf";
     private static String nOrden, nombreCliente, apellidosCliente, emailCliente, telefonoCLiente,dni,direccion;
     private static String cliente ="nombre apellidoooo aaa \n direccion = adadddadwadadd a aaaaaaaaadw wwww \n telefono = 1241412419410";
@@ -29,45 +32,46 @@ public class GenerarPDF {
     private static Estado estado;
     public static ResponseEntity<byte[]> generarPDF(ParteTrabajo parteTrabajo){
 
-         Cliente clienteTmp = parteTrabajo.getIncidencia().getUsuarioCliente();
-         if (clienteTmp == null){
+        Cliente clienteTmp = parteTrabajo.getIncidencia().getUsuarioCliente();
+        if (clienteTmp == null){
 
-             nombreCliente = "DonDigital";
-             apellidosCliente = "";
-             emailCliente = "dondigital@gmail.com";
-             telefonoCLiente = "";
-             dni = "";
-             direccion = "";
-         }else {
-             nombreCliente = clienteTmp.getNombre();
-             apellidosCliente = clienteTmp.getApellido();
-             emailCliente = clienteTmp.getCorreoElectronico();
-             telefonoCLiente = clienteTmp.getTelefono();
-             dni = clienteTmp.getDocumento();
-             direccion = clienteTmp.getCalle();
-         }
+            nombreCliente = "DonDigital";
+            apellidosCliente = "";
+            emailCliente = "dondigital@gmail.com";
+            telefonoCLiente = "";
+            dni = "";
+            direccion = "";
+        }else {
+            nombreCliente = clienteTmp.getNombre();
+            apellidosCliente = clienteTmp.getApellido();
+            emailCliente = clienteTmp.getCorreoElectronico();
+            telefonoCLiente = clienteTmp.getTelefono();
+            dni = clienteTmp.getDocumento();
+            direccion = clienteTmp.getCalle();
+        }
 
-         nOrden = parteTrabajo.getIdOrden().toString();
-         cliente = " cliente: "+nombreCliente +" "+ apellidosCliente +"\n"
-                    +" dni: "+dni
-                    +" telefono: "+telefonoCLiente + "\n"
-                    +" correo: "+emailCliente +"\n"
-                    +"direccion: "+direccion;
+        nOrden = parteTrabajo.getIdOrden().toString();
+        cliente = " cliente: "+nombreCliente +" "+ apellidosCliente +"\n"
+                +" dni: "+dni
+                +" telefono: "+telefonoCLiente + "\n"
+                +" correo: "+emailCliente +"\n"
+                +"direccion: "+direccion;
 
-         motivo = parteTrabajo.getIncidencia().getDescripcion();
-         diagnostico = parteTrabajo.getDiagnostico();
-         solucion = parteTrabajo.getTrabajoRealizado();
-         observacion = parteTrabajo.getObservaciones();
+        motivo = parteTrabajo.getIncidencia().getDescripcion();
+        diagnostico = parteTrabajo.getDiagnostico();
+        solucion = parteTrabajo.getTrabajoRealizado();
+        observacion = parteTrabajo.getObservaciones();
 
-         material =  parteTrabajo.getListaMaterialUtilizado();
-         tiempoEmpleado =  parteTrabajo.getListaTiempoEmpleados();
+        material =  parteTrabajo.getListaMaterialUtilizado();
+        tiempoEmpleado =  parteTrabajo.getListaTiempoEmpleados();
 
-         estado = parteTrabajo.getIncidencia().getEstado();
-        try {
+        estado = parteTrabajo.getIncidencia().getEstado();
+        //para guardar el pdf en la carpeta local
+        /*try {
             convertHTMLToPDF(ruta);
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }
+        }*/
         return enviarPdf();
     }
     private static String filasMaterial(){
@@ -87,20 +91,20 @@ public class GenerarPDF {
         for (TiempoEmpleado tmp: tiempoEmpleado){
             String modoResolucion = tmp.getModoResolucion().name();
             txt +=      "         <tr>\n" +
-                "                    <td style=\"padding: 0 3px 0;\">"+tmp.getFecha()+"</td>\n" +
-                        "                    <td style=\"padding: 0 3px 0;\">"+tmp.getHoraEntrada()+"</td>\n" +
-                        "                    <td style=\"padding: 0 3px 0;\">"+tmp.getHoraSalida()+"</td>\n" +
-                        "                    <td style=\"padding: 0 3px 0;\">\n" +
-                        "                        <input type=\"checkbox\" id=\"remota\" name=\"resolucion\" value=\"remota\"" + (modoResolucion.equals("remota") ? " checked" : "") + ">\n" +
-                                "                <label for=\"remota\">REMOTA</label>\n" +
-                                "                <input type=\"checkbox\" id=\"presencial\" name=\"resolucion\" value=\"presencial\"" + (modoResolucion.equals("presencial") ? " checked" : "") + ">\n" +
-                                "                <label for=\"presencial\">PRESENCIAL</label>\n" +
-                                "                <input type=\"checkbox\" id=\"telefonica\" name=\"resolucion\" value=\"telefonica\"" + (modoResolucion.equals("telefonica") ? " checked" : "") + ">\n" +
-                                "                <label for=\"telefonica\">TELEFÓNICA</label>\n" +
-                        "                    </td>\n" +
-                        "                    <td style=\"padding: 0 3px 0;\">"+ tmp.getHoraEntrada().until(tmp.getHoraSalida(), ChronoUnit.HOURS)+"</td>\n" +
-                        "          </tr>\n";
-            }
+                    "                    <td style=\"padding: 0 3px 0;\">"+tmp.getFecha()+"</td>\n" +
+                    "                    <td style=\"padding: 0 3px 0;\">"+tmp.getHoraEntrada()+"</td>\n" +
+                    "                    <td style=\"padding: 0 3px 0;\">"+tmp.getHoraSalida()+"</td>\n" +
+                    "                    <td style=\"padding: 0 3px 0;\">\n" +
+                    "                        <input type=\"checkbox\" id=\"remota\" name=\"resolucion\" value=\"remota\"" + (modoResolucion.equals("remota") ? " checked" : "") + ">\n" +
+                    "                <label for=\"remota\">REMOTA</label>\n" +
+                    "                <input type=\"checkbox\" id=\"presencial\" name=\"resolucion\" value=\"presencial\"" + (modoResolucion.equals("presencial") ? " checked" : "") + ">\n" +
+                    "                <label for=\"presencial\">PRESENCIAL</label>\n" +
+                    "                <input type=\"checkbox\" id=\"telefonica\" name=\"resolucion\" value=\"telefonica\"" + (modoResolucion.equals("telefonica") ? " checked" : "") + ">\n" +
+                    "                <label for=\"telefonica\">TELEFÓNICA</label>\n" +
+                    "                    </td>\n" +
+                    "                    <td style=\"padding: 0 3px 0;\">"+ tmp.getHoraEntrada().until(tmp.getHoraSalida(), ChronoUnit.HOURS)+"</td>\n" +
+                    "          </tr>\n";
+        }
         return txt;
     }
     private static String situacion(){
@@ -415,4 +419,5 @@ public class GenerarPDF {
         return new ResponseEntity<>(pdfContents, headers, org.springframework.http.HttpStatus.OK);
 
     }
+
 }

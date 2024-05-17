@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Generando el JAR del servidor" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Generando el JAR del servidor">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUsuarios/userLogoH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUsuarios/userLogoM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pdf_generados/Pdf_ParteTrabajo_DonDigital.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/ApiIncidenciasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/ApiIncidenciasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Pdf/GenerarPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Pdf/GenerarPDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Pdf/logo_DonDigital.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/api_incidencias-0.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/api_incidencias-0.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/api_incidencias-0.0.1.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/api_incidencias-0.0.1.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/ApiIncidenciasApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/ApiIncidenciasApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Pdf/GenerarPDF.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Pdf/GenerarPDF.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

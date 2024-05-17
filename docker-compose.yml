@@ -7,22 +7,21 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_URL: jdbc:mysql://mysql_incidencias_bd:3306/incidencias_bd?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_URL: jdbc:mysql://mi_incidencias_bd:3306/incidencias_bd?createDatabaseIfNotExist=true&serverTimezone=UTC
       DB_USER_NAME: root
       DB_PASSWORD: root
     restart: always
     depends_on:
-      mysql_incidencias_bd:
+      mi_incidencias_bd:
           condition: service_healthy
-  mysql_incidencias_bd:
+  mi_incidencias_bd:
     image: mysql:8.0.33 
     ports:
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: incidencias_bd
-      MYSQL_USER: root            # Opcional
       MYSQL_PASSWORD: root
+      MYSQL_DATABASE: incidencias_bd
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
