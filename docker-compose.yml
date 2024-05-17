@@ -7,14 +7,14 @@ services:
     ports:
       - "8080:8080"
     environment:
-      DB_URL: jdbc:mysql://incidenciasBD:3306/incidencias_bd?createDatabaseIfNotExist=true&serverTimezone=UTC
+      DB_URL: jdbc:mysql://mi_incidencias_bd:3306/incidencias_bd?createDatabaseIfNotExist=true&serverTimezone=UTC
       DB_USER_NAME: root
       DB_PASSWORD: root
     restart: always
     depends_on:
-      incidenciasBD:
+      mi_incidencias_bd:
           condition: service_healthy
-  incidenciasBD:
+  mi_incidencias_bd:
     image: mysql:8.0.33 
     ports:
       - "3307:3306"
