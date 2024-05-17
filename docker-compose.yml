@@ -20,8 +20,9 @@ services:
       - "3307:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_PASSWORD: root
       MYSQL_DATABASE: incidencias_bd
+      MYSQL_USER: root            # Opcional
+      MYSQL_PASSWORD: root
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
