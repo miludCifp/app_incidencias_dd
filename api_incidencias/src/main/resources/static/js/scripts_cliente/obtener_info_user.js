@@ -126,8 +126,6 @@ export function cargarDatosPerfilUser(objetoDatosUser) {
         let imagenPerfil = objetoDatosUser.imagenPerfil;
         console.log("Imagen de perfil del user es ----> "+imagenPerfil);
 
-        let idUsuario = objetoDatosUser.idUsuario;
-        let rolUsuario = objetoDatosUser.rol;
         let tipoDocUsuario = objetoDatosUser.tipoDocumento;
         let docUsuario = objetoDatosUser.documento;
         let generoUsuario = objetoDatosUser.genero;
@@ -136,25 +134,28 @@ export function cargarDatosPerfilUser(objetoDatosUser) {
         let emailUsuario = objetoDatosUser.correoElectronico;
         let telefonoUsuario = objetoDatosUser.telefono;
 
+        let calleUsuario = objetoDatosUser.calle;
+        let ciudadUsuario = objetoDatosUser.ciudad;
+        let provinciaUsuario = objetoDatosUser.provincia;
+        let codPostalUsuario = objetoDatosUser.codigoPostal;
+        let paisUsuario = objetoDatosUser.pais;
+
         // Actualizar el contenido de los campos HTML con la info del usuario
-        document.getElementById("inputIdUser").value = idUsuario || "";
-        document.getElementById("inputRol").value = convertirRolToFrontend(rolUsuario) || "Sin rol";
         document.getElementById("comboTipoDoc").value = tipoDocUsuario || "";
-        document.getElementById("inputDoc").value = docUsuario || "Sin documento";
+        document.getElementById("inputDoc").value = docUsuario;
         document.getElementById("comboGenero").value = generoUsuario || "";
         document.getElementById("inputNombre").value = nombreUsuario || "Sin nombre";
         document.getElementById("inputApellidos").value = apellidos || "Sin apellidos";
-        document.getElementById("inputTelefono").value = telefonoUsuario || "";
-        document.getElementById("inputEmail").value = emailUsuario || "";
+        document.getElementById("inputTelefono").value = telefonoUsuario || "Sin telefono";
+        document.getElementById("inputEmail").value = emailUsuario || "Sin email";
 
-        /*
-        // Esta es información solo de clientes
+        // Informacion de la direccion - Esta es información solo de clientes
         document.getElementById("inputCalle").value = calleUsuario;
         document.getElementById("inputCiudad").value = ciudadUsuario;
         document.getElementById("inputProvincia").value = provinciaUsuario;
-        document.getElementById("inputCodigoPostal").value = codigoPostalUsuario;
-        document.getElementById("inputPais").value = paisUsuario;
-        */
+        document.getElementById("inputCp").value = codPostalUsuario;
+        document.getElementById("comboPais").value = paisUsuario;
+
 
     } catch (error) {
         console.error("Error al cargar la información de usuario:", error);

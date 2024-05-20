@@ -22,6 +22,11 @@ async function actualizarPerfil(objetoDatosUsuario) {
         inputTelefono
         inputEmail
         -----------------------
+        inputCalle
+        inputCiudad
+        inputProvincia
+        inputCp
+        inputPais
         */
 
         // Obtenemos los datos de los campos
@@ -33,11 +38,18 @@ async function actualizarPerfil(objetoDatosUsuario) {
         var txtTlfn = document.getElementById("inputTelefono").value.trim();
         var txtEmail = document.getElementById("inputEmail").value.trim();
 
+        var txtCalle = document.getElementById("inputCalle").value.trim();
+        var txtCiudad = document.getElementById("inputCiudad").value.trim();
+        var txtProv = document.getElementById("inputProvincia").value.trim();
+        var txtCp = document.getElementById("inputCp").value.trim();
+        var txtPais = document.getElementById("inputPais").value.trim();
+
         var btnSelectImgPerfil = document.getElementById("inputImagenPerfil");
 
-        if (validarCampos(objetoDatosUsuario, tipoDoc,txtDocumento,genero,txtNombre, txtApellidos, txtTlfn, txtEmail)) {
+        if (validarCampos(objetoDatosUsuario, tipoDoc,txtDocumento,
+        genero,txtNombre, txtApellidos, txtTlfn, txtEmail,
+        txtCalle,txtCiudad,txtProv,txtCp,txtPais)) {
 
-            
             // Obtener el token
             const token = await obtenerToken();
 
@@ -102,7 +114,7 @@ async function actualizarPerfil(objetoDatosUsuario) {
 }
 
 
-function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtApellidos, txtTlfn, txtEmail) {
+function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, name, apellidos, tlfn, email,calle,ciudad,prov,cp,pais) {
 
     // Obtener los datos de los campos
     //var imgPerfil = document.getElementById("previewImagenPerfil").value;
@@ -111,6 +123,11 @@ function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtAp
     var msgErrInputDoc = document.getElementById('errorMsgDoc');
     var msgErrTlfn = document.getElementById('errorMsgTlfn');
     var msgErrEmail = document.getElementById('errorMsgEmail');
+    var msgErrCalle = document.getElementById("errorMsgCalle");
+    var msgErrCiudad = document.getElementById("errorMsgCiudad");
+    var msgErrProvincia = document.getElementById("errorMsgProvincia");
+    var msgErrCp = document.getElementById("errorMsgCp");
+    var msgErrPais = document.getElementById("errorMsgPais");
 
 
     console.log("El primer apellido es -->" + objetoDatosUsuario.apellido.split(' ')[0]);
@@ -122,10 +139,10 @@ function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtAp
         tipoDoc == objetoDatosUsuario.tipoDocumento &&
         txtDoc == objetoDatosUsuario.documento &&
         genero == objetoDatosUsuario.genero &&
-        txtName == objetoDatosUsuario.nombre &&
-        txtApellidos == objetoDatosUsuario.apellido &&
-        txtTlfn == objetoDatosUsuario.telefono &&
-        txtEmail == objetoDatosUsuario.correoElectronico) {
+        name == objetoDatosUsuario.nombre &&
+        apellidos == objetoDatosUsuario.apellido &&
+        tlfn == objetoDatosUsuario.telefono &&
+        email == objetoDatosUsuario.correoElectronico) {
         // No hay cambios, mostrar alerta y salir de la función
         //alert("No se han realizado cambios.");
         Swal.fire({
@@ -150,9 +167,11 @@ function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtAp
     msgErrInputDoc.style.display = "none";
     msgErrTlfn.style.display = "none";
     msgErrEmail.style.display = "none";
-
-
-
+    msgErrCalle.style.display = "none";
+    msgErrCiudad.style.display = "none";
+    msgErrProvincia.style.display = "none";
+    msgErrCp.style.display = "none";
+    msgErrPais.style.display = "none";
 
     // Comprobaciones de los campos
     if (txtDoc === '') {
@@ -173,23 +192,65 @@ function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtAp
         return false;
     }
 
-    if (txtTlfn === '') {
+    if (tlfn === '') {
         msgErrTlfn.style.display = "block";
         msgErrTlfn.textContent = 'El telefono es obligatorio';
         return false;
-    } else if (txtTlfn.length !== 9) {
+    } else if (tlfn.length !== 9) {
         msgErrTlfn.style.display = "block";
         msgErrTlfn.textContent = 'El telefono debe tener 9 numeros';
         return false;
     }
 
-    if (txtEmail === '') {
+    if (email === '') {
         msgErrEmail.style.display = "block";
         msgErrEmail.textContent = 'El correo es obligatorio';
         return false;
-    } else if (!emailRegex.test(txtEmail)) {
+    } else if (!emailRegex.test(email)) {
         msgErrEmail.style.display = "block";
         msgErrEmail.textContent = 'El email introducido no es valido';
+        return false;
+    }
+
+    if (calle === '') {
+        msgErrCalle.style.display = "block";
+        msgErrCalle.textContent = 'La calle es obligatoria';
+        return false;
+    }
+
+    if (ciudad === '') {
+        msgErrCiudad.style.display = "block";
+        msgErrCiudad.textContent = 'La ciudad es obligatoria';
+        return false;
+    } else if (regexNum.test(ciudad)) {
+        msgErrCiudad.style.display = "block";
+        msgErrCiudad.textContent = 'El campo ciudad no admite numeros';
+        return false;
+    }
+
+    if (prov === '') {
+        msgErrProvincia.style.display = "block";
+        msgErrProvincia.textContent = 'La provincia es obligatoria';
+        return false;
+    } else if (regexNum.test(prov)) {
+        msgErrProvincia.style.display = "block";
+        msgErrProvincia.textContent = 'El campo provincia no admite numeros';
+        return false;
+    }
+
+    if (cp === '') {
+        msgErrCp.style.display = "block";
+        msgErrCp.textContent = 'El codigo postal es obligatorio';
+        return false;
+    } else if (!regexNum.test(cp)) {
+        msgErrCp.style.display = "block";
+        msgErrCp.textContent = 'El campo codigo postal es numerico';
+        return false;
+    }
+
+    if (pais === 'sinPais') {
+        msgErrPais.style.display = "block";
+        msgErrPais.textContent = 'Por favor, selecciona un pais';
         return false;
     }
 

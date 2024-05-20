@@ -4,55 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Haciendo la Version Tecnico y Cliente">
-      <change afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/PublicFrontControlador.java" afterDir="false" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Cambios nuevos en todas las versiones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/AdminFrontControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/AdminFrontControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/ClienteFrontControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/ClienteFrontControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/TecnicoFrontControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/TecnicoFrontControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/SecurityConfig/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/SecurityConfig/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/inicio_sesion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/inicio_sesion.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/registro_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/registro_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/barra_superior.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/barra_superior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/menu_lateral.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/menu_lateral.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/cargar_editar_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/cargar_editar_incidencia.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/barra_superior.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/barra_superior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/menu_lateral.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/menu_lateral.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/add_users_clientes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/add_users_clientes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/barra_superior.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/barra_superior.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/gestion_trabajadores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/gestion_trabajadores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/menu_lateral.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/menu_lateral.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/add_incidencias.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ajustes_perfil_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ajustes_perfil_user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/inicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_user_cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_user_cliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_user_trabajador.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_user_trabajador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ajustes_perfil_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ajustes_perfil_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/gestion_users_clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/gestion_users_clientes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/gestion_users_trabajadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/gestion_users_trabajadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/inicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/recup_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/recup_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/SecurityConfig/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/SecurityConfig/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/add_users_clientes.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/add_users_clientes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_user_cliente.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_user_cliente.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_user_trabajador.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_user_trabajador.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ajustes_perfil_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ajustes_perfil_user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/gestion_users_clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/gestion_users_clientes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/gestion_users_trabajadores.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/gestion_users_trabajadores.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/inicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/inicio_sesion.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/inicio_sesion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/registro_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/registro_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/gestion_trabajadores.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/gestion_trabajadores.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -548,7 +510,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716200002482</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Cambios nuevos en todas las versiones">
+      <option name="closed" value="true" />
+      <created>1716219962174</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1716219962174</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -563,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="arreglar ruta metodo subir imagen" />
     <MESSAGE value="Config Spring Security" />
     <MESSAGE value="ultimos cambios" />
     <MESSAGE value="ultimos cambios del servidor - Mohamed" />
@@ -588,7 +557,8 @@
     <MESSAGE value="Frontend integrado en el Servidor - Listo" />
     <MESSAGE value="Generando el JAR del servidor" />
     <MESSAGE value="Haciendo la Version Tecnico y Cliente" />
-    <option name="LAST_COMMIT_MESSAGE" value="Haciendo la Version Tecnico y Cliente" />
+    <MESSAGE value="Cambios nuevos en todas las versiones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios nuevos en todas las versiones" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

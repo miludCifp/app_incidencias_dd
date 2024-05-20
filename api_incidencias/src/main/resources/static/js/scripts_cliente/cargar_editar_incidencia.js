@@ -143,8 +143,8 @@ async function editarIncidencia(objetoIncidencia, token) {
                 return;
             }
 
-            // Construir el objeto de incidencia a actualizar, en este caso vamos a actualizar solo el estado
-            objetoIncidencia.estado = nuevoEstado;
+            // Construir el objeto de incidencia a actualizar, en este caso vamos a actualizar solo la prioridad
+            objetoIncidencia.prioridad = nuevaPrioridad;
 
             // Realizar la solicitud PUT al servidor
             try {

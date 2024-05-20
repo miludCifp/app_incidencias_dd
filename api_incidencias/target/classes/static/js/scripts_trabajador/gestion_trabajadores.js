@@ -652,7 +652,7 @@ async function eliminarTrabajador(boton, objetoUsuario) {
                             title: '¡Tu cuenta ha sido eliminada con exito!',
                             text: 'La sesión actual se va a cerrar',
                             willClose: async function () {
-                                window.location.href = 'login';
+                                window.location.href = '/login';
                             }
                         });
                     } else {

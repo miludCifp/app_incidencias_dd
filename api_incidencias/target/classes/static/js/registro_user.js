@@ -57,6 +57,7 @@ function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad,
 
 
     const dniValido = /^\d{8}[A-Z]$/;
+    const cifValido = /^[a-zA-Z]\d{8}$/;
     const nieValido = /^[A-Z]\d{7}[A-Z]$/;
     const contrasenaValida = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()-_+=]).{8,}$/;
     var criteriosContrasena = "La contraseña debe cumplir con los siguientes criterios de seguridad:\n\
@@ -73,18 +74,21 @@ function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad,
     // Expresión regular para validar el formato del correo electrónico
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-
     if (doc === '') {
         msgErrInputDoc.style.display = "block";
         msgErrInputDoc.textContent = 'El documento es obligatorio';
         return false;
-    } else if (tipoDoc === 'dni' && !(dniValido.test(doc))) {
+    } else if (tipoDoc === 'DNI' && !(dniValido.test(doc))) {
         msgErrInputDoc.style.display = "block";
         msgErrInputDoc.textContent = 'DNI no valido. Formato admitido: 12345678A';
         return false;
-    } else if (tipoDoc === 'nie' && !(nieValido.test(doc))) {
+    } else if (tipoDoc === 'NIE' && !(nieValido.test(doc))) {
         msgErrInputDoc.style.display = "block";
         msgErrInputDoc.textContent = 'NIE no valido. Formato admitido: A1234567A';
+        return false;
+    } else if (tipoDoc === 'CIF' && !(cifValido.test(doc))) {
+        msgErrInputDoc.style.display = "block";
+        msgErrInputDoc.textContent = 'CIF no valido. Formato admitido: A12345678';
         return false;
     }
 
@@ -174,7 +178,7 @@ function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad,
 
 }
 
-async function registrarTrabajador() {
+async function registrarCliente() {
 
     const tipoDocumento = document.getElementById('comboTipoDoc').value;
     const documento = document.getElementById('inputDoc').value;
@@ -244,7 +248,6 @@ async function registrarTrabajador() {
 
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const btnRegistrarse = document.querySelector('#btnCrearCuenta');
 
@@ -252,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnRegistrarse.addEventListener('click', async function (event) {
             event.preventDefault();
 
-            await registrarTrabajador();
+            await registrarCliente();
         });
     } else {
         console.error('Botón no encontrado');

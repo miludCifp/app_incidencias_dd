@@ -56,17 +56,6 @@
                             </div>
                             <input type="file" class="form-control" id="inputImagenPerfil" accept="image/*">
                         </div>
-                        <!-- ID usuario + Rol -->
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label for="inputIdUser" class="form-label">ID usuario</label>
-                                <input class="form-control" type="text" id="inputIdUser" disabled>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label for="inputRol" class="form-label">Rol</label>
-                                <input class="form-control" type="text" id="inputRol" disabled>
-                            </div>
-                        </div>
                         <!-- Tipo de documento + Documento -->
                         <div class="row">
                             <div class="col-md-6 mb-3">
@@ -117,7 +106,68 @@
                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;"></div>
                             </div>
                         </div>
-
+                        <!------------------------ Campos de la direccion del cliente ------------------------>
+                        <div class="row">
+                            <!-- Calle -->
+                            <div class="col-md-6 mb-3">
+                                <label for="inputCalle" class="form-label">Calle</label>
+                                <input type="text" class="form-control" id="inputCalle"
+                                       placeholder="Ingrese su calle">
+                                <div id="errorMsgCalle" class="alert alert-danger" role="alert"
+                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- Ciudad -->
+                            <div class="col-md-6 mb-3">
+                                <label for="inputCiudad" class="form-label">Ciudad</label>
+                                <input type="text" class="form-control" id="inputCiudad"
+                                       placeholder="Ingrese su ciudad">
+                                <div id="errorMsgCiudad" class="alert alert-danger" role="alert"
+                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Provincia -->
+                            <div class="col-md-6 mb-3">
+                                <label for="inputProvincia" class="form-label">Provincia</label>
+                                <input type="text" class="form-control" id="inputProvincia"
+                                       placeholder="Ingrese su provincia">
+                                <div id="errorMsgProvincia" class="alert alert-danger" role="alert"
+                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- Código Postal -->
+                            <div class="col-md-3 mb-3">
+                                <label for="inputCp" class="form-label">Código Postal</label>
+                                <input type="text" class="form-control" id="inputCp"
+                                       placeholder="Ingrese su código postal">
+                                <div id="errorMsgCp" class="alert alert-danger" role="alert"
+                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                            <!-- País -->
+                            <div class="col-md-3 mb-3">
+                                <label for="comboPais" class="form-label">País</label>
+                                <select class="form-select" id="comboPais" aria-label="Seleccione su país">
+                                    <option value="sinPais" selected>Selecciona tu país</option>
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Brazil">Brasil</option>
+                                    <option value="Canada">Canadá</option>
+                                    <option value="France">Francia</option>
+                                    <option value="Germany">Alemania</option>
+                                    <option value="Italy">Italia</option>
+                                    <option value="Japan">Japón</option>
+                                    <option value="Mexico">México</option>
+                                    <option value="Spain">España</option>
+                                    <option value="United Kingdom">Reino Unido</option>
+                                    <option value="United States">Estados Unidos</option>
+                                </select>
+                                <div id="errorMsgPais" class="alert alert-danger" role="alert"
+                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                </div>
+                            </div>
+                        </div>
                         <!-- Email + Contraseña-->
                         <div class="row">
                             <div class="col-md-6 mb-3">
