@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Crear el enlace del Navbar Brand
     var navbarBrand = document.createElement("a");
     navbarBrand.className = "navbar-brand ps-3";
-    navbarBrand.href = "inicio.html";
+    navbarBrand.href = "inicio";
     navbarBrand.textContent = "Gestor incidencias";
 
     // Crear el botón de Sidebar Toggle

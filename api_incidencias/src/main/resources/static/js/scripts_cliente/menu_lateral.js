@@ -42,36 +42,6 @@ document.addEventListener("DOMContentLoaded", async function () {
             <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
             Registrar incidencia
         </a>
-        <a class="nav-link" href="ver_partes_trabajo">
-            <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
-            Ver partes de trabajo
-        </a>
-        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAdmin"
-            aria-expanded="false" aria-controls="collapseAdmin">
-            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-            Administración
-            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-        </a>
-        <div class="collapse" id="collapseAdmin" aria-labelledby="headingAdmin" data-bs-parent="#sidenavAccordion">
-            <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="add_user_trabajador">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
-                    Añadir trabajador
-                </a>
-                <a class="nav-link" href="add_user_cliente">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-plus"></i></div>
-                    Añadir cliente
-                </a>
-                <a class="nav-link" href="gestion_users_trabajadores">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
-                    Gestionar trabajadores
-                </a>
-                <a class="nav-link" href="gestion_users_clientes">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
-                    Gestionar clientes
-                </a>
-            </nav>
-        </div>
     `;
 
     // Crear el footer del menú lateral

@@ -33,7 +33,7 @@ public class WebSecurityConfig {
         return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(authRequest -> authRequest
-                    .requestMatchers("/auth/**","api/v1/usuarios/codigo-contraseña/**","api/v1/usuarios/cambiar-contraseña/**","/app_trabajador/**","/html/**","/css/**","/js/**","/assets/**").permitAll()
+                    .requestMatchers("/auth/**","api/v1/usuarios/codigo-contraseña/**","api/v1/usuarios/cambiar-contraseña/**","/app_trabajador/**","/app_tecnico/**","/html/**","/css/**","/js/**","/assets/**").permitAll()
                     .anyRequest().authenticated())
                 .sessionManagement(sessionManager ->
                         sessionManager

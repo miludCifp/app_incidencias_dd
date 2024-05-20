@@ -113,10 +113,6 @@ function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtAp
     var msgErrEmail = document.getElementById('errorMsgEmail');
 
 
-    console.log("El primer apellido es -->" + objetoDatosUsuario.apellido.split(' ')[0]);
-
-    console.log("El segundo apellido es -->" + objetoDatosUsuario.apellido.split(' ')[1]);
-
     // Verficar si hay cambios
     if (btnSelectImgPerfil.files.length === 0 &&
         tipoDoc == objetoDatosUsuario.tipoDocumento &&

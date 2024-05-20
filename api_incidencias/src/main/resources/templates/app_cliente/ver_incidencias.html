@@ -23,12 +23,12 @@
 
 <body class="sb-nav-fixed">
 
-    <script type="module" src="/js/scripts_trabajador/barra_superior.js"></script>
+    <script type="module" src="/js/scripts_cliente/barra_superior.js"></script>
 
     <div id="layoutSidenav">
 
-        <script type="module" src="/js/scripts_trabajador/obtener_info_user.js"></script>
-        <script type="module" src="/js/scripts_trabajador/menu_lateral.js"></script>
+        <script type="module" src="/js/scripts_cliente/obtener_info_user.js"></script>
+        <script type="module" src="/js/scripts_cliente/menu_lateral.js"></script>
 
         <!----------------------- Cuerpo interno de la pagina ----------------------->
         <div id="layoutSidenav_content">
@@ -118,8 +118,7 @@
                                 <h5 class="card-title text-info">Detalles de la incidencia</h5>
                                 <p class="card-text"><strong>ID Incidencia: </strong><span id="idIncidencia"></span></p>
                                 <p class="card-text"><strong>Título: </strong><span id="tituloIncidencia"></span></p>
-                                <p class="card-text"><strong>Descripción: </strong><span
-                                        id="descripcionIncidencia"></span></p>
+                                <p class="card-text"><strong>Descripción: </strong><span id="descripcionIncidencia"></span></p>
                                 <p class="card-text"><strong>Fecha de creación: </strong><span
                                         id="fechaCreacionIncidencia"></span></p>
                                 <p class="card-text"><strong>Prioridad: </strong><span id="prioridadIncidencia"></span>
@@ -133,7 +132,8 @@
                                                 <option value="presencial">Presencial</option>
                                                 <option value="telefonica">Telefónica</option>
                                             </select>
-                                        </span></p>
+                                        </span>
+                                </p>
 
                                 <div class="d-flex justify-content-between">
                                     <!-- Utilizando la clase para alinear los botones -->
@@ -163,12 +163,12 @@
                             <div class="mb-3">
                                 <label for="tituloIncid-edit" class="form-label">Título</label>
                                 <input type="text" class="form-control" id="tituloIncid-edit"
-                                    value="Título de la incidencia existente">
+                                    value="Título de la incidencia existente" readonly>
                             </div>
                             <div class="mb-3">
                                 <label for="descIncid-edit" class="form-label">Descripción</label>
                                 <textarea class="form-control" id="descIncid-edit"
-                                    rows="3">Descripción de la incidencia existente</textarea>
+                                    rows="3" readonly>Descripción de la incidencia existente</textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="fechaIncid-edit" class="form-label">Fecha de creación</label>
@@ -201,7 +201,7 @@
                                 <!-- Prioridad -->
                                 <div class="col-md-6">
                                     <label for="prioridadIncid-edit" class="form-label">Prioridad</label>
-                                    <select class="form-select" id="prioridadIncid-edit" name="prioridad">
+                                    <select class="form-select" id="prioridadIncid-edit" name="prioridad" disabled>
                                         <option value="baja">Baja</option>
                                         <option value="media">Media</option>
                                         <option value="alta">Alta</option>
@@ -332,10 +332,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--====== Scripts de funcionalidades de la app ======-->
-    <script type="module" src="/js/scripts_trabajador/ver_incidencias.js"></script>
-    <script src="/js/scripts_trabajador/ver_detalles_incidencia.js"></script>
-    <script src="/js/scripts_trabajador/cargar_editar_incidencia.js"></script>
-    <script type="module" src="/js/scripts_trabajador/crear_form_parte_trabajo.js"></script>
+    <script type="module" src="/js/scripts_cliente/ver_incidencias.js"></script>
+    <script src="/js/scripts_cliente/ver_detalles_incidencia.js"></script>
+    <script src="/js/scripts_cliente/cargar_editar_incidencia.js"></script>
+    <script type="module" src="/js/scripts_cliente/crear_form_parte_trabajo.js"></script>
 
 
 </body>
