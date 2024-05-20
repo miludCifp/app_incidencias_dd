@@ -1,5 +1,4 @@
 import * as manejadorToken from '../manejador_token.js';
-import * as formParteTb from '../scripts_trabajador/crear_form_parte_trabajo.js';
 
 function obtenerToken() {
     return manejadorToken.getToken();

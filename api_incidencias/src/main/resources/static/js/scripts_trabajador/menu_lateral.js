@@ -1,4 +1,4 @@
-import * as obtenerInfoUser from '../scripts_trabajador/obtener_info_user.js';
+import * as obtenerInfoUser from './obtener_info_user.js';
 import * as manejadorToken from '../manejador_token.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 manejadorToken.removeToken();
 
                 // Redireccionar a la página de inicio después de cerrar sesión
-                window.location.href = "login";
+                window.location.href = "/login";
             }
         });
     });
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // Obtener el nombre de usuario del objeto de usuario
     const datosUsuario = await obtenerInfoUser.obtenerDatosUser();
 
-    console.log("el objeto Datos usuario recibido del usaurio es --->" + datosUsuario);
+    console.log("el objeto Datos usuario recibido del usaurio es --->", datosUsuario);
 
     // Utilizamos esta funcion para cargar el nombre del usuario en el elemento nombre del menu lateral
     obtenerInfoUser.cargarNombreUser(datosUsuario);

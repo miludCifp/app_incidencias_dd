@@ -1,4 +1,4 @@
-import * as manejadorToken from '/js/manejador_token.js';
+import * as manejadorToken from '../manejador_token.js';
 
 async function crearIncidencia() {
 

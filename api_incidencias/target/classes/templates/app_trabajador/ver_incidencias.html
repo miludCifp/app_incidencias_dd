@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Gestor de incidencias - DonDigital</title>
-
+    <link rel="icon" href="/assets/img/icon_dondigital.png" type="image/png">
     <link href="/css/estilos_mostrar_material.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
@@ -125,9 +125,8 @@
                                 <p class="card-text"><strong>Prioridad: </strong><span id="prioridadIncidencia"></span>
                                 </p>
                                 <p class="card-text"><strong>Estado: </strong><span id="estadoIncidencia"></span></p>
-                                <p class="card-text"><strong>Modo de resolución: </strong><span
-                                        id="modoResolucionIncidencia">
-                                        <span id="modoResolucionIncidencia">
+                                <p class="card-text"><strong>Modo de resolución: </strong>
+                                        <span id="comboModoResolucion">
                                             <select id="selectModoResolucion">
                                                 <option value="sinModoResolucion">Sin seleccionar</option>
                                                 <option value="remota">Remota</option>
@@ -157,30 +156,30 @@
                     <div class="container" id="editarIncidenciaForm" style="display: none;">
                         <form>
                             <div class="mb-3">
-                                <label for="id-incidencia" class="form-label">Id incidencia</label>
+                                <label for="idIncidencia-edit" class="form-label">Id incidencia</label>
                                 <input type="text" class="form-control" id="idIncidencia-edit"
-                                    value="Id de la incidencia existente" readonly>
+                                    value="Id de la incidencia existente" disabled>
                             </div>
                             <div class="mb-3">
-                                <label for="titulo" class="form-label">Título</label>
+                                <label for="tituloIncid-edit" class="form-label">Título</label>
                                 <input type="text" class="form-control" id="tituloIncid-edit"
                                     value="Título de la incidencia existente">
                             </div>
                             <div class="mb-3">
-                                <label for="descripcion" class="form-label">Descripción</label>
+                                <label for="descIncid-edit" class="form-label">Descripción</label>
                                 <textarea class="form-control" id="descIncid-edit"
                                     rows="3">Descripción de la incidencia existente</textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="fecha_creacion" class="form-label">Fecha de creación</label>
+                                <label for="fechaIncid-edit" class="form-label">Fecha de creación</label>
                                 <input type="date" class="form-control" id="fechaIncid-edit" name="fecha_creacion"
-                                    readonly>
+                                       disabled>
                             </div>
 
                             <div class="row mb-3">
                                 <!-- Estado -->
                                 <div class="col-md-6">
-                                    <label for="estado" class="form-label">Estado</label>
+                                    <label for="estadoIncid-edit" class="form-label">Estado</label>
                                     <select class="form-select" id="estadoIncid-edit" name="estado">
                                         <option value="pendiente">Pendiente</option>
                                         <option value="tramite">En trámite</option>
@@ -201,7 +200,7 @@
 
                                 <!-- Prioridad -->
                                 <div class="col-md-6">
-                                    <label for="prioridad" class="form-label">Prioridad</label>
+                                    <label for="prioridadIncid-edit" class="form-label">Prioridad</label>
                                     <select class="form-select" id="prioridadIncid-edit" name="prioridad">
                                         <option value="baja">Baja</option>
                                         <option value="media">Media</option>
@@ -222,11 +221,11 @@
                         <form>
                             <div class="mb-3">
                                 <label for="diagnostico" class="form-label">ID incidencia</label>
-                                <input type="text" class="form-control" id="idIncidenciaParteTb" readonly>
+                                <input type="text" class="form-control" id="idIncidenciaParteTb" disabled>
                             </div>
                             <div class="mb-3">
                                 <label for="diagnostico" class="form-label">Motivo</label>
-                                <textarea class="form-control" id="motivo" rows="3" readonly></textarea>
+                                <textarea class="form-control" id="motivo" rows="3" disabled></textarea>
                             </div>
 
                             <div class="mb-3">

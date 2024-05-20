@@ -174,7 +174,7 @@ function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad,
 
 }
 
-async function registrarTrabajador() {
+async function registrarCliente() {
 
     const tipoDocumento = document.getElementById('comboTipoDoc').value;
     const documento = document.getElementById('inputDoc').value;
@@ -244,7 +244,6 @@ async function registrarTrabajador() {
 
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
     const btnRegistrarse = document.querySelector('#btnCrearCuenta');
 
@@ -252,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnRegistrarse.addEventListener('click', async function (event) {
             event.preventDefault();
 
-            await registrarTrabajador();
+            await registrarCliente();
         });
     } else {
         console.error('Botón no encontrado');

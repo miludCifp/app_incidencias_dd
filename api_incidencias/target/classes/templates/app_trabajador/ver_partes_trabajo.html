@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Gestor de incidencias - DonDigital</title>
-
+    <link rel="icon" href="/assets/img/icon_dondigital.png" type="image/png">
     <link href="/css/estilos_mostrar_material.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
@@ -61,17 +61,6 @@
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Id incidencia</th>
-                                        <th>Motivo</th>
-                                        <th>Diagnóstico</th>
-                                        <th>Trabajo realizado</th>
-                                        <th>Observaciones</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </tfoot>
                                 <tbody>
                                     <!--
                                     <tr>
@@ -188,33 +177,33 @@
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <label for="id-incidencia" class="form-label">ID incidencia</label>
+                                    <label for="idIncidenciaParteTb-edit" class="form-label">ID incidencia</label>
                                     <input type="text" class="form-control" id="idIncidenciaParteTb-edit"
-                                        value="Id de la incidencia existente" readonly>
+                                        value="Id de la incidencia existente" disabled>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="id-incidencia" class="form-label">Id parte de trabajo</label>
+                                    <label for="idparteTb-edit" class="form-label">Id parte de trabajo</label>
                                     <input type="text" class="form-control" id="idparteTb-edit"
-                                        value="Id del parte de trabajo" readonly>
+                                        value="Id del parte de trabajo" disabled>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="diagnostico" class="form-label">Motivo</label>
-                                <textarea class="form-control" id="motivo-edit" rows="3" readonly></textarea>
+                                <label for="motivo-edit" class="form-label">Motivo</label>
+                                <textarea class="form-control" id="motivo-edit" rows="3" disabled></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="diagnostico" class="form-label">Diagnóstico</label>
+                                <label for="diagnostico-edit" class="form-label">Diagnóstico</label>
                                 <textarea class="form-control" id="diagnostico-edit" rows="3"></textarea>
                                 <div id="msgErrorDiagnostico" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
                             </div>
                             <div class="mb-3">
-                                <label for="trabajo_realizado" class="form-label">Trabajo Realizado</label>
+                                <label for="trabajoRealizado-edit" class="form-label">Trabajo Realizado</label>
                                 <textarea class="form-control" id="trabajoRealizado-edit" rows="3"></textarea>
                                 <div id="msgErrorTbRealizado" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
                             </div>
 
                             <div class="mb-3">
-                                <label for="material_utilizado" class="form-label">Material Utilizado</label>
+                                <label for="material_utilizado_edit" class="form-label">Material Utilizado</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control" id="material_utilizado_edit"
                                         placeholder="Material">
@@ -229,7 +218,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="observaciones" class="form-label">Observaciones</label>
+                                <label for="observaciones-edit" class="form-label">Observaciones</label>
                                 <textarea class="form-control" id="observaciones-edit" rows="3"></textarea>
                             </div>
 

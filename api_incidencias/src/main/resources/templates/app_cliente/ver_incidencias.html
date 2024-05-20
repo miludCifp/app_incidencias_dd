@@ -8,7 +8,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Gestor de incidencias - DonDigital</title>
-
+    <link rel="icon" href="/assets/img/icon_dondigital.png" type="image/png">
     <link href="/css/estilos_mostrar_material.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
@@ -79,32 +79,6 @@
                                 </tfoot>
                                 -->
                                 <tbody>
-                                    <!--
-                                    <tr>
-                                        <td>01</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>2011/04/25</td>
-                                        <td>
-                                            <span class="btn btn-sm btn-secondary">Baja</span>
-                                        </td>
-                                        <td>
-                                            <span class="btn btn-sm btn-success">Cerrada</span>
-                                        </td>
-                                        <td>
-                                            <button onclick="mostrarDetallesIncidencia(this)" type="button"
-                                                class="btn btn-sm btn-primary" id="btn_detalles_incidencia">Ver
-                                                detalles</button>
-                                            <button onclick="editarIncidencia(this)" type="button"
-                                                class="btn btn-sm btn-warning" id="btn_edit_incidencia">Editar</button>
-                                            <button type="button" class="btn btn-sm btn-danger"
-                                                id="btn_delete_incidencia">Eliminar</button>
-                                            <button onclick="crearParteTb(this)" type="button"
-                                                class="btn btn-sm btn-info" id="btn_parte_tb">Crear parte
-                                                trabajo</button>
-                                        </td>
-                                    </tr>
-                                    -->
                                 </tbody>
                             </table>
                         </div>
@@ -125,23 +99,12 @@
                                 </p>
                                 <p class="card-text"><strong>Estado: </strong><span id="estadoIncidencia"></span></p>
                                 <p class="card-text"><strong>Modo de resolución: </strong>
-                                        <span id="comboModoResolucion">
-                                            <select id="selectModoResolucion">
-                                                <option value="sinModoResolucion">Sin seleccionar</option>
-                                                <option value="remota">Remota</option>
-                                                <option value="presencial">Presencial</option>
-                                                <option value="telefonica">Telefónica</option>
-                                            </select>
-                                        </span>
+                                    <span id="modoResolucion">No se sabe</span>
                                 </p>
-
                                 <div class="d-flex justify-content-between">
                                     <!-- Utilizando la clase para alinear los botones -->
                                     <div id="botonesIzquierda">
-                                        <button id="btnEmpezarTrabajo" class="btn btn-success">Empezar trabajo</button>
                                         <!-- <button id="btnReabrirIncidencia" class="btn btn-warning">Reabrir incidencia</button> -->
-                                    </div>
-                                    <div>
                                         <button onclick="volverListadoIncidencias()" class="btn btn-secondary">Volver al
                                             listado</button>
                                     </div>
@@ -158,29 +121,29 @@
                             <div class="mb-3">
                                 <label for="idIncidencia-edit" class="form-label">Id incidencia</label>
                                 <input type="text" class="form-control" id="idIncidencia-edit"
-                                    value="Id de la incidencia existente" readonly>
+                                    value="Id de la incidencia existente" disabled>
                             </div>
                             <div class="mb-3">
                                 <label for="tituloIncid-edit" class="form-label">Título</label>
                                 <input type="text" class="form-control" id="tituloIncid-edit"
-                                    value="Título de la incidencia existente" readonly>
+                                    value="Título de la incidencia existente" disabled>
                             </div>
                             <div class="mb-3">
                                 <label for="descIncid-edit" class="form-label">Descripción</label>
                                 <textarea class="form-control" id="descIncid-edit"
-                                    rows="3" readonly>Descripción de la incidencia existente</textarea>
+                                    rows="3" disabled>Descripción de la incidencia existente</textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="fechaIncid-edit" class="form-label">Fecha de creación</label>
                                 <input type="date" class="form-control" id="fechaIncid-edit" name="fecha_creacion"
-                                    readonly>
+                                       disabled>
                             </div>
 
                             <div class="row mb-3">
                                 <!-- Estado -->
                                 <div class="col-md-6">
                                     <label for="estadoIncid-edit" class="form-label">Estado</label>
-                                    <select class="form-select" id="estadoIncid-edit" name="estado">
+                                    <select class="form-select" id="estadoIncid-edit" name="estado" disabled>
                                         <option value="pendiente">Pendiente</option>
                                         <option value="tramite">En trámite</option>
                                         <option value="proceso_soluccion">En proceso de solución</option>
@@ -201,7 +164,7 @@
                                 <!-- Prioridad -->
                                 <div class="col-md-6">
                                     <label for="prioridadIncid-edit" class="form-label">Prioridad</label>
-                                    <select class="form-select" id="prioridadIncid-edit" name="prioridad" disabled>
+                                    <select class="form-select" id="prioridadIncid-edit" name="prioridad">
                                         <option value="baja">Baja</option>
                                         <option value="media">Media</option>
                                         <option value="alta">Alta</option>
@@ -215,96 +178,6 @@
                         </form>
                     </div>
                     <!-- Fin Form editar incidencia -->
-
-                    <!-- Form crear parte trabajo -->
-                    <div class="container" id="crearParteTbForm" style="display: none;">
-                        <form>
-                            <div class="mb-3">
-                                <label for="diagnostico" class="form-label">ID incidencia</label>
-                                <input type="text" class="form-control" id="idIncidenciaParteTb" readonly>
-                            </div>
-                            <div class="mb-3">
-                                <label for="diagnostico" class="form-label">Motivo</label>
-                                <textarea class="form-control" id="motivo" rows="3" readonly></textarea>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="diagnostico" class="form-label">Diagnóstico</label>
-                                <textarea class="form-control" id="diagnostico" rows="3"></textarea>
-                                <div id="msgErrorDiagnostico" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="trabajo_realizado" class="form-label">Trabajo Realizado</label>
-                                <textarea class="form-control" id="trabajo_realizado" rows="3"></textarea>
-                                <div id="msgErrorTbRealizado" class="alert alert-danger" role="alert" style="padding: 5px; display: none;"></div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="material_utilizado" class="form-label">Material Utilizado</label>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" id="material_utilizado"
-                                        placeholder="Material">
-                                    <input type="number" class="form-control" id="cantidad_utilizada"
-                                        placeholder="Cantidad">
-                                    <input type="number" class="form-control" id="costo_material" placeholder="Costo">
-                                    <button id="btnAgregarMaterial" class="btn btn-outline-secondary"
-                                        type="button">Agregar</button>
-                                </div>
-                                <div id="lista_materiales"></div>
-                                <div id="error-message"></div>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="observaciones" class="form-label">Observaciones</label>
-                                <textarea class="form-control" id="observaciones" rows="3"></textarea>
-                            </div>
-                            <div id="modoResolucionIncidenciaFormParteTb" class="mb-3">
-                                <div id="contenedorLabelModResol"></div>
-                                
-                            </div>
-    
-                            <!--
-                            <div id="contenedorBtnsFormParteTb">
-                                <button id="btnFinalizarTrabajo" type="button"
-                                    class="btnCrearParteTb btn btn-primary">Finalizar el trabajo</button>
-                                <button id="btnPausaTrabajo" type="button" class="btn btn-dark"
-                                    style="display: block;">Pausar trabajo ggg</button>
-                                <button id="btnVolverCrearParteTb" type="button" class="btn btn-secondary">Volver al
-                                    listado</button>
-                            </div>
-                            -->
-
-                            <div class="d-flex justify-content-between">
-                                <!-- Utilizando la clase para alinear los botones -->
-                                <div id="containerBtnsIzqFormParteTb">
-                                    <button id="btnFinalizarTrabajo" type="button"
-                                        class="btn btn-primary me-2">Finalizar el trabajo</button>
-                                    <!--<button id="btnPausaTrabajo" type="button" class="btn btn-dark me-2">Pausar
-                                        trabajo</button>-->
-                                </div>
-                                <div>
-                                    <button id="btnVolverCrearParteTb" type="button" class="btn btn-secondary">Volver al
-                                        listado</button>
-                                </div>
-                            </div>
-
-                            <!--
-                            <div class="row">
-                                <div class="col" id="containerBtnsIzqFormParteTb">
-                                    <button id="btnFinalizarTrabajo" type="button"
-                                        class="btn btn-primary me-2">Finalizar el trabajo</button>
-                                    <button id="btnPausaTrabajo" type="button" class="btn btn-dark me-2">Pausar
-                                        trabajo</button>
-                                    <button id="btnVolverCrearParteTb" type="button" class="btn btn-secondary">Volver al
-                                        listado</button>
-                                </div>
-                            </div>
-                            -->
-
-                        </form>
-                    </div>
-                    <!-- Fin Form crear parte trabajo -->
 
                 </div>
             </main>

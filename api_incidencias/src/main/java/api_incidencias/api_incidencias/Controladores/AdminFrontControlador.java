@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("app_trabajador")
 public class AdminFrontControlador {
+    /*
     @GetMapping("/login")
     public String index() {
         return "login"; // Se refiere al archivo login.html en src/main/resources/templates
@@ -19,6 +20,7 @@ public class AdminFrontControlador {
     public String register_user() {
         return "register_user";
     }
+     */
     @GetMapping("/ajustes_perfil_user")
     public String ajustes_perfil_user() {
         return "app_trabajador/ajustes_perfil_user";

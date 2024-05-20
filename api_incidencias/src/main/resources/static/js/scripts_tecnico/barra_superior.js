@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 manejadorToken.removeToken();
 
                 // Redireccionar a la página de inicio después de cerrar sesión
-                window.location.href = "login";
+                window.location.href = "/login";
             }
         });
     });

@@ -44,7 +44,7 @@ export function cargarNombreUser(objetoDatosUser) {
         // Actualizar el contenido del elemento HTML con el nombre de usuario
         const textUsername = document.getElementById("txt_username");
 
-        console.log("Elemento nombre user ---> "+textUsername);
+        console.log("Elemento nombre user ---> ",textUsername);
         if (textUsername) {
             textUsername.textContent = nombreUsuario;
         }
