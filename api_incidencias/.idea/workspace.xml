@@ -4,14 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Modificaciones nuevas en las paginas y los scripts">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Dando funcionalidad al filtrar y contar incidencias">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUsuarios/userLogoH_Trabajador.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/imgUsuarios/userLogoM_Trabajador.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/ApiIncidenciasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/ApiIncidenciasApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Auth/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_parte_tb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/inicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/inicio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_partes_trabajo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -523,7 +533,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716238636270</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Dando funcionalidad al filtrar y contar incidencias">
+      <option name="closed" value="true" />
+      <created>1716287711687</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1716287711687</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Dando funcionalidad al filtrar y contar incidencias">
+      <option name="closed" value="true" />
+      <created>1716287737365</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1716287737365</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +564,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ultimos cambios" />
     <MESSAGE value="ultimos cambios del servidor - Mohamed" />
     <MESSAGE value="ultimos cambios del servidor - Mohamed -" />
     <MESSAGE value="ultimo cambio" />
@@ -563,7 +588,8 @@
     <MESSAGE value="Haciendo la Version Tecnico y Cliente" />
     <MESSAGE value="Cambios nuevos en todas las versiones" />
     <MESSAGE value="Modificaciones nuevas en las paginas y los scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modificaciones nuevas en las paginas y los scripts" />
+    <MESSAGE value="Dando funcionalidad al filtrar y contar incidencias" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dando funcionalidad al filtrar y contar incidencias" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

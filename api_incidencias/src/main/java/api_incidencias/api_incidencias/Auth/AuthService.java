@@ -151,9 +151,9 @@ public class AuthService {
             newTrabajador.setRol(request.getRol());
             newTrabajador.setFechaRegistro(LocalDate.now());
             if (request.getGenero() == Genero.mujer) {
-                newTrabajador.setImagenPerfil("userLogoM.png");
+                newTrabajador.setImagenPerfil("userLogoMTrabajador.png");
             }else{
-                newTrabajador.setImagenPerfil("userLogoH.png");
+                newTrabajador.setImagenPerfil("userLogoHTrabajador.png");
             }
 
             // Guardamos el usuario usando el repositorio del usuario

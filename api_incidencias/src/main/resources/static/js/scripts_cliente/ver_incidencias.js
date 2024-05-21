@@ -1,5 +1,4 @@
 import * as manejadorToken from '../manejador_token.js';
-import * as pagInicio from './pag_inicio.js';
 
 function obtenerToken() {
     return manejadorToken.getToken();
@@ -9,6 +8,7 @@ function obtenerIDUser(token) {
     return manejadorToken.getIdFromToken(token);
 }
 
+/*
 async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
 
@@ -26,11 +26,12 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
 
         const data = await response.json();
 
-        console.log("Datos de incidencias reabiertas recibidos:", data);
-
-        if (data && data.length > 0) {
+        // Verificar si el JSON recibido es válido y no está vacío
+        if (Array.isArray(data) && data.length > 0) {
+            console.log("Datos de incidencias reabiertas recibidos:", data);
             return data; // Retorna la lista de incidencias reabiertas si hay alguna
         } else {
+            console.log("No hay incidencias reabiertas para la incidencia con ID:", idIncidencia);
             return null; // Retorna null si no se encontraron incidencias reabiertas
         }
     } catch (error) {
@@ -38,6 +39,47 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
         return null; // Retorna null en caso de error
     }
 }
+*/
+
+async function obtenerIncidenciasReabiertas(idIncidencia) {
+    const token = await obtenerToken();
+
+    try {
+        const response = await fetch('http://localhost:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al obtener las incidencias reabiertas');
+        }
+
+        const data = await response.text();
+
+        // Verificar si la respuesta está vacía
+        if (data.trim() === '') {
+            console.log("La respuesta del servidor está vacía");
+            return null;
+        }
+
+        // Si la respuesta no está vacía, intenta analizarla como JSON
+        const jsonData = JSON.parse(data);
+        console.log("Datos de incidencias reabiertas recibidos:", jsonData);
+
+        if (Array.isArray(jsonData) && jsonData.length > 0) {
+            return jsonData;
+        } else {
+            console.log("No hay incidencias reabiertas para la incidencia con ID:", idIncidencia);
+            return null;
+        }
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 
 // cambia los valores del estado
 function cambiarValoresEstado(estado) {
@@ -114,13 +156,16 @@ async function cargarIncidenciasEnTabla(incidencias) {
         // Obtenemos las incidencais reabiertas de la cada incidencia
         incidenciasReabiertas = await obtenerIncidenciasReabiertas(incidencia.idIncidencia);
 
-        // Verificar si ya existe una entrada para esta incidencia en el mapa
-        if (mapaIncidencias[incidencia.idIncidencia]) {
-            // Si ya existe, agregar las incidencias reabiertas a la lista existente
-            mapaIncidencias[incidencia.idIncidencia].push(...incidenciasReabiertas);
-        } else {
-            // Si no existe, crear una nueva entrada en el mapa con la lista de incidencias reabiertas
-            mapaIncidencias[incidencia.idIncidencia] = incidenciasReabiertas;
+        // Si hay incidencias reabiertas, agregarlas al mapa
+        if (incidenciasReabiertas !== null) {
+            // Verificar si ya existe una entrada para esta incidencia en el mapa
+            if (mapaIncidencias[incidencia.idIncidencia]) {
+                // Si ya existe, agregar las incidencias reabiertas a la lista existente
+                mapaIncidencias[incidencia.idIncidencia].push(...incidenciasReabiertas);
+            } else {
+                // Si no existe, crear una nueva entrada en el mapa con la lista de incidencias reabiertas
+                mapaIncidencias[incidencia.idIncidencia] = incidenciasReabiertas;
+            }
         }
 
         //Verificar si hay incidencias reabiertas
@@ -225,6 +270,7 @@ document.addEventListener("DOMContentLoaded", async function () {
          }
     } else {
         // ***************** Obtenemos todas las incidencias ****************** //
+        const pagInicio = await import('./pag_inicio.js');
         let incidencias = await pagInicio.obtenerIncidencias();
         cargarIncidenciasEnTabla(incidencias);
     }

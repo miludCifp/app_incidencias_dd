@@ -154,7 +154,7 @@ function mostrarDatosTecnico(objetoTecnico) {
 
     // Crear celdas para cada propiedad del material
     var celdaDocumento = document.createElement('td');
-    celdaDocumento.textContent = objetoTecnico.document;
+    celdaDocumento.textContent = objetoTecnico.documento;
     fila.appendChild(celdaDocumento);
 
     var celdaNombreApellidos = document.createElement('td');
