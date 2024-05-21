@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Cambios nuevos en todas las versiones">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Modificaciones nuevas en las paginas y los scripts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/registro_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/registro_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/cargar_editar_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/cargar_editar_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ajustes_perfil_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ajustes_perfil_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/inicio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/inicio_sesion.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/inicio_sesion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/registro_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/registro_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/gestion_trabajadores.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/gestion_trabajadores.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/inicio.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/inicio.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -518,7 +515,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716219962174</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Modificaciones nuevas en las paginas y los scripts">
+      <option name="closed" value="true" />
+      <created>1716238636270</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1716238636270</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -533,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Config Spring Security" />
     <MESSAGE value="ultimos cambios" />
     <MESSAGE value="ultimos cambios del servidor - Mohamed" />
     <MESSAGE value="ultimos cambios del servidor - Mohamed -" />
@@ -558,7 +562,8 @@
     <MESSAGE value="Generando el JAR del servidor" />
     <MESSAGE value="Haciendo la Version Tecnico y Cliente" />
     <MESSAGE value="Cambios nuevos en todas las versiones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios nuevos en todas las versiones" />
+    <MESSAGE value="Modificaciones nuevas en las paginas y los scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificaciones nuevas en las paginas y los scripts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

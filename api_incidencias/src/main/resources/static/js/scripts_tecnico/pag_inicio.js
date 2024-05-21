@@ -135,8 +135,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         // Guardar las incidencias resueltas en localStorage
         localStorage.setItem('incidenciasNoResueltas', JSON.stringify(incidenciasNoTerminadas));
 
-    // Abrir la nueva página con el parámetro de tipo
-    window.location.href = 'ver_incidencias?tipo=no_resueltas';
+        // Abrir la nueva página con el parámetro de tipo
+        window.location.href = 'ver_incidencias?tipo=no_resueltas';
 
     });
 

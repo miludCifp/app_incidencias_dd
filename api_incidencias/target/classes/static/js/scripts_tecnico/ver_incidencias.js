@@ -1,5 +1,5 @@
 import * as manejadorToken from '../manejador_token.js';
-import * as formParteTb from '../scripts_trabajador/crear_form_parte_trabajo.js';
+import * as formParteTb from './crear_form_parte_trabajo.js';
 import * as pagInicio from './pag_inicio.js';
 
 function obtenerToken() {
@@ -7,7 +7,30 @@ function obtenerToken() {
 }
 
 // Función para hacer la petición GET
+async function obtenerIncidencias() {
+    const token = await obtenerToken();
 
+    try {
+        const response = await fetch('http://localhost:8080/api/v1/incidencias', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al obtener las incidencias');
+        }
+
+        const data = await response.json();
+
+        console.log("Datos de incidencias recibidos:", data); // Añade este console.log para ver los datos recibidos
+
+        return data;  // Retorna la lista de incidencias
+    } catch (error) {
+        console.error(error);
+    }
+}
 
 async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
@@ -192,7 +215,6 @@ async function cargarIncidenciasEnTabla(incidencias) {
         <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
             <button onclick="mostrarDetallesIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-primary" id="btn_detalles_incidencia_${incidencia.idIncidencia}">Detalles</button>
             <button onclick="cargarEditarIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_incidencia_${incidencia.idIncidencia}">Editar</button>
-            <button onclick="eliminarIncidencia(this,'${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-danger" id="btn_delete_incidencia_${incidencia.idIncidencia}">Eliminar</button>
             <button type="button" class="btn btn-sm btn-info btn-parte-tb" data-id="${incidencia.idIncidencia}" title="Crear parte de trabajo" ${esTerminado ? 'disabled' : ''}>Trabajar</button>
             ${hayReabiertas ? `<button type="button" class="btn btn-sm btn-secondary btn-incid-reabiertas" data-id="${incidencia.idIncidencia}" title="Ver incidencias reabiertas"><i class="fas fa-chevron-down"></i></button>` : ''}
         </td>
@@ -282,7 +304,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     const params = getQueryParams();
     const tipo = params['tipo'];
 
-
     if (tipo === 'resueltas') {
         const incidenciasResueltas = JSON.parse(localStorage.getItem('incidenciasResueltas'));
         if (incidenciasResueltas) {
@@ -315,6 +336,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
 });
+
 
 async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];
@@ -391,7 +413,6 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token) {
             <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
                 <button onclick="mostrarDetallesIncidencia('${encodeURIComponent(JSON.stringify(incidenciaRbt))}', '${token}')" type="button" class="btn btn-sm btn-primary" id="btn_detalles_incidencia_${incidenciaRbt.idIncidencia}">Detalles</button>
                 <button onclick="cargarEditarIncidencia('${encodeURIComponent(JSON.stringify(incidenciaRbt))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_incidencia_${incidenciaRbt.idIncidencia}">Editar</button>
-                <button onclick="eliminarIncidencia(this,'${encodeURIComponent(JSON.stringify(incidenciaRbt))}', '${token}')" type="button" class="btn btn-sm btn-danger" id="btn_delete_incidencia_${incidenciaRbt.idIncidencia}">Eliminar</button>
                 <button type="button" class="btn btn-sm btn-info btn-parte-tb" data-id="${incidenciaRbt.idIncidencia}" title="Crear parte de trabajo" ${esTerminado ? 'disabled' : ''}>Trabajar</button>
             </td>
         `;
@@ -429,14 +450,7 @@ async function borrarSubFilas(idFilaPrincipal) {
 }
 
 
-
-
-
-
-
 /************************** Cambios Kevin ***********************************/
-
-
 
 export async function comprobarTiempoEmpleadoSinHoraFin(idOrden) {
     const response = await fetch(`http://localhost:8080/api/v1/tiempo-empleado/parte-trabajo-no-terminado/${idOrden}`, {
@@ -775,8 +789,6 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("El boton Empezar Trabajo es ====> " + btnEmpezar);
 
     btnEmpezar.addEventListener('click', empezarTrabajo);
-
-
 });
 
 
