@@ -1,35 +1,13 @@
 import * as manejadorToken from '../manejador_token.js';
 import * as formParteTb from '../scripts_trabajador/crear_form_parte_trabajo.js';
+import * as pagInicio from './pag_inicio.js';
 
 function obtenerToken() {
     return manejadorToken.getToken();
 }
 
 // Función para hacer la petición GET
-async function obtenerIncidencias() {
-    const token = await obtenerToken();
 
-    try {
-        const response = await fetch('http://localhost:8080/api/v1/incidencias', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Error al obtener las incidencias');
-        }
-
-        const data = await response.json();
-
-        console.log("Datos de incidencias recibidos:", data); // Añade este console.log para ver los datos recibidos
-
-        return data;  // Retorna la lista de incidencias
-    } catch (error) {
-        console.error(error);
-    }
-}
 
 async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
@@ -130,145 +108,18 @@ export async function obtenerParteTrabajo(idIncidencia) {
         throw new Error('Error al obtener los detalles de parteTrabajo. Por favor, inténtalo de nuevo más tarde.');
     }
 }
-/*
-async function cargarIncidenciasEnTabla() {
-    // Obtener la tabla donde se cargarán los usuarios
-    const tabla = document.getElementById('datatablesSimple');
-
-    // obtengo el token 
-    const token = await obtenerToken();
-
-    let incidencias = await obtenerIncidencias();
-
-    let incidenciasReabiertas;
-
-    let hayReabiertas;
-
-    // Verificar si las incidencias son un array o no
-    if (!Array.isArray(incidencias)) {
-        // Si no es un array, convertirlo en un array de un solo elemento
-        incidencias = [incidencias];
-    }
-
-    // Verificar si hay usuarios y si la tabla está presente
-    if (!incidencias || incidencias.length === 0 || !tabla) {
-        console.warn('No se encontraron incidencias o no se encontró la tabla.');
-        return;
-    }
-
-    // Limpiar el cuerpo de la tabla
-    tabla.querySelector('tbody').innerHTML = '';
-
-    // Declara la variable para obtener el parte de trabajo relacionado con cada incidencia
-    let objetoParteTrabajo;
-
-    let filaPrincipal;
-
-    // Construir las filas de la tabla con un bucle for
-    for (let i = 0; i < incidencias.length; i++) {
-        const incidencia = incidencias[i];
-
-        // Verificar si el parte de trabajo ha sido creado o no     
-        objetoParteTrabajo = await obtenerParteTrabajo(incidencia.idIncidencia);
-        let esTerminado = false;
-
-        if (objetoParteTrabajo === null) {
-            esTerminado = true;
-        } else {
-            esTerminado = objetoParteTrabajo.terminado;
-        }
-
-        incidenciasReabiertas = null;
-        // Obtenemos las incidencais reabiertas de la cada incidencia
-        incidenciasReabiertas = await obtenerIncidenciasReabiertas(incidencia.idIncidencia);
-
-        console.warn('-----> La lsita de las Incidencias reabierats es ----> ', incidenciasReabiertas);
-
-        //Verificar si hay incidencias reabiertas
-        hayReabiertas = incidenciasReabiertas !== null && incidenciasReabiertas.length > 0;
-
-        filaPrincipal = document.createElement("tr");
-        filaPrincipal.classList.add("fila");
-        filaPrincipal.innerHTML = `
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.idIncidencia}</td>
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.titulo}</td>
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">${incidencia.fechaCreacion.split('T')[0]}</td>
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
-            <span class="btn btn-sm btn-${incidencia.prioridad === 'alta' ? 'danger' : incidencia.prioridad === 'media' ? 'warning' : 'secondary'}">${incidencia.prioridad.charAt(0).toUpperCase() + incidencia.prioridad.slice(1)}</span>
-        </td>
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
-            <span class="btn btn-sm btn-${incidencia.estado === 'terminado' ? 'success' : incidencia.estado === 'tramite' ? 'primary' : 'warning'}">${cambiarValoresEstado(incidencia.estado)}</span>
-        </td>
-        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
-            ${hayReabiertas ? `<button type="button" class="btn btn-sm btn-success btn-incid-reabiertas" data-id="${incidencia.idIncidencia}">R<i class="fas fa-chevron-down"></i></button>` : ''}
-            <button onclick="mostrarDetallesIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-primary" id="btn_detalles_incidencia_${incidencia.idIncidencia}">Detalles</button>
-            <button onclick="cargarEditarIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_incidencia_${incidencia.idIncidencia}">Editar</button>
-            <button onclick="eliminarIncidencia(this,'${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-danger" id="btn_delete_incidencia_${incidencia.idIncidencia}">Eliminar</button>
-            <button type="button" class="btn btn-sm btn-info btn-parte-tb" data-id="${incidencia.idIncidencia}" ${esTerminado ? 'disabled' : ''}>Trabajar</button>
-        </td>
-    `;
-        tabla.querySelector('tbody').appendChild(filaPrincipal);
-
-        // Crear subfilas Despues de hacer la comprobacion de si hay incidencias reabiertas
-        //generarSubfilas(tabla);
-    }
-
-    // Inicializamos la tabla después de cargar las filas de la tabla.
-    new simpleDatatables.DataTable(tabla);
-
-    // Si hay incidencias reabiertas, asignar evento click al botón "Reabierta"
-    console.log("----> Hay reabiertas " + hayReabiertas);
-    if (hayReabiertas) {
-        tabla.querySelectorAll('.btn-incid-reabiertas').forEach(btnIncidReabiertas => {
-            btnIncidReabiertas.addEventListener('click', async function () {
-
-                // Obtener el ID de la incidencia desde el atributo data-id
-                //const idIncidencia = this.getAttribute('data-id').toString();
-                await verOrOcultarSubFilas(this, incidenciasReabiertas,filaPrincipal, token);
-
-            });
-        });
-    }
-
-
-    // Asignar evento click a los botones "Crear parte de trabajo"
-    tabla.querySelectorAll('.btn-parte-tb').forEach(botonCrearParteTb => {
-        botonCrearParteTb.addEventListener('click', function () {
-
-            // Obtener el ID del usuario desde el atributo data-id
-            const idIncidencia = this.getAttribute('data-id').toString();
-
-            console.log("El id incidencia pulado Para CrearParteTb es ----> " + idIncidencia);
-            // Encontrar el objeto de incidencia correspondiente
-            const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
-            console.log("-------OBJ---------> El objeto incidencia pulsado Para CrearParteTb es ----> ", objetoIncidencia);
-
-            //var parteTbJSON = objetoParteTrabajo;
-
-            // Obtenemos la pagina actual
-            var pagActual = document.getElementById("tablaListadoIncidencias");
-
-            // Llamar a la función crearFormParteTb
-            //formParteTb.crearFormParteTb(objetoIncidencia, parteTbJSON, pagActual, token);
-
-            formParteTb.crearFormParteTb(objetoIncidencia, pagActual, token);
-
-        });
-    });
-}
-*/
 
 const mapaIncidencias = {};
 const mapaFilaPrincipal = {};
 
-async function cargarIncidenciasEnTabla() {
+async function cargarIncidenciasEnTabla(incidencias) {
     // Obtener la tabla donde se cargarán los usuarios
     const tabla = document.getElementById('datatablesSimple');
 
     // obtengo el token 
     const token = await obtenerToken();
 
-    let incidencias = await obtenerIncidencias();
+    //let incidencias = await obtenerIncidencias();
 
     let incidenciasReabiertas;
 
@@ -413,8 +264,57 @@ async function cargarIncidenciasEnTabla() {
 }
 
 // Llamar a la función para cargar las incidencias cuando se cargue el DOM
-document.addEventListener('DOMContentLoaded', cargarIncidenciasEnTabla);
+document.addEventListener("DOMContentLoaded", async function () {
 
+    // Función para obtener los parámetros de la URL
+    function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const queries = queryString.split('&');
+        for (const query of queries) {
+            const [key, value] = query.split('=');
+            params[key] = decodeURIComponent(value);
+        }
+        return params;
+    }
+
+    // Recuperar el tipo de incidencias a mostrar desde los parámetros de la URL
+    const params = getQueryParams();
+    const tipo = params['tipo'];
+
+
+    if (tipo === 'resueltas') {
+        const incidenciasResueltas = JSON.parse(localStorage.getItem('incidenciasResueltas'));
+        if (incidenciasResueltas) {
+            console.log("Incidencias Resueltas recibidas desde la pag_inicio es --->:", incidenciasResueltas);
+            cargarIncidenciasEnTabla(incidenciasResueltas);
+        } else {
+            console.error('No se encontraron incidencias resueltas en localStorage');
+        }
+    } else if (tipo === 'no_resueltas') {
+        const incidenciasNoResueltas = JSON.parse(localStorage.getItem('incidenciasNoResueltas'));
+        if (incidenciasNoResueltas) {
+            console.log("Incidencias No Resueltas recibidas desde la pag_inicio es --->:", incidenciasNoResueltas);
+            cargarIncidenciasEnTabla(incidenciasNoResueltas);
+        } else {
+            console.error('No se encontraron incidencias no resueltas en localStorage');
+        }
+    } else if (tipo === 'todas') {
+         const todasIncidencias = JSON.parse(localStorage.getItem('todasIncidencias'));
+         if (todasIncidencias) {
+             console.log("TODAS Incidencias recibidas desde la pag_inicio es --->:", todasIncidencias);
+             // Aquí puedes llamar a tu función para cargar las incidencias en la tabla
+             cargarIncidenciasEnTabla(todasIncidencias);
+         } else {
+             console.error('No se encontraron TODAS incidencias en localStorage');
+         }
+    } else {
+        // ***************** Obtenemos todas las incidencias ****************** //
+        let incidencias = await pagInicio.obtenerIncidencias();
+        cargarIncidenciasEnTabla(incidencias);
+    }
+
+});
 
 async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];

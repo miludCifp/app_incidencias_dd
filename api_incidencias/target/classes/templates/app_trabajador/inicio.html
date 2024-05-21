@@ -57,9 +57,10 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">Incidencias asignadas</h5>
-                                        <p class="card-text">Número total de incidencias asignadas: <strong>10</strong>
+                                        <p class="card-text">Número total de incidencias asignadas:
+                                            <span id="numTodasIncidencias"><strong></strong></span>
                                         </p>
-                                        <a href="ver_incidencias" class="btn btn-primary">Ver detalles</a>
+                                        <button id="btnTodasIncidencias" class="btn btn-primary">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
@@ -68,9 +69,9 @@
                                     <div class="card-body">
                                         <h5 class="card-title">Incidencias sin resolver</h5>
                                         <p class="card-text">Número total de incidencias sin resolver:
-                                            <strong>5</strong>
+                                            <span id="numNoResueltas"><strong></strong></span>
                                         </p>
-                                        <a href="ver_incidencias" class="btn btn-primary">Ver detalles</a>
+                                        <button id="btnFiltrarNoResueltas" class="btn btn-primary">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
@@ -78,10 +79,10 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h5 class="card-title">Incidencias resueltas</h5>
-                                        <p class="card-text">Número total de incidencias resueltas: <strong>20</strong>
+                                        <p class="card-text">Número total de incidencias resueltas:
+                                            <span id="numResueltas"><strong></strong></span>
                                         </p>
-                                        <button onclick="filtrarIncidenciasResueltas()" class="btn btn-primary">Ver
-                                            detalles</button>
+                                        <button id="btnFiltrarResueltas" class="btn btn-primary">Ver detalles</button>
                                     </div>
                                 </div>
                             </div>
@@ -115,7 +116,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--====== Scripts de funcionalidades de la app ======-->
-    <script src="/js/pag_inicio.js"></script>
+    <script type="module" src="/js/scripts_trabajador/pag_inicio.js"></script>
 
 </body>
 
