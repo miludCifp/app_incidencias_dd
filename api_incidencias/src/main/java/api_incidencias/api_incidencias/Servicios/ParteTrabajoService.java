@@ -51,8 +51,8 @@ public class ParteTrabajoService {
         return null;
     }
 
-    public ParteTrabajo getPartesTrabajoPorCliente(Long idUsuario){
-        Optional<ParteTrabajo> optional = reposParteTrabajo.findByUsuario(idUsuario);
+    public ParteTrabajo getPartesTrabajoPorCliente(Long idCliente){
+        Optional<ParteTrabajo> optional = reposParteTrabajo.findByUsuario(idCliente);
         if(optional.isPresent()) return optional.get();
         return null;
     }

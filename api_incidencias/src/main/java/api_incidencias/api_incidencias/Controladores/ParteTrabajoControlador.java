@@ -43,9 +43,9 @@ public class ParteTrabajoControlador {
         return parteTrabajoServicio.getPartesTrabajoPorIncidencia(idIncidencia);
     }
 
-    @GetMapping("/cliente/{idUsuario}")
-    public ParteTrabajo getPartesTrabajoCliente(@PathVariable("idUsuario") Long idUsuario){
-        return parteTrabajoServicio.getPartesTrabajoPorCliente(idUsuario);
+    @GetMapping("/cliente/{idCliente}")
+    public ParteTrabajo getPartesTrabajoCliente(@PathVariable("idCliente") Long idCliente){
+        return parteTrabajoServicio.getPartesTrabajoPorCliente(idCliente);
     }
 
     @GetMapping("/incidencia-no-terminada/{idIncidencia}")
