@@ -101,7 +101,6 @@ async function actualizarPerfil(objetoDatosUsuario) {
 
 }
 
-
 function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtApellidos, txtTlfn, txtEmail) {
 
     // Obtener los datos de los campos
@@ -276,7 +275,6 @@ async function subirImagen(file) {
     }
 }
 
-
 function seleccionarImagen() {
     // Seleccionar el campo de entrada de archivo y el elemento img
     const inputImagenPerfil = document.getElementById('inputImagenPerfil');
@@ -306,7 +304,6 @@ function seleccionarImagen() {
         }
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", async function () {
 

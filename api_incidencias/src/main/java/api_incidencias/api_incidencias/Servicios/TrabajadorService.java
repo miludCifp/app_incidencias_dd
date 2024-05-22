@@ -1,6 +1,7 @@
 package api_incidencias.api_incidencias.Servicios;
 
 import api_incidencias.api_incidencias.Entidades.Clases.Trabajador;
+import api_incidencias.api_incidencias.Entidades.Enum.Rol;
 import api_incidencias.api_incidencias.Repositorios.RepositorioTrabajador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,7 +22,12 @@ public class TrabajadorService {
     private PasswordEncoder passwdEncoder;
     @Autowired
     private Seguridad seguridad;
+
+    public boolean existsByRol(Rol rol){
+        return reposTrabajador.countByRol(rol) != 0;
+    }
     public Trabajador addTrabajador(Trabajador trabajador){
+        trabajador.setContrasena(passwdEncoder.encode(trabajador.getContrasena()));
         return reposTrabajador.save(trabajador);
     }
 

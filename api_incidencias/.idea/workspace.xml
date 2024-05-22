@@ -4,24 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Dando funcionalidad al filtrar y contar incidencias">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Añadiendo imagenes de perfil de Trabajadores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUsuarios/userLogoH_Trabajador.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/imgUsuarios/userLogoM_Trabajador.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/ApiIncidenciasApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/ApiIncidenciasApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Auth/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Auth/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Repositorios/RepositorioTrabajador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Repositorios/RepositorioTrabajador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/IncidenciaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/IncidenciaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/TrabajadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/TrabajadorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ajustes_perfil_tecnico.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ajustes_perfil_tecnico.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_parte_tb.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_partes_trabajo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/ApiIncidenciasApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/ApiIncidenciasApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Auth/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Auth/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/ClienteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/ClienteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/IncidenciaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/IncidenciaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/TrabajadorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/TrabajadorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/UsuarioService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/UsuarioService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/pag_inicio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_partes_trabajo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +92,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -94,18 +104,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/static/js/scripts_cliente&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiIncidenciasApplication.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
@@ -121,7 +139,7 @@
       <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\src\main\resources\static\css" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ApiIncidenciasApplication">
     <configuration name="ApiIncidenciasApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="api_incidencias.api_incidencias.ApiIncidenciasApplication" />
       <module name="api_incidencias" />
@@ -142,11 +160,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiIncidenciasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api_incidencias" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="api_incidencias.api_incidencias.ApiIncidenciasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ApiIncidenciasApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -156,14 +189,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712140874987</updated>
-    </task>
-    <task id="LOCAL-00001" summary="Añadiendo el controlador Usuario - Mohamed">
-      <option name="closed" value="true" />
-      <created>1712141181895</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1712141181895</updated>
+      <workItem from="1716322799469" duration="1459000" />
+      <workItem from="1716363068379" duration="4093000" />
     </task>
     <task id="LOCAL-00002" summary="Hola">
       <option name="closed" value="true" />
@@ -549,8 +576,19 @@
       <option name="project" value="LOCAL" />
       <updated>1716287737365</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Añadiendo imagenes de perfil de Trabajadores">
+      <option name="closed" value="true" />
+      <created>1716309711798</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1716309711798</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -564,7 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ultimos cambios del servidor - Mohamed" />
     <MESSAGE value="ultimos cambios del servidor - Mohamed -" />
     <MESSAGE value="ultimo cambio" />
     <MESSAGE value="Cambios de ayer" />
@@ -589,7 +626,8 @@
     <MESSAGE value="Cambios nuevos en todas las versiones" />
     <MESSAGE value="Modificaciones nuevas en las paginas y los scripts" />
     <MESSAGE value="Dando funcionalidad al filtrar y contar incidencias" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dando funcionalidad al filtrar y contar incidencias" />
+    <MESSAGE value="Añadiendo imagenes de perfil de Trabajadores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Añadiendo imagenes de perfil de Trabajadores" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

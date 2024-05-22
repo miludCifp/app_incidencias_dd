@@ -41,8 +41,6 @@ public class AuthService {
     private Seguridad seguridad;
     @Autowired
     private TrabajadorService trabajadorService;
-    @Autowired
-    private PasswordEncoder passwdEncoder;
 
 
     public AuthResponse login(LoginRequest request){
@@ -104,7 +102,7 @@ public class AuthService {
         newCliente.setNombre(request.getNombre());
         newCliente.setApellido(request.getApellido());
         newCliente.setCorreoElectronico(request.getCorreoElectronico());
-        newCliente.setContrasena(passwdEncoder.encode(request.getContrasena()));
+        newCliente.setContrasena(request.getContrasena());
         newCliente.setTelefono(request.getTelefono());
         newCliente.setCalle(request.getCalle());
         newCliente.setCiudad(request.getCiudad());
@@ -137,7 +135,7 @@ public class AuthService {
      */
     public AuthResponse registrarTrabajador(RegisterRequest_Trabajador request){
 
-      //  if (seguridad.isAdmin()){
+        if (seguridad.isAdmin()){
 
             Trabajador newTrabajador = new Trabajador();
             newTrabajador.setTipoDocumento(request.getTipoDocumento());
@@ -146,7 +144,7 @@ public class AuthService {
             newTrabajador.setNombre(request.getNombre());
             newTrabajador.setApellido(request.getApellido());
             newTrabajador.setCorreoElectronico(request.getCorreoElectronico());
-            newTrabajador.setContrasena(passwdEncoder.encode(request.getContrasena()));
+            newTrabajador.setContrasena(request.getContrasena());
             newTrabajador.setTelefono(request.getTelefono());
             newTrabajador.setRol(request.getRol());
             newTrabajador.setFechaRegistro(LocalDate.now());
@@ -166,7 +164,7 @@ public class AuthService {
                     .token(jwtService.getToken(newTrabajador,newTrabajador.getRol().name(),id))
                     .build();
         }
-       // return null;
-   // }
+        return null;
+    }
 
 }

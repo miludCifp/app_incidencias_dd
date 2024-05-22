@@ -26,7 +26,7 @@ public class ApiIncidenciasApplication {
 	@Bean
 	CommandLineRunner init() {
 		return args -> {
-			String userH =  hashUserH();
+			String userH = hashUserH();
 			String userM = hashUserM();
 			String userHTrabajador = hashUserHTrabajador();
 			String userMTrabajador = hashUserMTrabajador();

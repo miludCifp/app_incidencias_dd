@@ -107,7 +107,7 @@ public class IncidenciaService {
                 incidenciaExistente.setFechaCreacion(incidencia.getFechaCreacion());
                 incidenciaExistente.setEstado(incidencia.getEstado());
                 incidenciaExistente.setPrioridad(incidencia.getPrioridad());
-                incidenciaExistente.setUsuarioCliente(incidencia.getUsuarioCliente());
+                //incidenciaExistente.setUsuarioCliente(incidencia.getUsuarioCliente());
                 // Guarda el usuario actualizado en el repositorio
                 return reposIncidencia.save(incidenciaExistente);
 

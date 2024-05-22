@@ -23,6 +23,7 @@ public class ClienteService {
     @Autowired
     private PasswordEncoder passwdEncoder;
     public Cliente addCliente(Cliente cliente) {
+        cliente.setContrasena(passwdEncoder.encode(cliente.getContrasena()));
         return reposCliente.save(cliente);
     }
 

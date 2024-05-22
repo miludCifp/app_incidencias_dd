@@ -1,3 +1,4 @@
+
 function verDetallesParteTb(parteTbJson) {
     try {
         // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
@@ -132,9 +133,14 @@ function mostrarDatosIncidencia(objetoIncidencia) {
     // Añadir la celda a la fila
     fila.appendChild(celdaVerIncidencia);
     // Añadir un event listener al botón
-    botonIncidencia.addEventListener('click', function () {
+    botonIncidencia.addEventListener('click', async  function () {
         //alert('Incidencia ID: ');
         window.location.href = 'ver_incidencias';
+
+        // Llamar al metodo ver detalles Incidencia
+        //const pagDetallesIncidencias = await import('./ver_detalles_incidencia.js');
+        //const objetoIncidenciaJSON = encodeURIComponent(JSON.stringify(objetoIncidencia));
+        //pagDetallesIncidencias.
     });
 
 

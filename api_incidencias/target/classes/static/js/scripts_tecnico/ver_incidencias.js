@@ -1,37 +1,11 @@
 import * as manejadorToken from '../manejador_token.js';
 import * as formParteTb from './crear_form_parte_trabajo.js';
-import * as pagInicio from './pag_inicio.js';
 
 function obtenerToken() {
     return manejadorToken.getToken();
 }
 
-// Función para hacer la petición GET
-async function obtenerIncidencias() {
-    const token = await obtenerToken();
-
-    try {
-        const response = await fetch('http://localhost:8080/api/v1/incidencias', {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Error al obtener las incidencias');
-        }
-
-        const data = await response.json();
-
-        console.log("Datos de incidencias recibidos:", data); // Añade este console.log para ver los datos recibidos
-
-        return data;  // Retorna la lista de incidencias
-    } catch (error) {
-        console.error(error);
-    }
-}
-
+/*
 async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
 
@@ -59,6 +33,46 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
     } catch (error) {
         console.error(error);
         return null; // Retorna null en caso de error
+    }
+}
+*/
+
+async function obtenerIncidenciasReabiertas(idIncidencia) {
+    const token = await obtenerToken();
+
+    try {
+        const response = await fetch('http://localhost:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Error al obtener las incidencias reabiertas');
+        }
+
+        const data = await response.text();
+
+        // Verificar si la respuesta está vacía
+        if (data.trim() === '') {
+            console.log("La respuesta del servidor está vacía");
+            return null;
+        }
+
+        // Si la respuesta no está vacía, intenta analizarla como JSON
+        const jsonData = JSON.parse(data);
+        console.log("Datos de incidencias reabiertas recibidos:", jsonData);
+
+        if (Array.isArray(jsonData) && jsonData.length > 0) {
+            return jsonData;
+        } else {
+            console.log("No hay incidencias reabiertas para la incidencia con ID:", idIncidencia);
+            return null;
+        }
+    } catch (error) {
+        console.error(error);
+        return null;
     }
 }
 
@@ -331,6 +345,7 @@ document.addEventListener("DOMContentLoaded", async function () {
          }
     } else {
         // ***************** Obtenemos todas las incidencias ****************** //
+        const pagInicio = await import('./pag_inicio.js');
         let incidencias = await pagInicio.obtenerIncidencias();
         cargarIncidenciasEnTabla(incidencias);
     }
@@ -792,60 +807,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-
-
-/*************************** Filtrar incidencias resueltas **************************************
-function contarIncidenciasResueltas() {
-    // Obtener todas las filas de la tabla
-    var filas = document.querySelectorAll('#tablaListadoIncidencias tbody tr');
-    var contador = 0;
-    
-    // Iterar sobre las filas y contar las que tienen el estado "Terminado"
-    filas.forEach(function(fila) {
-        var estado = fila.querySelector('td:nth-child(6) span').textContent;
-        if (estado.trim() === 'Terminado') {
-            contador++;
-        }
-    });
-    
-    return contador;
-}
-
-var cantidadTerminadas = contarIncidenciasResueltas();
-console.log("Cantidad de incidencias terminadas:", cantidadTerminadas);
-
-
-****/
-
-function filtrarTablaIncidResueltas() {
-    // Obtener todas las filas de la tabla
-    var filas = document.querySelectorAll('#tablaListadoIncidencias tbody tr');
-
-    // Iterar sobre las filas y mostrar solo las que tienen el estado "Terminado"
-    filas.forEach(function (fila) {
-        var estado = fila.querySelector('td:nth-child(6) span').textContent;
-        if (estado.trim() !== 'Pendiente_pieza') {
-            fila.style.display = 'none'; // Ocultar la fila si el estado no es "Terminado"
-        } else {
-            fila.style.display = ''; // Mostrar la fila si el estado es "Terminado"
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el parámetro de consulta 'estado' de la URL
-    var urlParams = new URLSearchParams(window.location.search);
-    var estado = urlParams.get('estado');
-
-    // Si el parámetro de consulta 'estado' es 'Terminado', filtrar las incidencias resueltas
-    if (estado === 'Pendiente_pieza') {
-        limpiarTabla();
-        filtrarTablaIncidResueltas();
-    }
-});
 
 function limpiarTabla() {
     var filas = document.querySelectorAll('#tablaListadoIncidencias tbody tr');

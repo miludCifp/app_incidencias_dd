@@ -76,7 +76,6 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
     }
 }
 
-
 // cambia los valores del estado
 function cambiarValoresEstado(estado) {
     switch (estado) {
