@@ -5,12 +5,18 @@ function obtenerToken() {
     return manejadorToken.getToken();
 }
 
+function getIdFromToken(token) {
+    const payload = JSON.parse(atob(token.split('.')[1]));  // Decodificar la parte del payload del token
+    return payload.id;  // Obtener el id del payload
+}
+
 // Función para hacer la petición GET
 async function obtenerPartesTrabajo() {
     const token = await obtenerToken();
+    const idUser = await getIdFromToken(token);
 
     try {
-        const response = await fetch('http://localhost:8080/api/v1/parte-trabajo', {
+        const response = await fetch('http://localhost:8080/api/v1/parte-trabajo/cliente/'+idUser, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
