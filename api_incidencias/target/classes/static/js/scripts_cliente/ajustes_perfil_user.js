@@ -13,22 +13,6 @@ async function actualizarPerfil(objetoDatosUsuario) {
     document.getElementById("ajustesPerfilForm").addEventListener("submit", async function (event) {
         event.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
 
-        /*
-        comboTipoDoc
-        inputDoc
-        comboGenero
-        inputNombre
-        inputApellidos
-        inputTelefono
-        inputEmail
-        -----------------------
-        inputCalle
-        inputCiudad
-        inputProvincia
-        inputCp
-        inputPais
-        */
-
         // Obtenemos los datos de los campos
         var tipoDoc = document.getElementById("comboTipoDoc").value;
         var txtDocumento = document.getElementById("inputDoc").value.trim();
@@ -37,12 +21,11 @@ async function actualizarPerfil(objetoDatosUsuario) {
         var txtApellidos = document.getElementById("inputApellidos").value.trim();
         var txtTlfn = document.getElementById("inputTelefono").value.trim();
         var txtEmail = document.getElementById("inputEmail").value.trim();
-
         var txtCalle = document.getElementById("inputCalle").value.trim();
         var txtCiudad = document.getElementById("inputCiudad").value.trim();
         var txtProv = document.getElementById("inputProvincia").value.trim();
         var txtCp = document.getElementById("inputCp").value.trim();
-        var txtPais = document.getElementById("inputPais").value.trim();
+        var txtPais = document.getElementById("inputPais").value;
 
         var btnSelectImgPerfil = document.getElementById("inputImagenPerfil");
 
@@ -65,10 +48,14 @@ async function actualizarPerfil(objetoDatosUsuario) {
                 apellido: txtApellidos,
                 correoElectronico: txtEmail,
                 telefono: txtTlfn,
-                rol: objetoDatosUsuario.rol
+                calle: txtCalle,
+                ciudad: txtCiudad,
+                provincia: txtProv,
+                codigoPostal: txtCp,
+                pais: txtPais
             };
 
-            var urlPut = 'http://localhost:8080/api/v1/trabajadores/' + idUser;
+            var urlPut = 'http://localhost:8080/api/v1/clientes/' + idUser;
 
             // Realizamos la solicitud PUT al servidor
             try {
@@ -142,7 +129,11 @@ function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, name, apellido
         name == objetoDatosUsuario.nombre &&
         apellidos == objetoDatosUsuario.apellido &&
         tlfn == objetoDatosUsuario.telefono &&
-        email == objetoDatosUsuario.correoElectronico) {
+        calle == objetoDatosUsuario.calle &&
+        ciudad == objetoDatosUsuario.ciudad &&
+        prov == objetoDatosUsuario.provincia &&
+        cp == objetoDatosUsuario.codigoPostal &&
+        pais == objetoDatosUsuario.pais) {
         // No hay cambios, mostrar alerta y salir de la función
         //alert("No se han realizado cambios.");
         Swal.fire({
@@ -336,7 +327,6 @@ async function subirImagen(file) {
         console.error('Error:', error.message);
     }
 }
-
 
 function seleccionarImagen() {
     // Seleccionar el campo de entrada de archivo y el elemento img
