@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface RepositorioIncidencia extends JpaRepository<Incidencia, String> {
-    @Query("SELECT i FROM Incidencia i WHERE i.usuarioCliente.idUsuario = ?1")
+    @Query("SELECT i FROM Incidencia i WHERE i.usuarioCliente.idUsuario = ?1 AND NOT i.id LIKE '%R%'")
     List<Incidencia> findByCliente(Long idCliente);
 
     //Sin contar las incidencias reabiertas
