@@ -1,52 +1,44 @@
 
-function verDetallesParteTb(parteTbJson) {
-    try {
-        // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
-        var subTituloElemento = document.getElementById("subtitle-ver-partes-tb");
 
-        // Sobreescribemos el texto del elemento
-        subTituloElemento.textContent = "Ver detalles";
+export function verDetallesParteTb(parteTb) {
+    // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
+    var subTituloElemento = document.getElementById("subtitle-ver-partes-tb");
+
+    // Sobreescribemos el texto del elemento
+    subTituloElemento.textContent = "Ver detalles";
 
 
-        // Decodificar la cadena JSON
-        const decodedParteJson = decodeURIComponent(parteTbJson);
+    console.log("parte ===> ", parteTb);
 
-        // Parsear la cadena JSON a un objeto
-        const parteTb = JSON.parse(decodedParteJson);
+    // Obtenemos los datos de la incidencia desde el objeto ParteTb
+    var idParteTb = parteTb.idOrden;
+    var motivoParteTb = parteTb.incidencia.descripcion;
+    var diagnosticoParteTb = parteTb.diagnostico;
+    var tbRealizadoParteTb = parteTb.trabajoRealizado;
+    var observacionesParteTb = parteTb.observaciones;
 
-        console.log("parte ===> ", parteTb);
+    // Actualizamos los elementos HTML con los detalles de la incidencia
+    document.getElementById("idParteTb").textContent = idParteTb;
+    document.getElementById("idParteTb").textContent = idParteTb;
+    document.getElementById("motivoParteTb").textContent = motivoParteTb;
+    document.getElementById("diagnosticoParteTb").textContent = diagnosticoParteTb;
+    document.getElementById("tbRealizadoParteTb").textContent = tbRealizadoParteTb;
+    mostrarDatosIncidencia(parteTb.incidencia);
+    // Mostrar los datos del tecnico
+    mostrarDatosTecnico(parteTb.tecnico);
+    // Mostrar los materiales
+    mostrarMateriales(parteTb.listaMaterialUtilizado);
+    // Mostrar los tiempos empleados
+    mostrarTiemposEmpleados(parteTb.listaTiempoEmpleados);
 
-        // Obtenemos los datos de la incidencia desde el objeto ParteTb
-        var idParteTb = parteTb.idOrden;
-        var motivoParteTb = parteTb.incidencia.descripcion;
-        var diagnosticoParteTb = parteTb.diagnostico;
-        var tbRealizadoParteTb = parteTb.trabajoRealizado;
-        var observacionesParteTb = parteTb.observaciones;
+    document.getElementById("observacionesParteTb").textContent = observacionesParteTb;
 
-        // Actualizamos los elementos HTML con los detalles de la incidencia
-        document.getElementById("idParteTb").textContent = idParteTb;
-        document.getElementById("idParteTb").textContent = idParteTb;
-        document.getElementById("motivoParteTb").textContent = motivoParteTb;
-        document.getElementById("diagnosticoParteTb").textContent = diagnosticoParteTb;
-        document.getElementById("tbRealizadoParteTb").textContent = tbRealizadoParteTb;
-        mostrarDatosIncidencia(parteTb.incidencia);
-        // Mostrar los datos del tecnico
-        mostrarDatosTecnico(parteTb.tecnico);
-        // Mostrar los materiales
-        mostrarMateriales(parteTb.listaMaterialUtilizado);
-        // Mostrar los tiempos empleados
-        mostrarTiemposEmpleados(parteTb.listaTiempoEmpleados);
+    // Ocultamos la tabla de listado de partes de trabajo
+    document.getElementById("tablaListadoPartesTb").style.display = "none";
 
-        document.getElementById("observacionesParteTb").textContent = observacionesParteTb;
+    // Mostramos los detalles del parte de trabajo
+    document.getElementById("detallesParteTb").style.display = "block";
 
-        // Ocultamos la tabla de listado de partes de trabajo
-        document.getElementById("tablaListadoPartesTb").style.display = "none";
-
-        // Mostramos los detalles del parte de trabajo
-        document.getElementById("detallesParteTb").style.display = "block";
-    } catch (error) {
-        console.error("Error al parsear la cadena JSON:", error);
-    }
 }
 
 // cambia los valores del estado
@@ -134,13 +126,11 @@ function mostrarDatosIncidencia(objetoIncidencia) {
     fila.appendChild(celdaVerIncidencia);
     // Añadir un event listener al botón
     botonIncidencia.addEventListener('click', async  function () {
-        //alert('Incidencia ID: ');
-        window.location.href = 'ver_incidencias';
+        // Guardar las incidencias resueltas en localStorage
+        localStorage.setItem('objetoIncidenciaParteTb', JSON.stringify(objetoIncidencia));
 
-        // Llamar al metodo ver detalles Incidencia
-        //const pagDetallesIncidencias = await import('./ver_detalles_incidencia.js');
-        //const objetoIncidenciaJSON = encodeURIComponent(JSON.stringify(objetoIncidencia));
-        //pagDetallesIncidencias.
+        //window.location.href = `ver_incidencias?objeto=incidencia-partetb`;
+        window.location.href = `ver_incidencias`;
     });
 
 
@@ -258,3 +248,9 @@ function volverListadoPartesTb() {
 
     location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const btnVolver = document.getElementById('btnVolverDetalles');
+    console.log("El boton Volver Detalles PartesTB es ====> " + btnVolver);
+    btnVolver.addEventListener('click', volverListadoPartesTb);
+});
