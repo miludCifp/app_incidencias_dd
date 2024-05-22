@@ -38,7 +38,9 @@ public class ClienteService {
     public Optional<Cliente> getCliente(String email) {
         return reposCliente.findByEmail(email);
     }
-
+    public Optional<Cliente> getClienteDocumento(String documento) {
+        return reposCliente.findByDocumento(documento);
+    }
     /**
      * Si es el mismo o admin
      *
