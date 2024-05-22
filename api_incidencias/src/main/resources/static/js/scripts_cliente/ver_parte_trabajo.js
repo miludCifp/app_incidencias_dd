@@ -1,4 +1,5 @@
 import * as manejadorToken from '../manejador_token.js';
+import * as pagDetallesParteTb from "./ver_detalles_parte_tb.js";
 
 function obtenerToken() {
     return manejadorToken.getToken();
@@ -74,7 +75,7 @@ async function cargarPartesTrabajoEnTabla() {
                 <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">${trabajoRealizado}</td>
                 <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px;">${observaciones}</td>
                 <td style="white-space: nowrap;">
-                    <button onclick="verDetallesParteTb('${encodeURIComponent(JSON.stringify(parte))}')" type="button" class="btn btn-sm btn-primary" id="btn_detalles_parte_tb">Detalles</button>
+                    <button type="button" class="btn btn-sm btn-primary btn-detalles-partetb" data-id="${parte.idOrden}" title="Ver detalles">Detalles</button>
                     <button onclick="generarPDFParteTb('${encodeURIComponent(JSON.stringify(parte))}','${token}')" type="button" class="btn btn-sm btn-info" id="btn_pdf_parte_tb">Generar PDF</button>
                 </td>
             </tr>`;
@@ -85,6 +86,20 @@ async function cargarPartesTrabajoEnTabla() {
 
     // Inicializamos la tabla después de cargar las filas de la tabla.
     new simpleDatatables.DataTable(tabla);
+
+    //onclick="verDetallesParteTb('${encodeURIComponent(JSON.stringify(parte))}')"
+    tabla.querySelectorAll('.btn-detalles-partetb').forEach(btnMostrarDetalles => {
+        btnMostrarDetalles.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+            const idOrden = this.getAttribute('data-id').toString();
+            // Encontrar el objeto de ParteTb correspondiente
+            const objetoParteTb = parteTrabajos.find(parteTb => parteTb.idOrden.toString() === idOrden);
+
+            pagDetallesParteTb.verDetallesParteTb(objetoParteTb);
+
+        });
+    });
 }
 
 
