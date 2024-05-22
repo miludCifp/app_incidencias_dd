@@ -4,44 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Añadiendo Ver partes trabajo al cliente">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pdf.js" afterDir="false" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando Ver incidencias desde Parte de trabajo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_partes_trabajo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_partes_trabajo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_partes_trabajo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_partes_trabajo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/ver_partes_trabajo.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,12 +55,14 @@
     &quot;assignee&quot;: &quot;miludCifp&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/miludCifp/app_incidencias_dd.git",
-    "accountId": "8f72abbb-e743-4a9d-a5d3-d07929c09c5c"
-  }
-}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="635db1bd-010a-4d9e-93c1-09882540058f" />
+        <option name="url" value="https://github.com/kevinRodriguezCastro/api_incidencias.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -110,9 +76,9 @@
     "Application.ApiIncidenciasApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Mohamed",
+    "git-widget-placeholder": "Kevin",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/static/js/scripts_cliente",
+    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/templates/app_cliente",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -127,8 +93,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\templates\app_cliente" />
+      <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_tecnico" />
       <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\imgUsuarios" />
     </key>
@@ -177,8 +143,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
