@@ -24,5 +24,9 @@ public class ClienteFrontControlador {
     public String ver_incidencias() {
         return "app_cliente/ver_incidencias";
     }
+    @GetMapping("/ver_partes_trabajo")
+    public String ver_partes_trabajo() {
+        return "app_cliente/ver_partes_trabajo";
+    }
 
 }

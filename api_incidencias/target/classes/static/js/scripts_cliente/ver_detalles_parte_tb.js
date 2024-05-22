@@ -1,4 +1,5 @@
 
+/*
 function verDetallesParteTb(parteTbJson) {
     try {
         // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
@@ -47,6 +48,48 @@ function verDetallesParteTb(parteTbJson) {
     } catch (error) {
         console.error("Error al parsear la cadena JSON:", error);
     }
+}
+*/
+
+export function verDetallesParteTb(parteTb) {
+        // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
+        var subTituloElemento = document.getElementById("subtitle-ver-partes-tb");
+
+        // Sobreescribemos el texto del elemento
+        subTituloElemento.textContent = "Ver detalles";
+
+
+        console.log("parte ===> ", parteTb);
+
+        // Obtenemos los datos de la incidencia desde el objeto ParteTb
+        var idParteTb = parteTb.idOrden;
+        var motivoParteTb = parteTb.incidencia.descripcion;
+        var diagnosticoParteTb = parteTb.diagnostico;
+        var tbRealizadoParteTb = parteTb.trabajoRealizado;
+        var observacionesParteTb = parteTb.observaciones;
+
+        // Actualizamos los elementos HTML con los detalles de la incidencia
+        document.getElementById("idParteTb").textContent = idParteTb;
+        document.getElementById("idParteTb").textContent = idParteTb;
+        document.getElementById("motivoParteTb").textContent = motivoParteTb;
+        document.getElementById("diagnosticoParteTb").textContent = diagnosticoParteTb;
+        document.getElementById("tbRealizadoParteTb").textContent = tbRealizadoParteTb;
+        mostrarDatosIncidencia(parteTb.incidencia);
+        // Mostrar los datos del tecnico
+        mostrarDatosTecnico(parteTb.tecnico);
+        // Mostrar los materiales
+        mostrarMateriales(parteTb.listaMaterialUtilizado);
+        // Mostrar los tiempos empleados
+        mostrarTiemposEmpleados(parteTb.listaTiempoEmpleados);
+
+        document.getElementById("observacionesParteTb").textContent = observacionesParteTb;
+
+        // Ocultamos la tabla de listado de partes de trabajo
+        document.getElementById("tablaListadoPartesTb").style.display = "none";
+
+        // Mostramos los detalles del parte de trabajo
+        document.getElementById("detallesParteTb").style.display = "block";
+
 }
 
 // cambia los valores del estado
@@ -258,3 +301,9 @@ function volverListadoPartesTb() {
 
     location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const btnVolver = document.getElementById('btnVolverDetalles');
+    console.log("El boton Volver Detalles PartesTB es ====> " + btnVolver);
+    btnVolver.addEventListener('click', volverListadoPartesTb);
+});

@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="arreglo">
+
+   
+
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando Ver incidencias desde Parte de trabajo">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_partes_trabajo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/ClienteFrontControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/ClienteFrontControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_parte_tb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/obtener_info_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/ver_incidencias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_parte_tb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/crear_incidencia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/crear_incidencia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_tecnico/ver_incidencias.html" afterDir="false" />
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,9 +95,11 @@
     "Application.ApiIncidenciasApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Kevin",
+
+    "git-widget-placeholder": "Mohamed",
+
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Usuario/Documents/ProyectoDonDigital/app_incidencias_dd/api_incidencias",
+    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/templates/app_cliente",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -93,8 +114,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\templates\app_cliente" />
+      <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_tecnico" />
       <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\imgUsuarios" />
     </key>
@@ -158,6 +179,14 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
+    </task>
+    <task id="LOCAL-00006" summary="Listo">
+      <option name="closed" value="true" />
+      <created>1712156240110</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712156240110</updated>
     </task>
     <task id="LOCAL-00007" summary="Listo">
       <option name="closed" value="true" />
@@ -543,15 +572,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716388182534</updated>
     </task>
-    <task id="LOCAL-00055" summary="arreglo">
-      <option name="closed" value="true" />
-      <created>1716388499598</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1716388499598</updated>
-    </task>
-    <option name="localTasksCounter" value="56" />
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

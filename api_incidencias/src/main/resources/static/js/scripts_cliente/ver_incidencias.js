@@ -1,5 +1,5 @@
 import * as manejadorToken from '../manejador_token.js';
-import * as pagDetallesIncidencia from "./ver_detalles_incidencia";
+import * as pagDetallesIncidencia from "./ver_detalles_incidencia.js";
 
 function obtenerToken() {
     return manejadorToken.getToken();
@@ -317,17 +317,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
             // Encontrar el objeto de incidencia correspondiente
             const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
 
-            console.warn("El TOKEN dentro del BOTON Detalles --->" + token);
             pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidencia, token);
-
-            /*
-            try {
-                const pagDetallesIncidencia = await import('./ver_detalles_incidencia.js');
-                pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidencia, token);
-            } catch (error) {
-                console.error('Error al importar el módulo:', error);
-            }
-            */
 
         });
     });
