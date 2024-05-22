@@ -34,14 +34,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
             Inicio
         </a>
-        <a class="nav-link" href="ver_incidencias">
-            <div class="sb-nav-link-icon"><i class="fas fa-eye"></i></div>
-            Ver incidencias
-        </a>
         <a class="nav-link" href="add_incidencias">
             <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
             Registrar incidencia
         </a>
+        <a class="nav-link" href="ver_incidencias">
+            <div class="sb-nav-link-icon"><i class="fas fa-eye"></i></div>
+            Ver incidencias
+        </a>
+        <a class="nav-link" href="ver_partes_trabajo">
+            <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div>
+            Ver partes de trabajo
+        </a>
+
     `;
 
     // Crear el footer del menú lateral

@@ -1,4 +1,5 @@
 import * as manejadorToken from '../manejador_token.js';
+import * as pagDetallesIncidencia from "./ver_detalles_incidencia";
 
 function obtenerToken() {
     return manejadorToken.getToken();
@@ -118,6 +119,7 @@ function cambiarValoresEstado(estado) {
 const mapaIncidencias = {};
 const mapaFilaPrincipal = {};
 
+/*
 async function cargarIncidenciasEnTabla(incidencias) {
     // Obtener la tabla donde se cargarán los usuarios
     const tabla = document.getElementById('datatablesSimple');
@@ -222,6 +224,132 @@ async function cargarIncidenciasEnTabla(incidencias) {
     //}
 
 }
+*/
+
+async function cargarIncidenciasEnTabla(incidencias) {
+    // Obtener la tabla donde se cargarán los usuarios
+    const tabla = document.getElementById('datatablesSimple');
+
+    // obtengo el token
+    const token = await obtenerToken();
+
+    //let incidencias = await pagInicio.obtenerIncidencias();
+
+    let incidenciasReabiertas;
+
+    let hayReabiertas;
+
+    // Verificar si las incidencias son un array o no
+    if (!Array.isArray(incidencias)) {
+        // Si no es un array, convertirlo en un array de un solo elemento
+        incidencias = [incidencias];
+    }
+
+    // Verificar si hay usuarios y si la tabla está presente
+    if (!incidencias || incidencias.length === 0 || !tabla) {
+        console.warn('No se encontraron incidencias o no se encontró la tabla.');
+        return;
+    }
+
+    // Limpiar el cuerpo de la tabla
+    tabla.querySelector('tbody').innerHTML = '';
+
+    let filaPrincipal;
+
+    // Construir las filas de la tabla con un bucle for
+    for (let i = 0; i < incidencias.length; i++) {
+        const incidencia = incidencias[i];
+
+        incidenciasReabiertas = null;
+        // Obtenemos las incidencais reabiertas de la cada incidencia
+        incidenciasReabiertas = await obtenerIncidenciasReabiertas(incidencia.idIncidencia);
+
+        // Si hay incidencias reabiertas, agregarlas al mapa
+        if (incidenciasReabiertas !== null) {
+            // Verificar si ya existe una entrada para esta incidencia en el mapa
+            if (mapaIncidencias[incidencia.idIncidencia]) {
+                // Si ya existe, agregar las incidencias reabiertas a la lista existente
+                mapaIncidencias[incidencia.idIncidencia].push(...incidenciasReabiertas);
+            } else {
+                // Si no existe, crear una nueva entrada en el mapa con la lista de incidencias reabiertas
+                mapaIncidencias[incidencia.idIncidencia] = incidenciasReabiertas;
+            }
+        }
+
+        //Verificar si hay incidencias reabiertas
+        hayReabiertas = incidenciasReabiertas !== null && incidenciasReabiertas.length > 0;
+
+        filaPrincipal = document.createElement("tr");
+        filaPrincipal.classList.add("fila");
+        //filaPrincipal.setAttribute('id', incidencia.idIncidencia);
+        filaPrincipal.id = incidencia.idIncidencia;
+        filaPrincipal.innerHTML = `
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.idIncidencia}</td>
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.titulo}</td>
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">${incidencia.fechaCreacion.split('T')[0]}</td>
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+            <span class="btn btn-sm btn-${incidencia.prioridad === 'alta' ? 'danger' : incidencia.prioridad === 'media' ? 'warning' : 'secondary'}">${incidencia.prioridad.charAt(0).toUpperCase() + incidencia.prioridad.slice(1)}</span>
+        </td>
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+            <span class="btn btn-sm btn-${incidencia.estado === 'terminado' ? 'success' : incidencia.estado === 'tramite' ? 'primary' : 'warning'}">${cambiarValoresEstado(incidencia.estado)}</span>
+        </td>
+        <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
+            <button type="button" class="btn btn-sm btn-primary btn-mostrar-detalles" data-id="${incidencia.idIncidencia}" title="Ver detalles">Detalles</button>
+            <button onclick="cargarEditarIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_incidencia_${incidencia.idIncidencia}">Editar</button>
+            ${hayReabiertas ? `<button type="button" class="btn btn-sm btn-secondary btn-incid-reabiertas" data-id="${incidencia.idIncidencia}" title="Ver incidencias reabiertas"><i class="fas fa-chevron-down"></i></button>` : ''}
+        </td>
+    `;
+        tabla.querySelector('tbody').appendChild(filaPrincipal);
+
+        // Guardamos las filas principales
+        mapaFilaPrincipal[incidencia.idIncidencia] = filaPrincipal;
+    }
+
+    // Inicializamos la tabla después de cargar las filas de la tabla.
+    new simpleDatatables.DataTable(tabla);
+
+    //onclick="mostrarDetallesIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')"
+    tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+        btnMostrarDetalles.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+            const idIncidencia = this.getAttribute('data-id').toString();
+            // Encontrar el objeto de incidencia correspondiente
+            const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
+
+            console.warn("El TOKEN dentro del BOTON Detalles --->" + token);
+            pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidencia, token);
+
+            /*
+            try {
+                const pagDetallesIncidencia = await import('./ver_detalles_incidencia.js');
+                pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidencia, token);
+            } catch (error) {
+                console.error('Error al importar el módulo:', error);
+            }
+            */
+
+        });
+    });
+
+
+    // Si hay incidencias reabiertas, asignar evento click al botón "Reabierta"
+    console.log("----> Hay reabiertas " + hayReabiertas);
+    // if (hayReabiertas) {
+    tabla.querySelectorAll('.btn-incid-reabiertas').forEach(btnIncidReabiertas => {
+        btnIncidReabiertas.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+
+            const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
+            console.warn("id antes del metodo" + idIncidenciaPrincipal);
+            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal);
+
+        });
+    });
+    //}
+
+}
 
 // Llamar a la función para cargar las incidencias cuando se cargue el DOM
 document.addEventListener("DOMContentLoaded", async function () {
@@ -247,7 +375,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const incidenciasResueltas = JSON.parse(localStorage.getItem('incidenciasResueltas'));
         if (incidenciasResueltas) {
             console.log("Incidencias Resueltas recibidas desde la pag_inicio es --->:", incidenciasResueltas);
-            cargarIncidenciasEnTabla(incidenciasResueltas);
+            await cargarIncidenciasEnTabla(incidenciasResueltas);
         } else {
             console.error('No se encontraron incidencias resueltas en localStorage');
         }
@@ -255,7 +383,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const incidenciasNoResueltas = JSON.parse(localStorage.getItem('incidenciasNoResueltas'));
         if (incidenciasNoResueltas) {
             console.log("Incidencias No Resueltas recibidas desde la pag_inicio es --->:", incidenciasNoResueltas);
-            cargarIncidenciasEnTabla(incidenciasNoResueltas);
+            await cargarIncidenciasEnTabla(incidenciasNoResueltas);
         } else {
             console.error('No se encontraron incidencias no resueltas en localStorage');
         }
@@ -264,7 +392,7 @@ document.addEventListener("DOMContentLoaded", async function () {
          if (todasIncidencias) {
              console.log("TODAS Incidencias recibidas desde la pag_inicio es --->:", todasIncidencias);
              // Aquí puedes llamar a tu función para cargar las incidencias en la tabla
-             cargarIncidenciasEnTabla(todasIncidencias);
+             await cargarIncidenciasEnTabla(todasIncidencias);
          } else {
              console.error('No se encontraron TODAS incidencias en localStorage');
          }
@@ -272,7 +400,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         // ***************** Obtenemos todas las incidencias ****************** //
         const pagInicio = await import('./pag_inicio.js');
         let incidencias = await pagInicio.obtenerIncidencias();
-        cargarIncidenciasEnTabla(incidencias);
+        await cargarIncidenciasEnTabla(incidencias);
     }
 
 });
@@ -388,55 +516,6 @@ async function borrarSubFilas(idFilaPrincipal) {
     }
 }
 
-/*************************** Filtrar incidencias resueltas **************************************
-function contarIncidenciasResueltas() {
-    // Obtener todas las filas de la tabla
-    var filas = document.querySelectorAll('#tablaListadoIncidencias tbody tr');
-    var contador = 0;
-    
-    // Iterar sobre las filas y contar las que tienen el estado "Terminado"
-    filas.forEach(function(fila) {
-        var estado = fila.querySelector('td:nth-child(6) span').textContent;
-        if (estado.trim() === 'Terminado') {
-            contador++;
-        }
-    });
-    
-    return contador;
-}
-
-var cantidadTerminadas = contarIncidenciasResueltas();
-console.log("Cantidad de incidencias terminadas:", cantidadTerminadas);
-
-
-****/
-
-function filtrarTablaIncidResueltas() {
-    // Obtener todas las filas de la tabla
-    var filas = document.querySelectorAll('#tablaListadoIncidencias tbody tr');
-
-    // Iterar sobre las filas y mostrar solo las que tienen el estado "Terminado"
-    filas.forEach(function (fila) {
-        var estado = fila.querySelector('td:nth-child(6) span').textContent;
-        if (estado.trim() !== 'Pendiente_pieza') {
-            fila.style.display = 'none'; // Ocultar la fila si el estado no es "Terminado"
-        } else {
-            fila.style.display = ''; // Mostrar la fila si el estado es "Terminado"
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el parámetro de consulta 'estado' de la URL
-    var urlParams = new URLSearchParams(window.location.search);
-    var estado = urlParams.get('estado');
-
-    // Si el parámetro de consulta 'estado' es 'Terminado', filtrar las incidencias resueltas
-    if (estado === 'Pendiente_pieza') {
-        limpiarTabla();
-        filtrarTablaIncidResueltas();
-    }
-});
 
 function limpiarTabla() {
     var filas = document.querySelectorAll('#tablaListadoIncidencias tbody tr');

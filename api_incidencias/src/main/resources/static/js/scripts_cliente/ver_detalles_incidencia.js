@@ -1,6 +1,6 @@
 
-
-function mostrarDetallesIncidencia(incidenciaJSON, token) {
+/*
+export function mostrarDetallesIncidencia(incidenciaJSON, token) {
     try {
         // Obtenemos el elemento subtitulo de la pagina Ver incidencias por su id
         var subTituloElemento = document.getElementById("subtitle-ver-incidencias");
@@ -43,7 +43,7 @@ function mostrarDetallesIncidencia(incidenciaJSON, token) {
         // Mostramos la sección de detalles de la incidencia
         document.getElementById("detallesIncidencia").style.display = "block";
 
-        //*******************************Creando dinamicamente el boton Reabrir incidencia**********************************//
+        //*******************************Creando dinamicamente el boton Reabrir incidencia*****************************
 
         // Creamos el boton Reabrir incidencia despues de verficar el estado
         if (estado === 'terminado' && !esIncidenciaReabierta(idIncidencia)) {
@@ -83,8 +83,84 @@ function mostrarDetallesIncidencia(incidenciaJSON, token) {
     }
 
 }
+*/
 
-async function crearIncidenciaReabierta(incidenciaDTO, token) {
+
+export function mostrarDetallesIncidencia(incidencia, token) {
+
+        // Obtenemos el elemento subtitulo de la pagina Ver incidencias por su id
+        var subTituloElemento = document.getElementById("subtitle-ver-incidencias");
+
+        // Sobreescribemos el texto del elemento
+        subTituloElemento.textContent = "Ver detalles";
+
+        console.log("objeto incidencia selecionada es ===> ", incidencia);
+
+        // Obtenemos los datos de la incidencia desde el objeto incidencia recibido por parametro
+        var idIncidencia = incidencia.idIncidencia;
+        var titulo = incidencia.titulo;
+        var descripcion = incidencia.descripcion;
+        var fechaCreacion = incidencia.fechaCreacion.split('T')[0];
+        var prioridad = incidencia.prioridad;
+        var estado = incidencia.estado;
+
+
+        // Actualizamos los elementos HTML con los detalles de la incidencia
+        document.getElementById("idIncidencia").textContent = idIncidencia;
+        document.getElementById("tituloIncidencia").textContent = titulo;
+        document.getElementById("descripcionIncidencia").textContent = descripcion;
+        document.getElementById("fechaCreacionIncidencia").textContent = fechaCreacion;
+        document.getElementById("prioridadIncidencia").textContent = prioridad;
+        document.getElementById("estadoIncidencia").textContent = estado;
+
+        // Ocultamos la tabla de listado de incidencias
+        document.getElementById("tablaListadoIncidencias").style.display = "none";
+
+        // Ocultamos el boton Nueva incidencia
+        document.getElementById("btnNuevaIncidencia").style.display = "none";
+
+        // Mostramos la sección de detalles de la incidencia
+        document.getElementById("detallesIncidencia").style.display = "block";
+
+        //*******************************Creando dinamicamente el boton Reabrir incidencia*****************************
+
+        // Creamos el boton Reabrir incidencia despues de verficar el estado
+        if (estado === 'terminado' && !esIncidenciaReabierta(idIncidencia)) {
+
+            // Seleccionar el contenedor donde se va a añadir el botón
+            var contenedorBotonesIzquierda = document.getElementById("botonesIzquierda");
+
+            // Crear un nuevo botón
+            var btnReabrirIncidencia = document.createElement("button");
+
+            // Configurar el botón
+            btnReabrirIncidencia.innerHTML = "Reabrir incidencia";
+            btnReabrirIncidencia.className = "btn btn-warning"; // Añadir clases de Bootstrap si es necesario
+            btnReabrirIncidencia.onclick = async function () {
+
+                // Acciones que deseas que ocurran cuando se hace clic en el nuevo botón
+                //alert("¡Has hecho clic en el nuevo botón!");
+
+                try {
+                    // Llamar a la función crearIncidenciaReabierta con los datos necesarios
+
+                    await crearIncidenciaReabierta(incidencia, token);
+                    // Realizar otras acciones después de que se reabra la incidencia, si es necesario
+                } catch (error) {
+                    console.error('Error al reabrir la incidencia:', error);
+                    // Manejar el error de alguna manera
+                }
+            };
+
+            // Añadir el botón al contenedor
+            contenedorBotonesIzquierda.appendChild(btnReabrirIncidencia);
+
+        }
+
+
+}
+
+export async function crearIncidenciaReabierta(incidenciaDTO, token) {
 
     const swalResult = await Swal.fire({
         title: 'Motivo de la reapertura',
@@ -149,7 +225,7 @@ async function crearIncidenciaReabierta(incidenciaDTO, token) {
 
 }
 
-function esIncidenciaReabierta(idIncidencia) {
+export function esIncidenciaReabierta(idIncidencia) {
     return idIncidencia.includes('R');
 }
 
@@ -172,3 +248,9 @@ function volverListadoIncidencias() {
     //recargar pagina
     location.reload();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const btnVolver = document.getElementById('btnVolverDetalles');
+    console.log("El boton Volver Detalles Incidencia es ====> " + btnVolver);
+    btnVolver.addEventListener('click', volverListadoIncidencias);
+});
