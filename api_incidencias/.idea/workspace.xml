@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando ver incidencias cliente">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_parte_tb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando Ver incidencias desde Parte de trabajo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/menu_lateral.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/menu_lateral.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_cliente/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +55,12 @@
     &quot;assignee&quot;: &quot;miludCifp&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/miludCifp/app_incidencias_dd.git",
-    "accountId": "8f72abbb-e743-4a9d-a5d3-d07929c09c5c"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/miludCifp/app_incidencias_dd.git&quot;,
+    &quot;accountId&quot;: &quot;8f72abbb-e743-4a9d-a5d3-d07929c09c5c&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -90,7 +81,7 @@
     "Application.ApiIncidenciasApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Mohamed",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/static/js/scripts_cliente",
     "node.js.detected.package.eslint": "true",
