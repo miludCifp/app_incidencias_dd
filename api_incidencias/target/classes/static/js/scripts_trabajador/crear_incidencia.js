@@ -56,7 +56,7 @@ async function crearIncidencia() {
             prioridad: prioridad.toLowerCase(),
             idUsuarioCliente: getClientePorDocumento(documento).idUsuario
         };
-        console.log("datos = ",datos);
+    
         if(datos.idUsuarioCliente === undefined){
             Swal.fire({
                 title: 'Cliente no encontrado',
