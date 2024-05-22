@@ -50,6 +50,12 @@ function verDetallesParteTb(parteTbJson) {
     }
 }
 */
+import * as manejadorToken from '../manejador_token.js';
+import * as pagDetallesIncidencia from "./ver_detalles_incidencia.js";
+
+function obtenerToken() {
+    return manejadorToken.getToken();
+}
 
 export function verDetallesParteTb(parteTb) {
         // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
@@ -177,13 +183,11 @@ function mostrarDatosIncidencia(objetoIncidencia) {
     fila.appendChild(celdaVerIncidencia);
     // Añadir un event listener al botón
     botonIncidencia.addEventListener('click', async  function () {
-        //alert('Incidencia ID: ');
-        window.location.href = 'ver_incidencias';
+        // Guardar las incidencias resueltas en localStorage
+        localStorage.setItem('objetoIncidenciaParteTb', JSON.stringify(objetoIncidencia));
 
-        // Llamar al metodo ver detalles Incidencia
-        //const pagDetallesIncidencias = await import('./ver_detalles_incidencia.js');
-        //const objetoIncidenciaJSON = encodeURIComponent(JSON.stringify(objetoIncidencia));
-        //pagDetallesIncidencias.
+        //window.location.href = `ver_incidencias?objeto=incidencia-partetb`;
+        window.location.href = `ver_incidencias`;
     });
 
 

@@ -1,101 +1,64 @@
+import * as manejadorToken from '../manejador_token.js';
+
+function obtenerToken() {
+    return manejadorToken.getToken();
+}
+
+export function mostrarDetallesIncidencia(incidencia, token) {
+
+    // Obtenemos el elemento subtitulo de la pagina Ver incidencias por su id
+    var subTituloElemento = document.getElementById("subtitle-ver-incidencias");
+
+    // Sobreescribemos el texto del elemento
+    subTituloElemento.textContent = "Ver detalles";
+
+    console.log("objeto incidencia selecionada es ===> ", incidencia);
+
+    // Obtenemos los datos de la incidencia desde el objeto incidencia recibido por parametro
+    var idIncidencia = incidencia.idIncidencia;
+    var titulo = incidencia.titulo;
+    var descripcion = incidencia.descripcion;
+    var fechaCreacion = incidencia.fechaCreacion.split('T')[0];
+    var prioridad = incidencia.prioridad;
+    var estado = incidencia.estado;
 
 
-function mostrarDetallesIncidencia(incidenciaJSON, token) {
-    try {
-        // Obtenemos el elemento subtitulo de la pagina Ver incidencias por su id
-        var subTituloElemento = document.getElementById("subtitle-ver-incidencias");
+    // Actualizamos los elementos HTML con los detalles de la incidencia
+    document.getElementById("idIncidencia").textContent = idIncidencia;
+    document.getElementById("tituloIncidencia").textContent = titulo;
+    document.getElementById("descripcionIncidencia").textContent = descripcion;
+    document.getElementById("fechaCreacionIncidencia").textContent = fechaCreacion;
+    document.getElementById("prioridadIncidencia").textContent = prioridad;
+    document.getElementById("estadoIncidencia").textContent = estado;
 
-        // Sobreescribemos el texto del elemento
-        subTituloElemento.textContent = "Ver detalles";
+    // Ocultamos la tabla de listado de incidencias
+    document.getElementById("tablaListadoIncidencias").style.display = "none";
 
+    // Ocultamos el boton Nueva incidencia
+    document.getElementById("btnNuevaIncidencia").style.display = "none";
 
-        // Decodificar la cadena JSON
-        const decodedIncidenciaJson = decodeURIComponent(incidenciaJSON);
+    // Mostramos la sección de detalles de la incidencia
+    document.getElementById("detallesIncidencia").style.display = "block";
 
-        // Parsear la cadena JSON a un objeto
-        const incidencia = JSON.parse(decodedIncidenciaJson);
+    //*******************************Creando dinamicamente el boton Reabrir incidencia*****************************
 
-        console.log("incidencia selecionada es ===> ", incidencia);
+    // Creamos el boton Reabrir incidencia despues de verficar el estado
+    if (estado === 'terminado' && !esIncidenciaReabierta(idIncidencia)) {
 
-        // Obtenemos los datos de la incidencia desde el objeto incidencia recibido por parametro
-        var idIncidencia = incidencia.idIncidencia;
-        var titulo = incidencia.titulo;
-        var descripcion = incidencia.descripcion;
-        var fechaCreacion = incidencia.fechaCreacion.split('T')[0];
-        var prioridad = incidencia.prioridad;
-        var estado = incidencia.estado;
+        // Seleccionar el contenedor donde se va a añadir el botón
+        var contenedorBotonesIzquierda = document.getElementById("botonesIzquierda");
 
+        // Crear un nuevo botón
+        var btnReabrirIncidencia = document.createElement("button");
 
-        // Actualizamos los elementos HTML con los detalles de la incidencia
-        document.getElementById("idIncidencia").textContent = idIncidencia;
-        document.getElementById("tituloIncidencia").textContent = titulo;
-        document.getElementById("descripcionIncidencia").textContent = descripcion;
-        document.getElementById("fechaCreacionIncidencia").textContent = fechaCreacion;
-        document.getElementById("prioridadIncidencia").textContent = prioridad;
-        document.getElementById("estadoIncidencia").textContent = estado;
+        // Configurar el botón
+        btnReabrirIncidencia.innerHTML = "Reabrir incidencia";
+        btnReabrirIncidencia.className = "btn btn-warning"; // Añadir clases de Bootstrap si es necesario
+        btnReabrirIncidencia.onclick = async function () {
 
-        // Ocultamos la tabla de listado de incidencias
-        document.getElementById("tablaListadoIncidencias").style.display = "none";
+            // Acciones que deseas que ocurran cuando se hace clic en el nuevo botón
+            //alert("¡Has hecho clic en el nuevo botón!");
 
-        // Ocultamos el boton Nueva incidencia
-        document.getElementById("btnNuevaIncidencia").style.display = "none";
-
-        // Mostramos la sección de detalles de la incidencia
-        document.getElementById("detallesIncidencia").style.display = "block";
-
-        //*******************************Comprobar estado Empezar trabajo**********************************//
-        const btnEmpezar = document.getElementById('btnEmpezarTrabajo');
-        if (estado === 'pendiente') {
-            // Activamos el boton Empezar trabajo
-            btnEmpezar.disabled = false;
-        } else {
-            // Desactivamos el boton Empezar trabajo
-            btnEmpezar.disabled = true;
-        }
-
-
-
-        //*******************************Creando dinamicamente el boton Reabrir incidencia**********************************//
-
-        // Creamos el boton Reabrir incidencia despues de verficar el estado
-        if (estado === 'terminado' && !esIncidenciaReabierta(idIncidencia)) {
-
-            // Seleccionar el contenedor donde se va a añadir el botón
-            var contenedorBotonesIzquierda = document.getElementById("botonesIzquierda");
-
-            // Crear un nuevo botón
-            var btnReabrirIncidencia = document.createElement("button");
-
-            // Configurar el botón
-            btnReabrirIncidencia.innerHTML = "Reabrir incidencia";
-            btnReabrirIncidencia.className = "btn btn-warning"; // Añadir clases de Bootstrap si es necesario
-            btnReabrirIncidencia.onclick = async function () {
-                
-                // Acciones que deseas que ocurran cuando se hace clic en el nuevo botón
-                //alert("¡Has hecho clic en el nuevo botón!");
-
-                try {
-                    // Llamar a la función crearIncidenciaReabierta con los datos necesarios
-    
-                    await crearIncidenciaReabierta(incidencia, token);
-                    // Realizar otras acciones después de que se reabra la incidencia, si es necesario
-                } catch (error) {
-                    console.error('Error al reabrir la incidencia:', error);
-                    // Manejar el error de alguna manera
-                }
-            };
-
-            // Añadir el botón al contenedor
-            contenedorBotonesIzquierda.appendChild(btnReabrirIncidencia);
-
-        }
-
-        /*
-        // Obtener el botón por su ID
-        const btnReabrirIncidencia = document.getElementById('btnReabrirIncidencia');
-
-        // Agregar un event listener para el clic en el botón
-        btnReabrirIncidencia.addEventListener('click', async () => {
             try {
                 // Llamar a la función crearIncidenciaReabierta con los datos necesarios
 
@@ -105,12 +68,13 @@ function mostrarDetallesIncidencia(incidenciaJSON, token) {
                 console.error('Error al reabrir la incidencia:', error);
                 // Manejar el error de alguna manera
             }
-        });
-        */
+        };
 
-    } catch (error) {
-        console.error("Error al parsear la cadena JSON:", error);
+        // Añadir el botón al contenedor
+        contenedorBotonesIzquierda.appendChild(btnReabrirIncidencia);
+
     }
+
 
 }
 
@@ -202,3 +166,21 @@ function volverListadoIncidencias() {
     //recargar pagina
     location.reload();
 }
+
+document.addEventListener('DOMContentLoaded',  function () {
+    const btnVolver = document.getElementById('btnVolverDetalles');
+    console.log("El boton Volver Detalles Incidencia es ====> " + btnVolver);
+    btnVolver.addEventListener('click', volverListadoIncidencias);
+
+
+});
+
+document.addEventListener('DOMContentLoaded', async function () {
+    const token = await obtenerToken();
+
+    const objetoIncidenciaParteTb = JSON.parse(localStorage.getItem('objetoIncidenciaParteTb'));
+    if (objetoIncidenciaParteTb) {
+        localStorage.removeItem('objetoIncidenciaParteTb');
+        mostrarDetallesIncidencia(objetoIncidenciaParteTb,token);
+    }
+});

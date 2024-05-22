@@ -85,6 +85,11 @@ export function mostrarDetallesIncidencia(incidenciaJSON, token) {
 }
 */
 
+import * as manejadorToken from '../manejador_token.js';
+
+function obtenerToken() {
+    return manejadorToken.getToken();
+}
 
 export function mostrarDetallesIncidencia(incidencia, token) {
 
@@ -249,8 +254,22 @@ function volverListadoIncidencias() {
     location.reload();
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded',  function () {
     const btnVolver = document.getElementById('btnVolverDetalles');
     console.log("El boton Volver Detalles Incidencia es ====> " + btnVolver);
     btnVolver.addEventListener('click', volverListadoIncidencias);
+
+
 });
+
+document.addEventListener('DOMContentLoaded', async function () {
+    const token = await obtenerToken();
+
+    const objetoIncidenciaParteTb = JSON.parse(localStorage.getItem('objetoIncidenciaParteTb'));
+    if (objetoIncidenciaParteTb) {
+        localStorage.removeItem('objetoIncidenciaParteTb');
+        mostrarDetallesIncidencia(objetoIncidenciaParteTb,token);
+    }
+});
+
+

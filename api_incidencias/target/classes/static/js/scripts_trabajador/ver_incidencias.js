@@ -1,5 +1,6 @@
 import * as manejadorToken from '../manejador_token.js';
-import * as formParteTb from '../scripts_trabajador/crear_form_parte_trabajo.js';
+import * as formParteTb from './crear_form_parte_trabajo.js';
+import * as pagDetallesIncidencia from './ver_detalles_incidencia.js';
 
 function obtenerToken() {
     return manejadorToken.getToken();
@@ -196,9 +197,9 @@ async function cargarIncidenciasEnTabla(incidencias) {
             <span class="btn btn-sm btn-${incidencia.estado === 'terminado' ? 'success' : incidencia.estado === 'tramite' ? 'primary' : 'warning'}">${cambiarValoresEstado(incidencia.estado)}</span>
         </td>
         <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
-            <button onclick="mostrarDetallesIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-primary" id="btn_detalles_incidencia_${incidencia.idIncidencia}">Detalles</button>
+            <button type="button" class="btn btn-sm btn-primary btn-mostrar-detalles" data-id="${incidencia.idIncidencia}" title="Ver detalles">Detalles</button>
             <button onclick="cargarEditarIncidencia('${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_incidencia_${incidencia.idIncidencia}">Editar</button>
-            <button onclick="eliminarIncidencia(this,'${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')" type="button" class="btn btn-sm btn-danger" id="btn_delete_incidencia_${incidencia.idIncidencia}">Eliminar</button>
+            <button type="button" class="btn btn-sm btn-danger btn-eliminar" data-id="${incidencia.idIncidencia}">Eliminar</button>
             <button type="button" class="btn btn-sm btn-info btn-parte-tb" data-id="${incidencia.idIncidencia}" title="Crear parte de trabajo" ${esTerminado ? 'disabled' : ''}>Trabajar</button>
             ${hayReabiertas ? `<button type="button" class="btn btn-sm btn-secondary btn-incid-reabiertas" data-id="${incidencia.idIncidencia}" title="Ver incidencias reabiertas"><i class="fas fa-chevron-down"></i></button>` : ''}
         </td>
@@ -217,6 +218,33 @@ async function cargarIncidenciasEnTabla(incidencias) {
     // Inicializamos la tabla después de cargar las filas de la tabla.
     new simpleDatatables.DataTable(tabla);
 
+    tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+        btnMostrarDetalles.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+            const idIncidencia = this.getAttribute('data-id').toString();
+            // Encontrar el objeto de incidencia correspondiente
+            const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
+
+            pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidencia, token);
+
+        });
+    });
+
+    //onclick="eliminarIncidencia(this,'${encodeURIComponent(JSON.stringify(incidencia))}', '${token}')"
+    tabla.querySelectorAll('.btn-eliminar').forEach(btnEliminar => {
+        btnEliminar.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+            const idIncidencia = this.getAttribute('data-id').toString();
+            // Encontrar el objeto de incidencia correspondiente
+            const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
+
+            pagDetallesIncidencia.eliminarIncidencia(this,objetoIncidencia, token);
+
+        });
+    });
+
     // Si hay incidencias reabiertas, asignar evento click al botón "Reabierta"
     console.log("----> Hay reabiertas " + hayReabiertas);
    // if (hayReabiertas) {
@@ -227,7 +255,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
                 
                 const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
                 console.warn("id antes del metodo" + idIncidenciaPrincipal);
-                await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal);
+                await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal,tabla);
                
             });
         });
@@ -323,7 +351,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 });
 
-async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
+async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,tabla) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];
     var filaPrincipal =  mapaFilaPrincipal[idIncidenciaPrincipal];
 
@@ -341,7 +369,7 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
             flecha.classList.add('fa-chevron-up');
         }
         // Si las subfilas no existen en el estado, generarlas y almacenarlas como un atributo de datos
-        subfilas = generarSubFilas(incidenciasReabiertas,filaPrincipal, token);
+        subfilas = generarSubFilas(incidenciasReabiertas,filaPrincipal, token,tabla);
         filaPrincipal.dataset.subfilas = true; // Marcar que las subfilas se han generado
     } else {
         console.warn("ELSE");
@@ -359,7 +387,7 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
 }
 
 
-async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token) {
+async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token,tabla) {
     console.log('---> Lista de incidencias Rbt --->', incidenciasReabiertas);
 
     const subfilas = [];
@@ -396,7 +424,7 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token) {
                 <span class="btn btn-sm btn-${incidenciaRbt.estado === 'terminado' ? 'success' : incidenciaRbt.estado === 'tramite' ? 'primary' : 'warning'}">${cambiarValoresEstado(incidenciaRbt.estado)}</span>
             </td>
             <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
-                <button onclick="mostrarDetallesIncidencia('${encodeURIComponent(JSON.stringify(incidenciaRbt))}', '${token}')" type="button" class="btn btn-sm btn-primary" id="btn_detalles_incidencia_${incidenciaRbt.idIncidencia}">Detalles</button>
+                <button type="button" class="btn btn-sm btn-primary btn-mostrar-detalles" data-id="${incidenciaRbt.idIncidencia}" title="Ver detalles">Detalles</button>
                 <button onclick="cargarEditarIncidencia('${encodeURIComponent(JSON.stringify(incidenciaRbt))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_incidencia_${incidenciaRbt.idIncidencia}">Editar</button>
                 <button onclick="eliminarIncidencia(this,'${encodeURIComponent(JSON.stringify(incidenciaRbt))}', '${token}')" type="button" class="btn btn-sm btn-danger" id="btn_delete_incidencia_${incidenciaRbt.idIncidencia}">Eliminar</button>
                 <button type="button" class="btn btn-sm btn-info btn-parte-tb" data-id="${incidenciaRbt.idIncidencia}" title="Crear parte de trabajo" ${esTerminado ? 'disabled' : ''}>Trabajar</button>
@@ -407,6 +435,20 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token) {
         incidenciaRbt.subfilas.push(subFila);
         subfilas.push(subFila);
     }
+
+    tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+        btnMostrarDetalles.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+            const idIncidenciaRbt = this.getAttribute('data-id').toString();
+            // Encontrar el objeto de incidencia correspondiente
+            const objetoIncidenciaRbt = incidenciasReabiertas.find(incidenciaRbt => incidenciaRbt.idIncidencia.toString() === idIncidenciaRbt);
+
+            pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidenciaRbt, token);
+
+        });
+    });
+
     console.warn("fila principal",filaPrincipal);
     // Insertar las subfilas justo debajo de la fila principal
     subfilas.forEach(subfila => {
