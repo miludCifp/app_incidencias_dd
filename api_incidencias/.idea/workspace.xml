@@ -4,30 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Añadiendo imagenes de perfil de Trabajadores">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/ClienteControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/ClienteControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/IncidenciaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/IncidenciaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Entidades/DTO/IncidenciaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Entidades/DTO/IncidenciaDTO.java" afterDir="false" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="documento en crear incidencia">
       <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Repositorios/RepositorioCliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Repositorios/RepositorioCliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Servicios/ClienteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_tecnico/add_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/app_trabajador/add_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Controladores/ClienteControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Controladores/ClienteControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Controladores/IncidenciaControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Controladores/IncidenciaControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Entidades/DTO/IncidenciaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Entidades/DTO/IncidenciaDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Repositorios/RepositorioCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Repositorios/RepositorioCliente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/ClienteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Servicios/ClienteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_cliente/ver_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_tecnico/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_tecnico/add_incidencias.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_incidencias.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/app_trabajador/add_incidencias.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +76,7 @@
     "Application.ApiIncidenciasApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Kevin",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Usuario/Documents/ProyectoDonDigital/app_incidencias_dd/api_incidencias",
     "node.js.detected.package.eslint": "true",
@@ -180,14 +158,6 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
-    </task>
-    <task id="LOCAL-00002" summary="Hola">
-      <option name="closed" value="true" />
-      <created>1712141268766</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1712141268766</updated>
     </task>
     <task id="LOCAL-00003" summary="Controlador Usuario Hecho">
       <option name="closed" value="true" />
@@ -573,7 +543,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716309711798</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="documento en crear incidencia">
+      <option name="closed" value="true" />
+      <created>1716385163627</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1716385163628</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ultimos cambios del servidor - Mohamed -" />
     <MESSAGE value="ultimo cambio" />
     <MESSAGE value="Cambios de ayer" />
     <MESSAGE value="Cambios de hoy" />
@@ -616,7 +593,8 @@
     <MESSAGE value="Modificaciones nuevas en las paginas y los scripts" />
     <MESSAGE value="Dando funcionalidad al filtrar y contar incidencias" />
     <MESSAGE value="Añadiendo imagenes de perfil de Trabajadores" />
-    <option name="LAST_COMMIT_MESSAGE" value="Añadiendo imagenes de perfil de Trabajadores" />
+    <MESSAGE value="documento en crear incidencia" />
+    <option name="LAST_COMMIT_MESSAGE" value="documento en crear incidencia" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

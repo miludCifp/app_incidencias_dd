@@ -14,6 +14,6 @@ public interface RepositorioCliente extends JpaRepository<Cliente, Long> {
     @Query("SELECT u FROM Cliente u WHERE u.correoElectronico = ?1")
     Optional<Cliente> findByEmail(String email);
 
-    @Query("SELECT u FROM Cliente u WHERE u.documento = :documento")
-    Optional<Cliente> findByDocumento(@Param("documento") String documento);
+    @Query("SELECT u FROM Cliente u WHERE u.documento = ?1")
+    Optional<Cliente> findByDocumento(String documento);
 }
