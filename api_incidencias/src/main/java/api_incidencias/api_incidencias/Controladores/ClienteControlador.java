@@ -31,6 +31,11 @@ public class ClienteControlador {
     public Optional<Cliente> getClientePorEmail(@PathVariable("emailUser") String email){
         return clienteServicio.getCliente(email);
     }
+    @GetMapping("/documento/{documento}")
+    public Optional<Cliente> getClientePorDocumento(@PathVariable("documento") String documento){
+        System.out.println("documentoo");
+        return clienteServicio.getClienteDocumento(documento);
+    }
 
     /*@PostMapping
     public ResponseEntity<Cliente> crearCliente(@RequestBody Cliente cliente){
