@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglar algunos botones" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando Ver incidencias desde Parte de trabajo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,12 +55,14 @@
     &quot;assignee&quot;: &quot;miludCifp&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/miludCifp/app_incidencias_dd.git",
-    "accountId": "8f72abbb-e743-4a9d-a5d3-d07929c09c5c"
-  }
-}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="635db1bd-010a-4d9e-93c1-09882540058f" />
+        <option name="url" value="https://github.com/kevinRodriguezCastro/api_incidencias.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -72,9 +76,9 @@
     "Application.ApiIncidenciasApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Mohamed",
+    "git-widget-placeholder": "Kevin",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/static/js/scripts_cliente",
+    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/templates/app_cliente",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,8 +93,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\templates\app_cliente" />
+      <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_cliente" />
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\static\js\scripts_tecnico" />
       <recent name="C:\Users\MEDO\Documents\GitHub\api_incidencias\imgUsuarios" />
     </key>
@@ -139,8 +143,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
       </set>
     </attachedChunks>
   </component>
@@ -154,6 +158,14 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
+    </task>
+    <task id="LOCAL-00006" summary="Listo">
+      <option name="closed" value="true" />
+      <created>1712156240110</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1712156240110</updated>
     </task>
     <task id="LOCAL-00007" summary="Listo">
       <option name="closed" value="true" />
@@ -539,15 +551,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716388182534</updated>
     </task>
-    <task id="LOCAL-00055" summary="Arreglar algunos botones">
-      <option name="closed" value="true" />
-      <created>1716397220766</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1716397220766</updated>
-    </task>
-    <option name="localTasksCounter" value="56" />
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,6 +569,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Crear carpeta Generar PDF" />
     <MESSAGE value="Crear carpeta Generar PDF ultimos cambios" />
     <MESSAGE value="cambios rotos" />
     <MESSAGE value="cambios no seguros" />
@@ -589,8 +594,7 @@
     <MESSAGE value="querys parte(idCliente) cliente(documento)" />
     <MESSAGE value="arreglo query findByCliente" />
     <MESSAGE value="arreglo" />
-    <MESSAGE value="Arreglar algunos botones" />
-    <option name="LAST_COMMIT_MESSAGE" value="Arreglar algunos botones" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
