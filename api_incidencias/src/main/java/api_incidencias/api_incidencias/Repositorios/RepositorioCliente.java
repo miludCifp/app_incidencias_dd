@@ -4,6 +4,7 @@ import api_incidencias.api_incidencias.Entidades.Clases.Cliente;
 import api_incidencias.api_incidencias.Entidades.Clases.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -12,4 +13,7 @@ import java.util.Optional;
 public interface RepositorioCliente extends JpaRepository<Cliente, Long> {
     @Query("SELECT u FROM Cliente u WHERE u.correoElectronico = ?1")
     Optional<Cliente> findByEmail(String email);
+
+    @Query("SELECT u FROM Cliente u WHERE u.documento = :documento")
+    Optional<Cliente> findByDocumento(@Param("documento") String documento);
 }

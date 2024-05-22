@@ -1,5 +1,36 @@
 import * as manejadorToken from '../manejador_token.js';
 
+async function getClientePorDocumento(documento) {
+    const url = `http://localhost:8080/api/v1/clientes/documento/${documento}`;
+    
+    try {
+        const token = manejadorToken.getToken();
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            }
+        });
+
+        if (!response.ok) {
+            Swal.fire({
+                title: 'Cliente no encontrado',
+                text: 'Revise el documento introducido',
+                icon: 'warning'
+            });
+            return null;
+        }
+
+        const data = await response.json();
+        
+        return data;
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+        return null;
+    }
+}
+
 async function crearIncidencia() {
 
     const titulo = document.querySelector('#titulo').value;
@@ -7,6 +38,7 @@ async function crearIncidencia() {
     const descripcion = document.querySelector('#descripcion').value;
     //const estado = document.querySelector('#estado').value;
     const prioridad = document.querySelector('#prioridad').value;
+    const documento = document.querySelector('#documentoCliente').value;
 
     if (descripcion === '') {
         Swal.fire({
@@ -19,7 +51,8 @@ async function crearIncidencia() {
             //fechaCreacion: fechaCreacion,
             descripcion: descripcion,
             estado: 'pendiente',
-            prioridad: prioridad.toLowerCase()
+            prioridad: prioridad.toLowerCase(),
+            idUsuarioCliente: getClientePorDocumento(documento).idUsuario
         };
 
         try {
