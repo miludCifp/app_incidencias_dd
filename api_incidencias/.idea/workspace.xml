@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="querys parte(idCliente) cliente(documento)">
-      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Repositorios/RepositorioIncidencia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Repositorios/RepositorioIncidencia.java" afterDir="false" />
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="arreglo query findByCliente">
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Repositorios/RepositorioCliente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Repositorios/RepositorioCliente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/crear_incidencia.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/crear_incidencia.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,14 +160,6 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
-    </task>
-    <task id="LOCAL-00004" summary="Controladores terminados">
-      <option name="closed" value="true" />
-      <created>1712153907360</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1712153907360</updated>
     </task>
     <task id="LOCAL-00005" summary="Controladores terminados Listo">
       <option name="closed" value="true" />
@@ -551,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716386934084</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="arreglo query findByCliente">
+      <option name="closed" value="true" />
+      <created>1716387300764</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1716387300764</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cambios de ayer" />
     <MESSAGE value="Cambios de hoy" />
     <MESSAGE value="Crear carpeta Generar PDF" />
     <MESSAGE value="Crear carpeta Generar PDF ultimos cambios" />
@@ -594,7 +595,8 @@
     <MESSAGE value="Añadiendo imagenes de perfil de Trabajadores" />
     <MESSAGE value="documento en crear incidencia" />
     <MESSAGE value="querys parte(idCliente) cliente(documento)" />
-    <option name="LAST_COMMIT_MESSAGE" value="querys parte(idCliente) cliente(documento)" />
+    <MESSAGE value="arreglo query findByCliente" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglo query findByCliente" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
