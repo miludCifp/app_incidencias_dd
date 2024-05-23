@@ -25,7 +25,7 @@ async function actualizarPerfil(objetoDatosUsuario) {
         var txtCiudad = document.getElementById("inputCiudad").value.trim();
         var txtProv = document.getElementById("inputProvincia").value.trim();
         var txtCp = document.getElementById("inputCp").value.trim();
-        var txtPais = document.getElementById("inputPais").value;
+        var txtPais = document.getElementById("comboPais").value;
 
         var btnSelectImgPerfil = document.getElementById("inputImagenPerfil");
 
@@ -99,7 +99,6 @@ async function actualizarPerfil(objetoDatosUsuario) {
     });
 
 }
-
 
 function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, name, apellidos, tlfn, email,calle,ciudad,prov,cp,pais) {
 
@@ -272,7 +271,7 @@ function cambiarContrasena() {
                 manejadorToken.removeToken();
 
                 // Redirigir a la pagina recuperar contraseña
-                window.location.href = 'recup_password';
+                window.location.href = '/recup_password';
             }
         });
 
@@ -357,7 +356,6 @@ function seleccionarImagen() {
         }
     });
 }
-
 
 document.addEventListener("DOMContentLoaded", async function () {
 

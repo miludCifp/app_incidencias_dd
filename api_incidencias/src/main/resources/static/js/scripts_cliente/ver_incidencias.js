@@ -333,7 +333,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
 
             const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
             console.warn("id antes del metodo" + idIncidenciaPrincipal);
-            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal, tabla);
+            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal);
 
         });
     });
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 });
 
-async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal, tabla) {
+async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];
     var filaPrincipal = mapaFilaPrincipal[idIncidenciaPrincipal];
 
@@ -413,7 +413,7 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal, tabla) 
             flecha.classList.add('fa-chevron-up');
         }
         // Si las subfilas no existen en el estado, generarlas y almacenarlas como un atributo de datos
-        subfilas = generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabla);
+        subfilas = generarSubFilas(incidenciasReabiertas, filaPrincipal, token);
         filaPrincipal.dataset.subfilas = true; // Marcar que las subfilas se han generado
     } else {
         console.warn("ELSE");
@@ -431,7 +431,7 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal, tabla) 
 }
 
 
-async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabla) {
+async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token) {
     console.log('---> Lista de incidencias Rbt --->', incidenciasReabiertas);
 
     const subfilas = [];
@@ -441,6 +441,7 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabl
         // Agregar una lista de subfilas a la incidencia principal
         incidenciaRbt.subfilas = [];
 
+        /*
         // Verificar si el parte de trabajo ha sido creado o no
         const objetoParteTrabajo = await obtenerParteTrabajo(incidenciaRbt.idIncidencia);
         let esTerminado = false;
@@ -450,6 +451,7 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabl
         } else {
             esTerminado = objetoParteTrabajo.terminado;
         }
+         */
 
         // Crear la subfila
         const subFila = document.createElement("tr");
