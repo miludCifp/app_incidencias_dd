@@ -4,6 +4,53 @@ function obtenerToken() {
     return manejadorToken.getToken();
 }
 
+// cambia los valores del estado
+function cambiarValoresEstado(estado) {
+    switch (estado) {
+        case 'pendiente':
+            return 'Pendiente';
+        case 'tramite':
+            return 'En trámite';
+        case 'proceso_soluccion':
+            return 'En proceso de solución';
+        case 'espera_recursos':
+            return 'En espera de recursos';
+        case 'revision':
+            return 'En revisión';
+        case 'espera_aprobacion':
+            return 'En espera de aprobación';
+        case 'espera_validacion':
+            return 'En espera de validación';
+        case 'pendiente_pieza':
+            return 'Pendiente de pieza';
+        case 'espera_cliente':
+            return 'Espera de cliente';
+        case 'espera_presupuesto':
+            return 'Espera de situación de presupuesto';
+        case 'seguimiento':
+            return 'Seguimiento';
+        case 'terminado':
+            return 'Terminado';
+        case 'cancelado':
+            return 'Cancelado';
+        default:
+            return '';
+    }
+}
+
+function cambiarValoresPrioridad(prioridad){
+    switch (prioridad) {
+        case 'alta':
+            return 'Alta';
+        case 'media':
+            return 'Media';
+        case 'baja':
+            return 'Baja';
+        default:
+            return '';
+    }
+}
+
 export function mostrarDetallesIncidencia(incidencia, token) {
 
     // Obtenemos el elemento subtitulo de la pagina Ver incidencias por su id
@@ -28,8 +75,8 @@ export function mostrarDetallesIncidencia(incidencia, token) {
     document.getElementById("tituloIncidencia").textContent = titulo;
     document.getElementById("descripcionIncidencia").textContent = descripcion;
     document.getElementById("fechaCreacionIncidencia").textContent = fechaCreacion;
-    document.getElementById("prioridadIncidencia").textContent = prioridad;
-    document.getElementById("estadoIncidencia").textContent = estado;
+    document.getElementById("prioridadIncidencia").textContent = cambiarValoresPrioridad(prioridad);
+    document.getElementById("estadoIncidencia").textContent = cambiarValoresEstado(estado);
 
     // Ocultamos la tabla de listado de incidencias
     document.getElementById("tablaListadoIncidencias").style.display = "none";
@@ -150,8 +197,6 @@ function esIncidenciaReabierta(idIncidencia) {
 
 // Esta función elimina las incidencias de la base de datos actualizando la tabla
 export async function eliminarIncidencia(boton, incidencia, token) {
-
-
     console.log("el id de la incidencia selecionada es ===> ", incidencia.idIncidencia);
 
     var idIncidencia = incidencia.idIncidencia;
