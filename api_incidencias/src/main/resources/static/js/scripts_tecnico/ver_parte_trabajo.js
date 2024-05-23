@@ -62,9 +62,9 @@ async function cargarPartesTrabajoEnTabla() {
 
         
         const descripcion = parte.incidencia.descripcion !== undefined && parte.incidencia.descripcion !== null ? parte.incidencia.descripcion : '-';
-        const diagnostico = parte.incidencia.diagnostico !== undefined && parte.incidencia.diagnostico !== null ? parte.incidencia.diagnostico : '-';
-        const trabajoRealizado = parte.incidencia.trabajoRealizado !== undefined && parte.incidencia.trabajoRealizado !== null ? parte.incidencia.trabajoRealizado : '-';
-        const observaciones = parte.incidencia.observaciones !== undefined && parte.incidencia.observaciones !== null ? parte.incidencia.observaciones : '-';
+        const diagnostico = parte.diagnostico !== undefined && parte.diagnostico !== null ? parte.diagnostico : '-';
+        const trabajoRealizado = parte.trabajoRealizado !== undefined && parte.trabajoRealizado !== null ? parte.trabajoRealizado : '-';
+        const observaciones = parte.observaciones !== undefined && parte.observaciones !== null ? parte.observaciones : '-';
 
         const row = `
             <tr>
@@ -77,7 +77,6 @@ async function cargarPartesTrabajoEnTabla() {
                 <td style="white-space: nowrap;">
                     <button type="button" class="btn btn-sm btn-primary btn-detalles-partetb" data-id="${parte.idOrden}" title="Ver detalles">Detalles</button>
                     <button onclick="generarPDFParteTb('${encodeURIComponent(JSON.stringify(parte))}','${token}')" type="button" class="btn btn-sm btn-info" id="btn_pdf_parte_tb">Generar PDF</button>
-                    <button onclick="cargarEditarParteTb('${encodeURIComponent(JSON.stringify(parte))}', '${token}')" type="button" class="btn btn-sm btn-warning" id="btn_edit_parte_tb">Editar</button>
                 </td>
             </tr>`;
 
