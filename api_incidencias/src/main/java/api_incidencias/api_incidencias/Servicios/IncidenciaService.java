@@ -65,7 +65,7 @@ public class IncidenciaService {
     public List<Incidencia> getIncidenciasReabiertas(String idIncidencia) {
         //if (seguridad.isTrabajador())
             return reposIncidencia.findIncidenciasReabiertas(idIncidencia);
-       // return null;
+        //return null;
     }
     public List<Incidencia> getIncidenciasCliente(Long idCliente){
         return reposIncidencia.findByCliente(idCliente);

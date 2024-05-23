@@ -216,7 +216,7 @@ function cambiarContrasena() {
                 manejadorToken.removeToken();
 
                 // Redirigir a la pagina recuperar contraseña
-                window.location.href = 'recup_password';
+                window.location.href = '/recup_password';
             }
         });
 
