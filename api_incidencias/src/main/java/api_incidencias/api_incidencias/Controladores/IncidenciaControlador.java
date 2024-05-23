@@ -55,6 +55,7 @@ public class IncidenciaControlador {
     }
     @GetMapping("/incidencias-reabiertas/{idIncidencia}")
     public List<Incidencia> getIncidenciasReabiertas(@PathVariable("idIncidencia") String idIncidencia){
+        System.out.println("Incidencias reabiertas: "+incidenciaServicio.getIncidenciasReabiertas(idIncidencia).size());
         return incidenciaServicio.getIncidenciasReabiertas(idIncidencia);
     }
     @GetMapping("/cliente/{idCliente}")

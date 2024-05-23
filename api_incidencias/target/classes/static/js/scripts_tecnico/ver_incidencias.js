@@ -238,11 +238,11 @@ async function cargarIncidenciasEnTabla(incidencias) {
 
         // Crear subfilas Despues de hacer la comprobacion de si hay incidencias reabiertas
         //generarSubfilas(tabla);
-        
-       
+
+
         // Guardamos las filas principales
         mapaFilaPrincipal[incidencia.idIncidencia] = filaPrincipal;
-        
+
     }
 
     // Inicializamos la tabla después de cargar las filas de la tabla.
@@ -263,18 +263,18 @@ async function cargarIncidenciasEnTabla(incidencias) {
 
     // Si hay incidencias reabiertas, asignar evento click al botón "Reabierta"
     console.log("----> Hay reabiertas " + hayReabiertas);
-   // if (hayReabiertas) {
-        tabla.querySelectorAll('.btn-incid-reabiertas').forEach(btnIncidReabiertas => {
-            btnIncidReabiertas.addEventListener('click', async function () {
+    // if (hayReabiertas) {
+    tabla.querySelectorAll('.btn-incid-reabiertas').forEach(btnIncidReabiertas => {
+        btnIncidReabiertas.addEventListener('click', async function () {
 
-                // Obtener el ID de la incidencia desde el atributo data-id
-                
-                const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
-                console.warn("id antes del metodo" + idIncidenciaPrincipal);
-                await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal,tabla);
-               
-            });
+            // Obtener el ID de la incidencia desde el atributo data-id
+
+            const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
+            console.warn("id antes del metodo" + idIncidenciaPrincipal);
+            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal, tabla);
+
         });
+    });
     //}
 
     /*document.addEventListener('click', async function(event) {
@@ -284,7 +284,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
             const idIncidenciaPrincipal = boton.getAttribute('data-id').toString();
             await verOrOcultarSubFilas(boton, filaPrincipal, token, idIncidenciaPrincipal);
         }
-    });*/ 
+    });*/
 
 
     // Asignar evento click a los botones "Crear parte de trabajo"
@@ -294,10 +294,10 @@ async function cargarIncidenciasEnTabla(incidencias) {
             // Obtener el ID del usuario desde el atributo data-id
             const idIncidencia = this.getAttribute('data-id').toString();
 
-            
+
             // Encontrar el objeto de incidencia correspondiente
             const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
-           
+
 
             //var parteTbJSON = objetoParteTrabajo;
 
@@ -349,14 +349,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error('No se encontraron incidencias no resueltas en localStorage');
         }
     } else if (tipo === 'todas') {
-         const todasIncidencias = JSON.parse(localStorage.getItem('todasIncidencias'));
-         if (todasIncidencias) {
-             console.log("TODAS Incidencias recibidas desde la pag_inicio es --->:", todasIncidencias);
-             // Aquí puedes llamar a tu función para cargar las incidencias en la tabla
-             cargarIncidenciasEnTabla(todasIncidencias);
-         } else {
-             console.error('No se encontraron TODAS incidencias en localStorage');
-         }
+        const todasIncidencias = JSON.parse(localStorage.getItem('todasIncidencias'));
+        if (todasIncidencias) {
+            console.log("TODAS Incidencias recibidas desde la pag_inicio es --->:", todasIncidencias);
+            // Aquí puedes llamar a tu función para cargar las incidencias en la tabla
+            cargarIncidenciasEnTabla(todasIncidencias);
+        } else {
+            console.error('No se encontraron TODAS incidencias en localStorage');
+        }
     } else {
         // ***************** Obtenemos todas las incidencias ****************** //
         const pagInicio = await import('./pag_inicio.js');
@@ -367,16 +367,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,talba) {
+async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal, talba) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];
-    var filaPrincipal =  mapaFilaPrincipal[idIncidenciaPrincipal];
+    var filaPrincipal = mapaFilaPrincipal[idIncidenciaPrincipal];
 
     // Verificar si ya se han generado las subfilas anteriormente
     let subfilas = filaPrincipal.dataset.subfilas;
     const flecha = boton.querySelector('svg');
     const clase = flecha.getAttribute("class").split(" ")[1].split("-")[2];
-    console.warn("BOTON",boton);
-    console.warn("-------------------CLASE IMG------------------------ ",clase);
+    console.warn("BOTON", boton);
+    console.warn("-------------------CLASE IMG------------------------ ", clase);
     if (clase === "down") {
         console.warn("IF");
         // Cambiar la dirección del ícono de la flecha según el estado de las subfilas
@@ -385,7 +385,7 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,talba) {
             flecha.classList.add('fa-chevron-up');
         }
         // Si las subfilas no existen en el estado, generarlas y almacenarlas como un atributo de datos
-        subfilas = generarSubFilas(incidenciasReabiertas,filaPrincipal, token,tabla);
+        subfilas = generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabla);
         filaPrincipal.dataset.subfilas = true; // Marcar que las subfilas se han generado
     } else {
         console.warn("ELSE");
@@ -398,12 +398,12 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,talba) {
         // Si las subfilas ya existen, simplemente mostrar u ocultar según sea necesario
 
 
-        borrarSubFilas(idIncidenciaPrincipal);    
+        borrarSubFilas(idIncidenciaPrincipal);
     }
 }
 
 
-async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token,tabla) {
+async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabla) {
     console.log('---> Lista de incidencias Rbt --->', incidenciasReabiertas);
 
     const subfilas = [];
@@ -449,9 +449,8 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token,tabla
         // Agregar la subfila a la lista de subfilas de la incidencia principal
         incidenciaRbt.subfilas.push(subFila);
         subfilas.push(subFila);
-    }
-
-    tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+        // Agregar evento al botón "Detalles"
+        const btnMostrarDetalles = subFila.querySelector('.btn-mostrar-detalles');
         btnMostrarDetalles.addEventListener('click', async function () {
             // Obtener el ID de la incidencia desde el atributo data-id
             const idIncidenciaRbt = this.getAttribute('data-id').toString();
@@ -459,11 +458,24 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token,tabla
             const objetoIncidenciaRbt = incidenciasReabiertas.find(incidenciaRbt => incidenciaRbt.idIncidencia.toString() === idIncidenciaRbt);
 
             pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidenciaRbt, token);
-
         });
-    });
+    }
+    /*
+       tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+           btnMostrarDetalles.addEventListener('click', async function () {
+    
+               // Obtener el ID de la incidencia desde el atributo data-id
+               const idIncidenciaRbt = this.getAttribute('data-id').toString();
+               // Encontrar el objeto de incidencia correspondiente
+               const objetoIncidenciaRbt = incidenciasReabiertas.find(incidenciaRbt => incidenciaRbt.idIncidencia.toString() === idIncidenciaRbt);
+    
+               pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidenciaRbt, token);
+    
+           });
+       });
+    */
 
-    console.warn("fila principal",filaPrincipal);
+    console.warn("fila principal", filaPrincipal);
     // Insertar las subfilas justo debajo de la fila principal
     subfilas.forEach(subfila => {
         filaPrincipal.insertAdjacentElement('afterend', subfila);
