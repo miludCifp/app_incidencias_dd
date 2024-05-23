@@ -33,7 +33,7 @@ public class AdminInitializer implements ApplicationListener<ContextRefreshedEve
             admin.setContrasena("admin");
             admin.setCorreoElectronico("kevinrc2525@gmail.com");
             admin.setGenero(Genero.hombre);
-            admin.setImagenPerfil("userLogoH.png");
+            admin.setImagenPerfil("userLogoHTrabajador.png");
             // Guardar el usuario administrador
             trabajadorService.addTrabajador(admin);
         }
