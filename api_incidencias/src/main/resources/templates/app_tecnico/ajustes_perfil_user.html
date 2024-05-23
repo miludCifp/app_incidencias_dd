@@ -54,7 +54,7 @@
                             <div>
                                 <label for="inputImagenPerfil" class="form-label">Imagen de perfil</label>
                             </div>
-                            <input type="file" class="form-control" id="inputImagenPerfil" accept="image/*">
+                            <input type="file" class="form-control" id="inputImagenPerfil" accept="image/*" disabled>
                         </div>
                         <!-- ID usuario + Rol -->
                         <div class="row">
@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="comboTipoDoc" class="form-label">Tipo de documento</label>
-                                <select class="form-select" id="comboTipoDoc">
+                                <select class="form-select" id="comboTipoDoc" disabled>
                                     <option value="DNI">DNI</option>
                                     <option value="CIF">CIF</option>
                                     <option value="NIE">NIE</option>
@@ -79,7 +79,7 @@
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="inputDoc" class="form-label">Documento</label>
-                                <input class="form-control" type="text" id="inputDoc">
+                                <input class="form-control" type="text" id="inputDoc" disabled>
                                 <div id="errorMsgDoc" class="alert alert-danger" role="alert"
                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
                                 </div>
@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="comboGenero" class="form-label">Genero</label>
-                                <select class="form-select" id="comboGenero" aria-label="Seleccione su genero">
+                                <select class="form-select" id="comboGenero" aria-label="Seleccione su genero" disabled>
                                     <option value="hombre" selected>Hombre</option>
                                     <option value="mujer">Mujer</option>
                                     <option value="sinGenero">Sin genero</option>
@@ -98,7 +98,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="inputNombre" class="form-label">Nombre</label>
                                 <input type="text" class="form-control" id="inputNombre"
-                                    placeholder="Ingrese su nombre">
+                                    placeholder="Ingrese su nombre" disabled>
                             </div>
                         </div>
 
@@ -107,12 +107,12 @@
                             <div class="col-md-6 mb-3">
                                 <label for="inputApellidos" class="form-label">Apellidos</label>
                                 <input type="text" class="form-control" id="inputApellidos"
-                                    placeholder="Ingrese su primer apellido">
+                                    placeholder="Ingrese su primer apellido" disabled>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="inputTelefono" class="form-label">Teléfono</label>
                                 <input type="tel" class="form-control" id="inputTelefono"
-                                    placeholder="Ingrese su número de teléfono">
+                                    placeholder="Ingrese su número de teléfono" disabled>
                                 <div id="errorMsgTlfn" class="alert alert-danger" role="alert"
                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;"></div>
                             </div>
@@ -123,7 +123,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="inputEmail" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="inputEmail"
-                                    placeholder="Ingrese su correo electrónico">
+                                    placeholder="Ingrese su correo electrónico" disabled>
                                 <div id="errorMsgEmail" class="alert alert-danger" role="alert"
                                     style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;"></div>
                             </div>
@@ -132,7 +132,7 @@
                                 <div class="input-group">
                                     <!-- Botón para redirigir a la página de recuperación de contraseña -->
                                     <button id="btnCambiarPasswd" class="btn btn-outline-secondary"
-                                        type="button">Cambiar
+                                        type="button" disabled>Cambiar
                                         contraseña</button>
                                 </div>
                             </div>

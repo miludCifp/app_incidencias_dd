@@ -6,23 +6,12 @@ let fileImagen;
 function obtenerToken() {
     return manejadorToken.getToken();
 }
-
+/*
 async function actualizarPerfil(objetoDatosUsuario) {
 
     // Escuchar el evento submit del formulario
     document.getElementById("ajustesPerfilForm").addEventListener("submit", async function (event) {
         event.preventDefault(); // Evitar el comportamiento predeterminado de enviar el formulario
-
-        /*
-        comboTipoDoc
-        inputDoc
-        comboGenero
-        inputNombre
-        inputApellidos
-        inputTelefono
-        inputEmail
-        -----------------------
-        */
 
         // Obtenemos los datos de los campos
         var tipoDoc = document.getElementById("comboTipoDoc").value;
@@ -100,6 +89,7 @@ async function actualizarPerfil(objetoDatosUsuario) {
     });
 
 }
+*/
 
 function validarCampos(objetoDatosUsuario, tipoDoc,txtDoc,genero, txtName, txtApellidos, txtTlfn, txtEmail) {
 
