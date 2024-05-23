@@ -150,8 +150,6 @@ function esIncidenciaReabierta(idIncidencia) {
 
 // Esta función elimina las incidencias de la base de datos actualizando la tabla
 export async function eliminarIncidencia(boton, incidencia, token) {
-
-
     console.log("el id de la incidencia selecionada es ===> ", incidencia.idIncidencia);
 
     var idIncidencia = incidencia.idIncidencia;

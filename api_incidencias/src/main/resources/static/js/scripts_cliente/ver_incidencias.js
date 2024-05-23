@@ -333,7 +333,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
 
             const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
             console.warn("id antes del metodo" + idIncidenciaPrincipal);
-            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal,tabla);
+            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal, tabla);
 
         });
     });
@@ -378,14 +378,14 @@ document.addEventListener("DOMContentLoaded", async function () {
             console.error('No se encontraron incidencias no resueltas en localStorage');
         }
     } else if (tipo === 'todas') {
-         const todasIncidencias = JSON.parse(localStorage.getItem('todasIncidencias'));
-         if (todasIncidencias) {
-             console.log("TODAS Incidencias recibidas desde la pag_inicio es --->:", todasIncidencias);
-             // Aquí puedes llamar a tu función para cargar las incidencias en la tabla
-             await cargarIncidenciasEnTabla(todasIncidencias);
-         } else {
-             console.error('No se encontraron TODAS incidencias en localStorage');
-         }
+        const todasIncidencias = JSON.parse(localStorage.getItem('todasIncidencias'));
+        if (todasIncidencias) {
+            console.log("TODAS Incidencias recibidas desde la pag_inicio es --->:", todasIncidencias);
+            // Aquí puedes llamar a tu función para cargar las incidencias en la tabla
+            await cargarIncidenciasEnTabla(todasIncidencias);
+        } else {
+            console.error('No se encontraron TODAS incidencias en localStorage');
+        }
     } else {
         // ***************** Obtenemos todas las incidencias ****************** //
         const pagInicio = await import('./pag_inicio.js');
@@ -395,16 +395,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 });
 
-async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,tabla) {
+async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal, tabla) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];
-    var filaPrincipal =  mapaFilaPrincipal[idIncidenciaPrincipal];
+    var filaPrincipal = mapaFilaPrincipal[idIncidenciaPrincipal];
 
     // Verificar si ya se han generado las subfilas anteriormente
     let subfilas = filaPrincipal.dataset.subfilas;
     const flecha = boton.querySelector('svg');
     const clase = flecha.getAttribute("class").split(" ")[1].split("-")[2];
-    console.warn("BOTON",boton);
-    console.warn("-------------------CLASE IMG------------------------ ",clase);
+    console.warn("BOTON", boton);
+    console.warn("-------------------CLASE IMG------------------------ ", clase);
     if (clase === "down") {
         console.warn("IF");
         // Cambiar la dirección del ícono de la flecha según el estado de las subfilas
@@ -413,7 +413,7 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,tabla) {
             flecha.classList.add('fa-chevron-up');
         }
         // Si las subfilas no existen en el estado, generarlas y almacenarlas como un atributo de datos
-        subfilas = generarSubFilas(incidenciasReabiertas,filaPrincipal, token,tabla);
+        subfilas = generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabla);
         filaPrincipal.dataset.subfilas = true; // Marcar que las subfilas se han generado
     } else {
         console.warn("ELSE");
@@ -426,12 +426,12 @@ async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal,tabla) {
         // Si las subfilas ya existen, simplemente mostrar u ocultar según sea necesario
 
 
-        borrarSubFilas(idIncidenciaPrincipal);    
+        borrarSubFilas(idIncidenciaPrincipal);
     }
 }
 
 
-async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token,tabla) {
+async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token, tabla) {
     console.log('---> Lista de incidencias Rbt --->', incidenciasReabiertas);
 
     const subfilas = [];
@@ -476,21 +476,33 @@ async function generarSubFilas(incidenciasReabiertas, filaPrincipal, token,tabla
         // Agregar la subfila a la lista de subfilas de la incidencia principal
         incidenciaRbt.subfilas.push(subFila);
         subfilas.push(subFila);
-    }
-    tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+        // Agregar evento al botón "Detalles"
+        const btnMostrarDetalles = subFila.querySelector('.btn-mostrar-detalles');
         btnMostrarDetalles.addEventListener('click', async function () {
-
             // Obtener el ID de la incidencia desde el atributo data-id
             const idIncidenciaRbt = this.getAttribute('data-id').toString();
             // Encontrar el objeto de incidencia correspondiente
             const objetoIncidenciaRbt = incidenciasReabiertas.find(incidenciaRbt => incidenciaRbt.idIncidencia.toString() === idIncidenciaRbt);
 
             pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidenciaRbt, token);
-
         });
-    });
+    }
+    /*
+       tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
+           btnMostrarDetalles.addEventListener('click', async function () {
+    
+               // Obtener el ID de la incidencia desde el atributo data-id
+               const idIncidenciaRbt = this.getAttribute('data-id').toString();
+               // Encontrar el objeto de incidencia correspondiente
+               const objetoIncidenciaRbt = incidenciasReabiertas.find(incidenciaRbt => incidenciaRbt.idIncidencia.toString() === idIncidenciaRbt);
+    
+               pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidenciaRbt, token);
+    
+           });
+       });
+    */
 
-    console.warn("fila principal",filaPrincipal);
+    console.warn("fila principal", filaPrincipal);
     // Insertar las subfilas justo debajo de la fila principal
     subfilas.forEach(subfila => {
         filaPrincipal.insertAdjacentElement('afterend', subfila);
