@@ -211,7 +211,7 @@ async function editarParteTb(parteTb, token) {
 }
 
 // Función para cargar los materiales en el formulario de editar parte de trabajo
-function cargarMaterialesEnFormulario(listaMaterialUtilizado, token) {
+async function cargarMaterialesEnFormulario(listaMaterialUtilizado, token) {
     listaMaterialUtilizado.forEach(function (material) {
         var nombreMaterial = material.nombre;
         var cantidadMaterial = material.cantidad;
@@ -225,7 +225,7 @@ function cargarMaterialesEnFormulario(listaMaterialUtilizado, token) {
         var eliminarBtn = document.createElement('button');
         eliminarBtn.innerHTML = 'Eliminar';
         eliminarBtn.classList.add('btn', 'btn-sm', 'btn-danger', 'eliminar-material-btn');
-        eliminarBtn.addEventListener('click', function () {
+        eliminarBtn.addEventListener('click', async function () {
 
             var indice = listaMaterialUtilizado.indexOf(material);
             if (indice !== -1) {
@@ -239,7 +239,7 @@ function cargarMaterialesEnFormulario(listaMaterialUtilizado, token) {
                 console.log("El id del material q se va a borra es ----> " + idMaterialABorrar);
 
                 // Ahora elimino el material de la base de datos
-                eliminarMaterial(idMaterialABorrar, token);
+                await eliminarMaterial(idMaterialABorrar, token);
 
                 // Lo elimino de la interfaz
                 nuevaFilaMaterial.remove();

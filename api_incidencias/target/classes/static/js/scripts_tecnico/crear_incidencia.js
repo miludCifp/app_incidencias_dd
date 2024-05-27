@@ -47,6 +47,11 @@ async function crearIncidencia() {
             title: 'Por favor, introduce una breve descripcion de la incidencia',
             icon: 'warning'
           })
+    } else if(documento === ''){
+        Swal.fire({
+            title: 'Por favor, introduce el documento del cliente',
+            icon: 'warning'
+        })
     } else {
         const datos = {
             titulo: titulo,
