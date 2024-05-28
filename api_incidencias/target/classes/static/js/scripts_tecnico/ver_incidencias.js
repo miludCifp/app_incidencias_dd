@@ -150,11 +150,12 @@ export async function obtenerParteTrabajo(idIncidencia) {
 const mapaIncidencias = {};
 const mapaFilaPrincipal = {};
 
+/*
 async function cargarIncidenciasEnTabla(incidencias) {
     // Obtener la tabla donde se cargarán los usuarios
     const tabla = document.getElementById('datatablesSimple');
 
-    // obtengo el token 
+    // obtengo el token
     const token = await obtenerToken();
 
     //let incidencias = await obtenerIncidencias();
@@ -187,7 +188,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
     for (let i = 0; i < incidencias.length; i++) {
         const incidencia = incidencias[i];
 
-        // Verificar si el parte de trabajo ha sido creado o no     
+        // Verificar si el parte de trabajo ha sido creado o no
         objetoParteTrabajo = await obtenerParteTrabajo(incidencia.idIncidencia);
         let esTerminado = false;
 
@@ -215,7 +216,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
 
         filaPrincipal = document.createElement("tr");
         filaPrincipal.classList.add("fila");
-        //filaPrincipal.setAttribute('id', incidencia.idIncidencia);    
+        //filaPrincipal.setAttribute('id', incidencia.idIncidencia);
         filaPrincipal.id = incidencia.idIncidencia;
         filaPrincipal.innerHTML = `
         <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.idIncidencia}</td>
@@ -246,7 +247,7 @@ async function cargarIncidenciasEnTabla(incidencias) {
     }
 
     // Inicializamos la tabla después de cargar las filas de la tabla.
-    new simpleDatatables.DataTable(tabla);
+    //new simpleDatatables.DataTable(tabla);
 
     tabla.querySelectorAll('.btn-mostrar-detalles').forEach(btnMostrarDetalles => {
         btnMostrarDetalles.addEventListener('click', async function () {
@@ -261,32 +262,6 @@ async function cargarIncidenciasEnTabla(incidencias) {
         });
     });
 
-    // Si hay incidencias reabiertas, asignar evento click al botón "Reabierta"
-    console.log("----> Hay reabiertas " + hayReabiertas);
-    // if (hayReabiertas) {
-    tabla.querySelectorAll('.btn-incid-reabiertas').forEach(btnIncidReabiertas => {
-        btnIncidReabiertas.addEventListener('click', async function () {
-
-            // Obtener el ID de la incidencia desde el atributo data-id
-
-            const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
-            console.warn("id antes del metodo" + idIncidenciaPrincipal);
-            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal);
-
-        });
-    });
-    //}
-
-    /*document.addEventListener('click', async function(event) {
-        if (event.target.classList.contains('btn-incid-reabiertas')) {
-    
-            const boton = event.target;
-            const idIncidenciaPrincipal = boton.getAttribute('data-id').toString();
-            await verOrOcultarSubFilas(boton, filaPrincipal, token, idIncidenciaPrincipal);
-        }
-    });*/
-
-
     // Asignar evento click a los botones "Crear parte de trabajo"
     tabla.querySelectorAll('.btn-parte-tb').forEach(botonCrearParteTb => {
         botonCrearParteTb.addEventListener('click', function () {
@@ -294,10 +269,8 @@ async function cargarIncidenciasEnTabla(incidencias) {
             // Obtener el ID del usuario desde el atributo data-id
             const idIncidencia = this.getAttribute('data-id').toString();
 
-
             // Encontrar el objeto de incidencia correspondiente
             const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
-
 
             //var parteTbJSON = objetoParteTrabajo;
 
@@ -311,9 +284,165 @@ async function cargarIncidenciasEnTabla(incidencias) {
 
         });
     });
+
+    // Si hay incidencias reabiertas, asignar evento click al botón "Reabierta"
+    console.log("----> Hay reabiertas " + hayReabiertas);
+    // if (hayReabiertas) {
+    tabla.querySelectorAll('.btn-incid-reabiertas').forEach(btnIncidReabiertas => {
+        btnIncidReabiertas.addEventListener('click', async function () {
+
+            // Obtener el ID de la incidencia desde el atributo data-id
+            const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
+            console.warn("id antes del metodo" + idIncidenciaPrincipal);
+            await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal);
+
+        });
+    });
+
+    // Inicializamos la tabla después de cargar las filas de la tabla.
+    new simpleDatatables.DataTable(tabla);
+
+    //}
+
+    /*document.addEventListener('click', async function(event) {
+        if (event.target.classList.contains('btn-incid-reabiertas')) {
+
+            const boton = event.target;
+            const idIncidenciaPrincipal = boton.getAttribute('data-id').toString();
+            await verOrOcultarSubFilas(boton, filaPrincipal, token, idIncidenciaPrincipal);
+        }
+    });
+
+
+}
+*/
+
+async function cargarIncidenciasEnTabla(incidencias) {
+    const tabla = document.getElementById('datatablesSimple');
+    const token = await obtenerToken();
+
+    if (!Array.isArray(incidencias)) {
+        incidencias = [incidencias];
+    }
+
+    if (!incidencias || incidencias.length === 0 || !tabla) {
+        console.warn('No se encontraron incidencias o no se encontró la tabla.');
+        return;
+    }
+
+    tabla.querySelector('tbody').innerHTML = '';
+
+    for (let i = 0; i < incidencias.length; i++) {
+        const incidencia = incidencias[i];
+        const objetoParteTrabajo = await obtenerParteTrabajo(incidencia.idIncidencia);
+        const esTerminado = objetoParteTrabajo ? objetoParteTrabajo.terminado : true;
+
+        const incidenciasReabiertas = await obtenerIncidenciasReabiertas(incidencia.idIncidencia);
+        if (mapaIncidencias[incidencia.idIncidencia]) {
+            mapaIncidencias[incidencia.idIncidencia].push(...incidenciasReabiertas);
+        } else {
+            mapaIncidencias[incidencia.idIncidencia] = incidenciasReabiertas;
+        }
+
+        const hayReabiertas = incidenciasReabiertas && incidenciasReabiertas.length > 0;
+
+        const filaPrincipal = document.createElement("tr");
+        filaPrincipal.classList.add("fila");
+        filaPrincipal.id = incidencia.idIncidencia;
+        filaPrincipal.innerHTML = `
+            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.idIncidencia}</td>
+            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100px;">${incidencia.titulo}</td>
+            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">${incidencia.fechaCreacion.split('T')[0]}</td>
+            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+                <span class="btn btn-sm btn-${incidencia.prioridad === 'alta' ? 'danger' : incidencia.prioridad === 'media' ? 'warning' : 'secondary'}">${incidencia.prioridad.charAt(0).toUpperCase() + incidencia.prioridad.slice(1)}</span>
+            </td>
+            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;">
+                <span class="btn btn-sm btn-${incidencia.estado === 'terminado' ? 'success' : incidencia.estado === 'tramite' ? 'primary' : 'warning'}">${cambiarValoresEstado(incidencia.estado)}</span>
+            </td>
+            <td style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 300px;">
+                <button type="button" class="btn btn-sm btn-primary btn-mostrar-detalles" data-id="${incidencia.idIncidencia}" title="Ver detalles">Detalles</button>
+                <button type="button" class="btn btn-sm btn-warning btn-editar-incidencia" data-id="${incidencia.idIncidencia}" title="Editar">Editar</button>
+                <button type="button" class="btn btn-sm btn-info btn-parte-tb" data-id="${incidencia.idIncidencia}" title="Crear parte de trabajo" ${esTerminado ? 'disabled' : ''}>Trabajar</button>
+                ${hayReabiertas ? `<button type="button" class="btn btn-sm btn-secondary btn-incid-reabiertas" data-id="${incidencia.idIncidencia}" title="Ver incidencias reabiertas"><i class="fas fa-chevron-down"></i></button>` : ''}
+            </td>
+        `;
+        tabla.querySelector('tbody').appendChild(filaPrincipal);
+
+        // Guardamos las filas principales
+        mapaFilaPrincipal[incidencia.idIncidencia] = filaPrincipal;
+
+        // Añadir eventos a los botones dentro del bucle
+        filaPrincipal.querySelector('.btn-mostrar-detalles').addEventListener('click', function() {
+            const idIncidencia = this.getAttribute('data-id').toString();
+            const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
+            pagDetallesIncidencia.mostrarDetallesIncidencia(objetoIncidencia, token);
+        });
+
+        filaPrincipal.querySelector('.btn-editar-incidencia').addEventListener('click', function() {
+            const idIncidencia = this.getAttribute('data-id').toString();
+            cargarEditarIncidencia(encodeURIComponent(JSON.stringify(incidencia)), token);
+        });
+
+        filaPrincipal.querySelector('.btn-parte-tb').addEventListener('click', function() {
+            const idIncidencia = this.getAttribute('data-id').toString();
+            const objetoIncidencia = incidencias.find(incidencia => incidencia.idIncidencia.toString() === idIncidencia);
+            const pagActual = document.getElementById("tablaListadoIncidencias");
+            formParteTb.crearFormParteTb(objetoIncidencia, pagActual, token);
+        });
+
+        if (hayReabiertas) {
+            filaPrincipal.querySelector('.btn-incid-reabiertas').addEventListener('click', async function() {
+                const idIncidenciaPrincipal = this.getAttribute('data-id').toString();
+                await verOrOcultarSubFilas(this, token, idIncidenciaPrincipal);
+            });
+        }
+    }
+
+    new simpleDatatables.DataTable(tabla);
 }
 
+
+document.addEventListener("DOMContentLoaded", async function () {
+    //new simpleDatatables.DataTable(tabla);
+
+
+    const params = getQueryParams();
+    const tipo = params['tipo'];
+
+    let incidencias;
+    if (tipo === 'resueltas') {
+        incidencias = JSON.parse(localStorage.getItem('incidenciasResueltas'));
+    } else if (tipo === 'no_resueltas') {
+        incidencias = JSON.parse(localStorage.getItem('incidenciasNoResueltas'));
+    } else if (tipo === 'todas') {
+        incidencias = JSON.parse(localStorage.getItem('todasIncidencias'));
+    } else {
+        const pagInicio = await import('./pag_inicio.js');
+        incidencias = await pagInicio.obtenerIncidencias();
+    }
+
+    if (incidencias) {
+        cargarIncidenciasEnTabla(incidencias);
+    } else {
+        console.error('No se encontraron incidencias en localStorage ni se pudieron cargar desde la API');
+    }
+
+});
+
+function getQueryParams() {
+    const params = {};
+    const queryString = window.location.search.substring(1);
+    const queries = queryString.split('&');
+    for (const query of queries) {
+        const [key, value] = query.split('=');
+        params[key] = decodeURIComponent(value);
+    }
+    return params;
+}
+
+
 // Llamar a la función para cargar las incidencias cuando se cargue el DOM
+/*
 document.addEventListener("DOMContentLoaded", async function () {
 
     // Función para obtener los parámetros de la URL
@@ -365,7 +494,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
 });
-
+*/
 
 async function verOrOcultarSubFilas(boton, token, idIncidenciaPrincipal) {
     var incidenciasReabiertas = mapaIncidencias[idIncidenciaPrincipal];
