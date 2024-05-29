@@ -1,7 +1,6 @@
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Correo\CorreoService.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Clases\ParteTrabajo.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioTrabajador.java
-C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\FrontControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Clases\MaterialUtilizado.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\DTO\ComentarioDTO.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Auth\AuthResponse.java
@@ -27,6 +26,7 @@ C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incid
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Auth\AuthControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\ParteTrabajoControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Servicios\Seguridad.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\AdminFrontControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioMaterialUtilizado.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Jwt\JwtAuthenticationFilter.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\DTO\ParteTrabajoDTO.java
@@ -34,6 +34,7 @@ C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incid
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Auth\AuthService.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Enum\Genero.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\IncidenciaControlador.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\TecnicoFrontControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Clases\Comentario.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\DTO\IncidenciaDTO.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\SecurityConfig\WebSecurityConfig.java
@@ -42,11 +43,13 @@ C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incid
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\ApiIncidenciasApplication.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioIncidencia.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Clases\TiempoEmpleado.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\SecurityConfig\AdminInitializer.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\TiempoEmpControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioParteTrabajo.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioCliente.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioResetContraseña.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Enum\Rol.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\FormReCaptchaControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\UsuarioControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Auth\LoginRequest.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Correo\Correo.java
@@ -55,10 +58,13 @@ C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incid
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Enum\Estado.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Servicios\MaterialUtilizadoService.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Servicios\TrabajadorService.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Servicios\RecaptchaService.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\MaterialUtilizadoControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\ClienteControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\ComentarioControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\Clases\Cliente.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\ClienteFrontControlador.java
+C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Controladores\PublicFrontControlador.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Repositorios\RepositorioComentario.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Auth\RegisterRequest.java
 C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\java\api_incidencias\api_incidencias\Entidades\DTO\TiempoEmpleadoDTO.java
