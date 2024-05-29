@@ -68,9 +68,9 @@ async function cargarPartesTrabajoEnTabla() {
 
         
         const descripcion = parte.incidencia.descripcion !== undefined && parte.incidencia.descripcion !== null ? parte.incidencia.descripcion : '-';
-        const diagnostico = parte.incidencia.diagnostico !== undefined && parte.incidencia.diagnostico !== null ? parte.incidencia.diagnostico : '-';
-        const trabajoRealizado = parte.incidencia.trabajoRealizado !== undefined && parte.incidencia.trabajoRealizado !== null ? parte.incidencia.trabajoRealizado : '-';
-        const observaciones = parte.incidencia.observaciones !== undefined && parte.incidencia.observaciones !== null ? parte.incidencia.observaciones : '-';
+        const diagnostico = parte.diagnostico !== undefined && parte.diagnostico !== null ? parte.diagnostico : '-';
+        const trabajoRealizado = parte.trabajoRealizado !== undefined && parte.trabajoRealizado !== null ? parte.trabajoRealizado : '-';
+        const observaciones = parte.observaciones !== undefined && parte.observaciones !== null ? parte.observaciones : '-';
 
         const row = `
             <tr>

@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando Ver incidencias desde Parte de trabajo">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="arreglo botones subfilas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/api_incidencias-0.0.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/api_incidencias-0.0.1.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Controladores/IncidenciaControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/api_incidencias/api_incidencias/Controladores/IncidenciaControlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_tecnico/ver_parte_trabajo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/scripts_trabajador/ver_parte_trabajo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/api_incidencias.api_incidencias.ApiIncidenciasApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,6 +89,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.ApiIncidenciasApplication.executor": "Run",
+    "Maven.api_incidencias [clean].executor": "Run",
+    "Maven.api_incidencias [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "Kevin",
@@ -158,38 +175,6 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
-    </task>
-    <task id="LOCAL-00006" summary="Listo">
-      <option name="closed" value="true" />
-      <created>1712156240110</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1712156240110</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Listo">
-      <option name="closed" value="true" />
-      <created>1712156271937</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1712156271937</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Ultimos cambios - Hecho">
-      <option name="closed" value="true" />
-      <created>1712217867180</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1712217867180</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Ultimos cambios - cambios en las clases">
-      <option name="closed" value="true" />
-      <created>1712220487619</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1712220487619</updated>
     </task>
     <task id="LOCAL-00010" summary="Creando el Controlador de Incidencias Reabiertas">
       <option name="closed" value="true" />
@@ -551,7 +536,39 @@
       <option name="project" value="LOCAL" />
       <updated>1716388182534</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="arreglo">
+      <option name="closed" value="true" />
+      <created>1716397439509</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1716397439509</updated>
+    </task>
+    <task id="LOCAL-00056" summary="arreglo">
+      <option name="closed" value="true" />
+      <created>1716397487721</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1716397487721</updated>
+    </task>
+    <task id="LOCAL-00057" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1716453593324</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1716453593324</updated>
+    </task>
+    <task id="LOCAL-00058" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1716462597446</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1716462597446</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Crear carpeta Generar PDF" />
     <MESSAGE value="Crear carpeta Generar PDF ultimos cambios" />
     <MESSAGE value="cambios rotos" />
     <MESSAGE value="cambios no seguros" />
@@ -594,7 +610,8 @@
     <MESSAGE value="querys parte(idCliente) cliente(documento)" />
     <MESSAGE value="arreglo query findByCliente" />
     <MESSAGE value="arreglo" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglo" />
+    <MESSAGE value="arreglo botones subfilas" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglo botones subfilas" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
