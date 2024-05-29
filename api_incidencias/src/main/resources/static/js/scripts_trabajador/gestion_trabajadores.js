@@ -15,7 +15,7 @@ async function obtenerUsuarios() {
     const token = await obtenerToken();
 
     // URL para la solicitud GET
-    const urlGet = 'http://localhost:8080/api/v1/trabajadores';
+    const urlGet = 'http://185.166.39.117:8080/api/v1/trabajadores';
 
     try {
         const response = await fetch(urlGet, {
@@ -431,7 +431,7 @@ async function editarUserTrabajador(objetoUsuario) {
             };
 
             // Si hay cambios, hacemos una solicitud PUT al servidor pasándole el id obtenido por la solicitud GET
-            var urlPut = 'http://localhost:8080/api/v1/trabajadores/' + idUserOriginal;
+            var urlPut = 'http://185.166.39.117:8080/api/v1/trabajadores/' + idUserOriginal;
 
 
             // Ahora comprobar si se ha introducido una nueva contraseña
@@ -559,7 +559,7 @@ async function actualizarUsuarioTrabajador(urlPut, objetoUsuario,token) {
 
 async function actualizarPasswdTrabajador(idUser, usuario,token) {
     try {
-        const response = await fetch(`http://localhost:8080/api/v1/trabajadores/update-con-contraseña/${idUser}`, {
+        const response = await fetch(`http://185.166.39.117:8080/api/v1/trabajadores/update-con-contraseña/${idUser}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -612,7 +612,7 @@ async function eliminarTrabajador(boton, objetoUsuario) {
     console.log('id de la fila es : ' + idUser);
 
     // URL para la solicitud DELETE
-    var url = 'http://localhost:8080/api/v1/trabajadores/' + idUser;
+    var url = 'http://185.166.39.117:8080/api/v1/trabajadores/' + idUser;
 
 
     if (idUser === obtenerIDUser(token)) {

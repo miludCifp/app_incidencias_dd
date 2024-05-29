@@ -53,7 +53,7 @@ async function registrarUserCliente() {
             const token = await obtenerToken();
 
             // URL para la solicitud POST
-            const urlPost = 'http://localhost:8080/auth/registrar-cliente';
+            const urlPost = 'http://185.166.39.117:8080/auth/registrar-cliente';
 
             try {
                 const response = await fetch(urlPost, {
