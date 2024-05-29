@@ -70,7 +70,7 @@ async function editarIncidencia(objetoIncidencia, token) {
 
     // Hacemos una solicitud GET para obtener los datos originales de la incidencia
     try {
-        const response = await fetch('http://localhost:8080/api/v1/incidencias/' + idIncidencia, {
+        const response = await fetch('http://185.166.39.117:8080/api/v1/incidencias/' + idIncidencia, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -98,7 +98,7 @@ async function editarIncidencia(objetoIncidencia, token) {
         */
 
         // Si hay cambios, hacemos una solicitud PUT al servidor pasándole el id obtenido por la solicitud GET
-        var urlPut = 'http://localhost:8080/api/v1/incidencias/' + idIncidenciaOriginal;
+        var urlPut = 'http://185.166.39.117:8080/api/v1/incidencias/' + idIncidenciaOriginal;
 
         // Escuchar el evento submit del formulario
         document.getElementById("editarIncidenciaForm").addEventListener("submit", async function (event) {

@@ -10,7 +10,7 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
 
     try {
-        const response = await fetch('http://localhost:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
+        const response = await fetch('http://185.166.39.117:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -83,7 +83,7 @@ function cambiarValoresEstado(estado) {
 export async function obtenerParteTrabajo(idIncidencia) {
     const token = obtenerToken(); // Obtener el token JWT
 
-    const apiUrl = `http://localhost:8080/api/v1/parte-trabajo/incidencia/${idIncidencia}`; // Ruta para obtener el detalle de parteTrabajo
+    const apiUrl = `http://185.166.39.117:8080/api/v1/parte-trabajo/incidencia/${idIncidencia}`; // Ruta para obtener el detalle de parteTrabajo
 
     const response = await fetch(apiUrl, {
         method: 'GET',
@@ -509,7 +509,7 @@ async function borrarSubFilas(idFilaPrincipal) {
 
 
 export async function comprobarTiempoEmpleadoSinHoraFin(idOrden) {
-    const response = await fetch(`http://localhost:8080/api/v1/tiempo-empleado/parte-trabajo-no-terminado/${idOrden}`, {
+    const response = await fetch(`http://185.166.39.117:8080/api/v1/tiempo-empleado/parte-trabajo-no-terminado/${idOrden}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + obtenerToken()
@@ -532,7 +532,7 @@ export async function comprobarTrabajoNoTerminado(idIncidencia) {
     const token = obtenerToken(); // Obtener el token JWT
     //const idTecnico = manejadorToken.getIdFromToken(token); // Pasar el token a la función
 
-    const response = await fetch(`http://localhost:8080/api/v1/parte-trabajo/incidencia-no-terminada/${idIncidencia}`, {
+    const response = await fetch(`http://185.166.39.117:8080/api/v1/parte-trabajo/incidencia-no-terminada/${idIncidencia}`, {
         method: 'GET',
         headers: {
             'Authorization': 'Bearer ' + token // Usar el token obtenido
@@ -570,8 +570,8 @@ export async function empezarTrabajo() {
             text: `Debe seleccionar un modo de resolución antes de empezar el trabajo`,
         });
     } else {
-        const apiUrlEmpezarTrabajo = 'http://localhost:8080/api/v1/parte-trabajo'; // Ruta para empezar el trabajo
-        const apiUrlRegistrarTiempo = 'http://localhost:8080/api/v1/tiempo-empleado'; // Ruta para registrar el tiempo empleado
+        const apiUrlEmpezarTrabajo = 'http://185.166.39.117:8080/api/v1/parte-trabajo'; // Ruta para empezar el trabajo
+        const apiUrlRegistrarTiempo = 'http://185.166.39.117:8080/api/v1/tiempo-empleado'; // Ruta para registrar el tiempo empleado
         const token = obtenerToken(); // Reemplaza con tu token JWT
         const idTecnico = manejadorToken.getIdFromToken(token); // Llamar a getIdFromToken sin argumento
         const idIncidencia = document.getElementById('idIncidencia').innerText;
@@ -709,7 +709,7 @@ async function cambiarEstadoEmpezarTb(objetoIncidencia, token) {
 
     objetoIncidencia.estado = 'tramite';
 
-    var urlPut = 'http://localhost:8080/api/v1/incidencias/' + objetoIncidencia.idIncidencia;
+    var urlPut = 'http://185.166.39.117:8080/api/v1/incidencias/' + objetoIncidencia.idIncidencia;
 
     // Realizar la solicitud PUT al servidor
     try {
@@ -778,7 +778,7 @@ export async function finTrabajo(objetoIncidencia) {
             // tiempoEmpleado.horaSalida = new Date().toLocaleTimeString('es-ES', { hour12: false }); // Formato HH:MM:SS
 
 
-            const respuesta = await fetch(`http://localhost:8080/api/v1/tiempo-empleado/${idTiempoEmpleado}`, {
+            const respuesta = await fetch(`http://185.166.39.117:8080/api/v1/tiempo-empleado/${idTiempoEmpleado}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -806,7 +806,7 @@ export async function finTrabajo(objetoIncidencia) {
             //Cambiamos el estado
             objetoIncidencia.estado = 'terminado';
 
-            const respuestaIncidencia = await fetch(`http://localhost:8080/api/v1/incidencias/${objetoIncidencia.idIncidencia}`, {
+            const respuestaIncidencia = await fetch(`http://185.166.39.117:8080/api/v1/incidencias/${objetoIncidencia.idIncidencia}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

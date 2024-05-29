@@ -245,7 +245,7 @@ async function eliminarParteTb(boton, parteTbJson, token) {
 
         console.log("idOrden de la fila seleccionada es  => ", idOrden);
         // URL para la solicitud DELETE
-        var urlDelete = 'http://localhost:8080/api/v1/parte-trabajo/' + idOrden;
+        var urlDelete = 'http://185.166.39.117:8080/api/v1/parte-trabajo/' + idOrden;
 
         // Confirmar si el usuario realmente quiere eliminar la incidencia
         Swal.fire({
