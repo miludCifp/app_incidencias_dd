@@ -621,7 +621,7 @@ async function eliminarTrabajador(boton, objetoUsuario) {
         // Confirmar si el usuario realmente quiere eliminar la incidencia
         Swal.fire({
             title: '¿Está seguro de que desea eliminar su cuenta actual?',
-            text: 'Tu cuenta se eliminará definitivamente y la sesión se cerrará',
+            text: 'La cuenta se eliminará definitivamente y la sesión se cerrará',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
