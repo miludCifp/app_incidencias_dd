@@ -9,39 +9,6 @@ function obtenerIDUser(token) {
     return manejadorToken.getIdFromToken(token);
 }
 
-/*
-async function obtenerIncidenciasReabiertas(idIncidencia) {
-    const token = await obtenerToken();
-
-    try {
-        const response = await fetch('http://localhost:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error('Error al obtener las incidencias reabiertas');
-        }
-
-        const data = await response.json();
-
-        // Verificar si el JSON recibido es válido y no está vacío
-        if (Array.isArray(data) && data.length > 0) {
-            console.log("Datos de incidencias reabiertas recibidos:", data);
-            return data; // Retorna la lista de incidencias reabiertas si hay alguna
-        } else {
-            console.log("No hay incidencias reabiertas para la incidencia con ID:", idIncidencia);
-            return null; // Retorna null si no se encontraron incidencias reabiertas
-        }
-    } catch (error) {
-        console.error(error);
-        return null; // Retorna null en caso de error
-    }
-}
-*/
-
 async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
 
