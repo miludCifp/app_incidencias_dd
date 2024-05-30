@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PublicFrontControlador {
     @GetMapping("login")
     public String iniciarSesion() {
+        System.out.println("-----> Iniciando sesion desde el controlador publico");
         return "login"; // Se refiere al archivo login.html en src/main/resources/templates
     }
     @GetMapping("register_user")
