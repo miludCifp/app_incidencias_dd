@@ -270,7 +270,7 @@ async function crearParteTrabajo(objetoIncidencia, objetoParteTb, token) {
 
 
     // Url para una peticion PUT al servidor
-    var urlPut = 'http://localhost:8080/api/v1/parte-trabajo/' + idOrden;
+    var urlPut = 'http://185.166.39.117:8080/api/v1/parte-trabajo/' + idOrden;
 
 
     var btnFinalizarTrabajo = document.getElementById("btnFinalizarTrabajo");
@@ -431,7 +431,7 @@ async function insertarMaterial(objetoMaterialAgregado, idOrden, token) {
 
     try {
 
-        const respuesta = await fetch('http://localhost:8080/api/v1/material-utilizado', {
+        const respuesta = await fetch('http://185.166.39.117:8080/api/v1/material-utilizado', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -569,7 +569,7 @@ export async function pausarTrabajo(idIncidencia, parteTrabajo) {
                 // tiempoEmpleado.horaSalida = new Date().toLocaleTimeString('es-ES', { hour12: false }); // Formato HH:MM:SS
 
 
-                const respuesta = await fetch(`http://localhost:8080/api/v1/tiempo-empleado/${idTiempoEmpleado}`, {
+                const respuesta = await fetch(`http://185.166.39.117:8080/api/v1/tiempo-empleado/${idTiempoEmpleado}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -667,7 +667,7 @@ export async function continuarTrabajo(parteTrabajo) {
         const token = obtenerToken();
 
         if (hayTiempoSinHora == true || parteCreado) { // Corregido aquí
-            const apiUrlRegistrarTiempo = 'http://localhost:8080/api/v1/tiempo-empleado'; // Ruta para registrar el tiempo empleado
+            const apiUrlRegistrarTiempo = 'http://185.166.39.117:8080/api/v1/tiempo-empleado'; // Ruta para registrar el tiempo empleado
             const responseRegistrarTiempo = await fetch(apiUrlRegistrarTiempo, {
                 method: 'POST',
                 headers: {

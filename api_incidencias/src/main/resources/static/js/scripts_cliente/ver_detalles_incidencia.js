@@ -237,7 +237,7 @@ export async function crearIncidenciaReabierta(incidenciaDTO, token) {
 
         try {
             // const token = obtenerToken(); // Suponiendo que tengas una función para obtener el token
-            const respuesta = await fetch('http://localhost:8080/api/v1/incidencias/reabrir-incidencia', {
+            const respuesta = await fetch('http://185.166.39.117:8080/api/v1/incidencias/reabrir-incidencia', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

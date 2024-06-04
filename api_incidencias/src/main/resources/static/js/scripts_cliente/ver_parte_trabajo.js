@@ -16,7 +16,7 @@ async function obtenerPartesTrabajo() {
     const idUser = await getIdFromToken(token);
 
     try {
-        const response = await fetch('http://localhost:8080/api/v1/parte-trabajo/cliente/'+idUser, {
+        const response = await fetch('http://185.166.39.117:8080/api/v1/parte-trabajo/cliente/'+idUser, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

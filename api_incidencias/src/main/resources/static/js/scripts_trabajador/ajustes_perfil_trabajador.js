@@ -56,7 +56,7 @@ async function actualizarPerfil(objetoDatosUsuario) {
                 rol: objetoDatosUsuario.rol
             };
 
-            var urlPut = 'http://localhost:8080/api/v1/trabajadores/' + idUser;
+            var urlPut = 'http://185.166.39.117:8080/api/v1/trabajadores/' + idUser;
 
             // Realizamos la solicitud PUT al servidor
             try {
@@ -230,7 +230,7 @@ async function subirImagen(file) {
         formData.append('file', file);
 
         // Construir la URL para la solicitud POST
-        const url = `http://localhost:8080/api/v1/usuarios/imagen`;
+        const url = `http://185.166.39.117:8080/api/v1/usuarios/imagen`;
 
         const token = await obtenerToken();
 

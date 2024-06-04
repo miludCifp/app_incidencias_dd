@@ -5,7 +5,7 @@ async function iniciarSesion() {
     const txtPassword = document.getElementById('inputPassword').value;
 
     if (txtEmail && txtPassword) {
-        const url = 'http://localhost:8080/auth/login';
+        const url = 'http://185.166.39.117:8080/auth/login';
 
         const data = {
             correoElectronico: txtEmail,

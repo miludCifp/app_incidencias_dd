@@ -43,7 +43,7 @@ async function registrarUserTrabajador() {
             };
 
             // URL para la solicitud POST
-            const urlPost = 'http://localhost:8080/auth/registrar-trabajador';
+            const urlPost = 'http://185.166.39.117:8080/auth/registrar-trabajador';
 
             try {
                 const response = await fetch(urlPost, {

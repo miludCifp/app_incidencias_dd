@@ -15,7 +15,7 @@ function validarCorreoElectronico(correo) {
 
 async function enviarCorreo(correo) {
     try {
-        const url = `http://localhost:8080/api/v1/usuarios/codigo-contraseña/${correo}`;
+        const url = `http://185.166.39.117:8080/api/v1/usuarios/codigo-contraseña/${correo}`;
         const response = await fetch(url, {
             method: 'GET'
         });
@@ -178,7 +178,7 @@ async function cambiarContrasena() {
         if (validarContraseña(txtNewPasswd, txtConfirmPasswd)) {
             // Procedemos a cambiar la contraseña despues de validarla
             try {
-                const url = `http://localhost:8080/api/v1/usuarios/cambiar-contraseña/${codigo}`;
+                const url = `http://185.166.39.117:8080/api/v1/usuarios/cambiar-contraseña/${codigo}`;
                 const response = await fetch(url, {
                     method: 'PUT',
                     headers: {
