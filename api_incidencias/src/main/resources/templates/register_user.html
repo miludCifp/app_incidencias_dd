@@ -68,12 +68,16 @@
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-0">
                                                     <select class="form-select" id="comboGenero"
-                                                        aria-label="Seleccione su país">
-                                                        <option value="hombre" selected>Hombre</option>
+                                                        aria-label="Seleccione su genero">
+                                                        <option value="sexo" selected>Sexo</option>
+                                                        <option value="hombre">Hombre</option>
                                                         <option value="mujer">Mujer</option>
                                                         <option value="sinGenero">sin Genero</option>
                                                     </select>
                                                     <label for="comboGenero">Género</label>
+                                                    <div id="errorMsgGenero" class="alert alert-danger" role="alert"
+                                                         style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
