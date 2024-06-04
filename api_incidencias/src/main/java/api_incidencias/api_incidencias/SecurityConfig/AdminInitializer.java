@@ -28,10 +28,10 @@ public class AdminInitializer implements ApplicationListener<ContextRefreshedEve
         if (!trabajadorService.existsByRol(Rol.administrador)) {
             Trabajador admin = new Trabajador();
             admin.setRol(Rol.administrador);
-            admin.setContrasena("admin");
+            admin.setNombre("Administrador");
             admin.setFechaRegistro(LocalDate.now());
+            admin.setCorreoElectronico("direccion@dondigital.es");
             admin.setContrasena("admin");
-            admin.setCorreoElectronico("kevinrc2525@gmail.com");
             admin.setGenero(Genero.hombre);
             admin.setImagenPerfil("userLogoHTrabajador.png");
             // Guardar el usuario administrador

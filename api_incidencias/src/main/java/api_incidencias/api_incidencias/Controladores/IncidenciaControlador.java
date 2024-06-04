@@ -5,11 +5,9 @@ import api_incidencias.api_incidencias.Entidades.Clases.Incidencia;
 import api_incidencias.api_incidencias.Entidades.Clases.Usuario;
 import api_incidencias.api_incidencias.Entidades.DTO.IncidenciaDTO;
 import api_incidencias.api_incidencias.Entidades.Enum.Estado;
-import api_incidencias.api_incidencias.Servicios.ClienteService;
-import api_incidencias.api_incidencias.Servicios.IncidenciaService;
-import api_incidencias.api_incidencias.Servicios.Seguridad;
-import api_incidencias.api_incidencias.Servicios.UsuarioService;
+import api_incidencias.api_incidencias.Servicios.*;
 
+import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +32,9 @@ public class IncidenciaControlador {
     private ClienteService clienteServicio;
     @Autowired
     private Seguridad seguridad;
+
+    @Autowired
+    private AvisosService servicioAviso;
 
     @GetMapping
     public List<Incidencia> getIncidencias(){
@@ -63,11 +64,26 @@ public class IncidenciaControlador {
         return incidenciaServicio.getIncidenciasCliente(idCliente);
     }
 
+    /*
     @PostMapping
     public ResponseEntity<Incidencia> crearIncidencia(@RequestBody IncidenciaDTO incidenciaDTO){
         Incidencia incidencia = cargarDTO(incidenciaDTO);
         Incidencia incidenciaGuardada = incidenciaServicio.addIncidencia(incidencia);
         return new ResponseEntity<>(incidenciaGuardada, HttpStatus.CREATED);
+    }
+    */
+
+    @PostMapping
+    public ResponseEntity<Incidencia> crearIncidencia(@RequestBody IncidenciaDTO incidenciaDTO) {
+        Incidencia incidencia = cargarDTO(incidenciaDTO);
+        Incidencia incidenciaGuardada = incidenciaServicio.addIncidencia(incidencia);
+
+        if (incidenciaGuardada != null) {
+            servicioAviso.avisoNuevaIncidencia(incidenciaGuardada);
+            return new ResponseEntity<>(incidenciaGuardada, HttpStatus.CREATED);
+        } else {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     /**
