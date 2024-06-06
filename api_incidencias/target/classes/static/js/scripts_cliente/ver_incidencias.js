@@ -13,7 +13,7 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
 
     try {
-        const response = await fetch('http://localhost:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
+        const response = await fetch('http://185.166.39.117:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
