@@ -205,7 +205,7 @@ async function registrarCliente() {
 
 
     if (validarCampos(tipoDocumento, documento,genero, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, codigoPostal, pais)) {
-        const url = 'http://localhost:8080/auth/registrar-cliente';
+        const url = 'http://185.166.39.117:8080/auth/registrar-cliente';
 
         const data = {
             tipoDocumento: tipoDocumento,
