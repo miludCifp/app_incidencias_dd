@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: api_incidencias.api_incidencias.ApiIncidenciasApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.77 s -- in api_incidencias.api_incidencias.ApiIncidenciasApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.80 s -- in api_incidencias.api_incidencias.ApiIncidenciasApplicationTests

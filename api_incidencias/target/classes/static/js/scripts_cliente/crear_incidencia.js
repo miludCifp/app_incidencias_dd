@@ -25,7 +25,7 @@ async function crearIncidencia() {
         try {
             const token = manejadorToken.getToken();
 
-            const respuesta = await fetch('http://185.166.39.117:8080/api/v1/incidencias', {
+            const respuesta = await fetch('http://localhost:8080/api/v1/incidencias', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

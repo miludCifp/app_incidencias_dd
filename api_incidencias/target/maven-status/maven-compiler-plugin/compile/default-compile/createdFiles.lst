@@ -15,6 +15,7 @@ api_incidencias\api_incidencias\Controladores\TecnicoFrontControlador.class
 api_incidencias\api_incidencias\Servicios\IncidenciaService.class
 api_incidencias\api_incidencias\Entidades\Enum\TipoDocumento.class
 api_incidencias\api_incidencias\Servicios\ServicioResetContraseña.class
+api_incidencias\api_incidencias\Servicios\AvisosService.class
 api_incidencias\api_incidencias\Controladores\ClienteFrontControlador.class
 api_incidencias\api_incidencias\Repositorios\RepositorioTrabajador.class
 api_incidencias\api_incidencias\Controladores\FormReCaptchaControlador.class
