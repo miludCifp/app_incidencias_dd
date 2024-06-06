@@ -22,7 +22,7 @@ public class AvisosService {
         MimeMessageHelper helper = null;
         try {
             helper = new MimeMessageHelper(mensaje, true, "UTF-8");
-            helper.setTo("dondigital.correo@gmail.com");
+            helper.setTo("soporte@dondigital.es");
             helper.setSubject("Nueva incidencia");
 
             String cuerpoEmail = "<html>" +
@@ -50,7 +50,7 @@ public class AvisosService {
         MimeMessageHelper helper = null;
         try {
             helper = new MimeMessageHelper(mensaje, true, "UTF-8");
-            helper.setTo("dondigital.correo@gmail.com");
+            helper.setTo("soporte@dondigital.es");
             helper.setSubject("Nuevo cliente");
             String cuerpoEmail = "<html>" +
                     "<body>" +

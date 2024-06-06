@@ -17,7 +17,7 @@ export async function obtenerIncidencias() {
 
     if (!incidenciasObtenidas) {
         try {
-            const response = await fetch('http://185.166.39.117:8080/api/v1/incidencias/cliente/'+userId, {
+            const response = await fetch('http://localhost:8080/api/v1/incidencias/cliente/'+userId, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
