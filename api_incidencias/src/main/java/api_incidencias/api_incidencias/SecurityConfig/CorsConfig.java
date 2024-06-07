@@ -14,7 +14,6 @@ public class CorsConfig implements WebMvcConfigurer {
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     }
 
-    /*
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
@@ -22,7 +21,5 @@ public class CorsConfig implements WebMvcConfigurer {
                 .setCachePeriod(3600)
                 .resourceChain(true);
     }
-
-     */
 }
 

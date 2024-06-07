@@ -55,58 +55,60 @@
                             Listado de incidencias
                         </div>
                         <div class="card-body">
-                            <table id="datatablesSimple" class="table">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Titulo</th>
-                                        <th>Fecha_creación</th>
-                                        <th>Prioridad</th>
-                                        <th>Estado</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <!--
-                                <tfoot>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Titulo</th>
-                                        <th>Fecha_creación</th>
-                                        <th>Prioridad</th>
-                                        <th>Estado</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </tfoot>
-                                -->
-                                <tbody>
+                            <div style="overflow-x: auto;">
+                                <table id="datatablesSimple" class="table" style="min-width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Titulo</th>
+                                            <th>Fecha_creación</th>
+                                            <th>Prioridad</th>
+                                            <th>Estado</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </thead>
                                     <!--
-                                    <tr>
-                                        <td>01</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>2011/04/25</td>
-                                        <td>
-                                            <span class="btn btn-sm btn-secondary">Baja</span>
-                                        </td>
-                                        <td>
-                                            <span class="btn btn-sm btn-success">Cerrada</span>
-                                        </td>
-                                        <td>
-                                            <button onclick="mostrarDetallesIncidencia(this)" type="button"
-                                                class="btn btn-sm btn-primary" id="btn_detalles_incidencia">Ver
-                                                detalles</button>
-                                            <button onclick="editarIncidencia(this)" type="button"
-                                                class="btn btn-sm btn-warning" id="btn_edit_incidencia">Editar</button>
-                                            <button type="button" class="btn btn-sm btn-danger"
-                                                id="btn_delete_incidencia">Eliminar</button>
-                                            <button onclick="crearParteTb(this)" type="button"
-                                                class="btn btn-sm btn-info" id="btn_parte_tb">Crear parte
-                                                trabajo</button>
-                                        </td>
-                                    </tr>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Titulo</th>
+                                            <th>Fecha_creación</th>
+                                            <th>Prioridad</th>
+                                            <th>Estado</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </tfoot>
                                     -->
-                                </tbody>
-                            </table>
+                                    <tbody>
+                                        <!--
+                                        <tr>
+                                            <td>01</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>2011/04/25</td>
+                                            <td>
+                                                <span class="btn btn-sm btn-secondary">Baja</span>
+                                            </td>
+                                            <td>
+                                                <span class="btn btn-sm btn-success">Cerrada</span>
+                                            </td>
+                                            <td>
+                                                <button onclick="mostrarDetallesIncidencia(this)" type="button"
+                                                    class="btn btn-sm btn-primary" id="btn_detalles_incidencia">Ver
+                                                    detalles</button>
+                                                <button onclick="editarIncidencia(this)" type="button"
+                                                    class="btn btn-sm btn-warning" id="btn_edit_incidencia">Editar</button>
+                                                <button type="button" class="btn btn-sm btn-danger"
+                                                    id="btn_delete_incidencia">Eliminar</button>
+                                                <button onclick="crearParteTb(this)" type="button"
+                                                    class="btn btn-sm btn-info" id="btn_parte_tb">Crear parte
+                                                    trabajo</button>
+                                            </td>
+                                        </tr>
+                                        -->
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <!-- Fin Tabla listado de incidencias -->
