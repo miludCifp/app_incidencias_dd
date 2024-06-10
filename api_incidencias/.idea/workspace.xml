@@ -6,45 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="arreglo botones subfilas">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/inicio_sesion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/inicio_sesion.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/recup_contrasena.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/recup_contrasena.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/registro_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/registro_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ajustes_perfil_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/cargar_editar_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/cargar_editar_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pag_inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/pdf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_cliente/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ajustes_perfil_tecnico.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ajustes_perfil_tecnico.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/cargar_editar_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/cargar_editar_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/cargar_editar_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/cargar_editar_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/crear_form_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/crear_form_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pag_inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/pdf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_tecnico/ver_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/add_users_clientes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/add_users_clientes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/add_users_trabajadores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/add_users_trabajadores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ajustes_perfil_trabajador.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ajustes_perfil_trabajador.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/cargar_editar_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/cargar_editar_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/cargar_editar_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/cargar_editar_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/crear_form_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/crear_form_parte_trabajo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/crear_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/crear_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/gestion_clientes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/gestion_clientes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/gestion_trabajadores.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/gestion_trabajadores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/obtener_info_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/obtener_info_user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pag_inicio.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pdf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/pdf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_incidencia.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_incidencia.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_detalles_parte_tb.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_incidencias.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_parte_trabajo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/scripts_trabajador/ver_parte_trabajo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,14 +160,6 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
-    </task>
-    <task id="LOCAL-00011" summary="Añadiendo clases">
-      <option name="closed" value="true" />
-      <created>1712242137706</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1712242137706</updated>
     </task>
     <task id="LOCAL-00012" summary="ultimos cambios en las clases">
       <option name="closed" value="true" />
@@ -592,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716972638848</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1717488612562</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1717488612562</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
