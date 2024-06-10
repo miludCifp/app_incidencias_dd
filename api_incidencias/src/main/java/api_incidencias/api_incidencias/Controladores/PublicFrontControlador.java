@@ -1,5 +1,7 @@
 package api_incidencias.api_incidencias.Controladores;
 
+import api_incidencias.api_incidencias.Servicios.Seguridad;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class PublicFrontControlador {
+
+    @Autowired
+    private Seguridad seguridad;
+
     @GetMapping("login")
     public String iniciarSesion() {
         System.out.println("-----> Iniciando sesion desde el controlador publico");
@@ -32,6 +38,21 @@ public class PublicFrontControlador {
     @GetMapping("error_500")
     public String error500() {
         return "error_500";
+    }
+
+    /**************************/
+    @GetMapping("inicio")
+    public String inicio() {
+        if (seguridad.isAdmin()) {
+            return "app_trabajador/inicio";
+        } else if (seguridad.isTrabajador()) {
+            return "app_tecnico/inicio";
+        } else if (seguridad.isCliente()) {
+            return "app_cliente/inicio";
+        }else {
+            return error404();
+        }
+
     }
 
 }

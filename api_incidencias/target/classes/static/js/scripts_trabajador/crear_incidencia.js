@@ -1,7 +1,9 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
+
 async function getClientePorDocumento(documento) {
-    const url = `http://185.166.39.117:8080/api/v1/clientes/documento/${documento}`;
+    const url = 'http://'+serverIP+'/api/v1/clientes/documento/${documento}';
    
     try {
         const token = manejadorToken.getToken();
@@ -73,7 +75,7 @@ async function crearIncidencia() {
             try {
                 const token = manejadorToken.getToken();
     
-                const respuesta = await fetch('http://185.166.39.117:8080/api/v1/incidencias', {
+                const respuesta = await fetch('http://'+serverIP+'/api/v1/incidencias', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

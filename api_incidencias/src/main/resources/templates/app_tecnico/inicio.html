@@ -42,10 +42,9 @@
                     </ol>
                     <div class="card mb-4">
                         <div class="card-body">
-                            Todo lo que necesitas para digitalizar tu negocio. Mantenimiento informático y soporte
-                            informático seas particular o empresa.
-                            Solución integral de Marketing Digital, Creación de Marcas (Branding), Gestión de Redes
-                            Sociales y Diseño Web. Visita nuestra web aqui
+                            Nuestra aplicación web de Gestión de Incidencias te permite registrar, rastrear y resolver problemas
+                            de manera eficiente. Optimiza la gestión de incidencias y mejora la productividad de tu equipo con
+                            nuestra solución intuitiva y eficaz. Visita nuestra web aqui
                             <a target="_blank" href="https://dondigital.es/">DonDigital</a>
                         </div>
                     </div>
@@ -95,7 +94,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital <span id="year"></span></div>
                         <div>
                             <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
                             &middot;
@@ -116,6 +115,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--====== Scripts de funcionalidades de la app ======-->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script type="module" src="/js/scripts_tecnico/pag_inicio.js"></script>
 
 </body>

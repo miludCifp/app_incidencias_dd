@@ -1,5 +1,7 @@
 import * as manejadorToken from '../manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
+
 function obtenerToken() {
     return manejadorToken.getToken();
 }
@@ -16,7 +18,7 @@ export async function obtenerIncidencias() {
 
     if (!incidenciasObtenidas) {
         try {
-            const response = await fetch('http://185.166.39.117:8080/api/v1/incidencias', {
+            const response = await fetch('http://'+serverIP+'/api/v1/incidencias', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`

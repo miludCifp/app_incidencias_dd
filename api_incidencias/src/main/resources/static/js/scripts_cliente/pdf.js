@@ -1,3 +1,6 @@
+
+let serverIP = "185.166.39.117:8080";
+
 async function generarPDFParteTb(parteJSON, token) {
     // Decodificar el JSON serializado de parte
     const parte = JSON.parse(decodeURIComponent(parteJSON));
@@ -17,7 +20,7 @@ async function generarYDescargarPDF(idOrden, token, idIncidencia) {
         };
 
         // Hacer la petición GET al endpoint del servidor para obtener el PDF
-        const response = await fetch(`http://185.166.39.117:8080/api/v1/parte-trabajo/generar-pdf/${idOrden}`, {
+        const response = await fetch('http://'+serverIP+'/api/v1/parte-trabajo/generar-pdf/${idOrden}', {
             headers: headers
         });
 

@@ -1,24 +1,12 @@
 import * as manejadorToken from '../manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
+
 // Función para obtener el token
 function obtenerToken() {
     return manejadorToken.getToken();
 }
-/*
-                    idUseEdit
-                    comboGeneroEdit
-                    comboTipoDocEdit
-                    comboTipoDocEdit
-                    inputDocEdit
-                    nombreUserEdit
-                    apellidosUserEdit
-                    telfUserEdit
-                    emailUserEdit
-                    -----------------------
-                    errorMsgDoc
-                    errorMsgTlfn
-                    errorMsgEmail
-*/
+
 
 // Función para hacer peticion GET al servidor, utiliz el token
 async function obtenerUsuarios() {
@@ -26,7 +14,7 @@ async function obtenerUsuarios() {
     const token = await obtenerToken();
 
     // URL para la solicitud GET
-    const urlGet = 'http://185.166.39.117:8080/api/v1/clientes';
+    const urlGet = 'http://'+serverIP+'/api/v1/clientes';
 
     try {
         const response = await fetch(urlGet, {
@@ -459,7 +447,7 @@ async function editarUserCliente(objetoUsuario) {
             };
 
             // Si hay cambios, hacemos una solicitud PUT al servidor pasándole el id obtenido por la solicitud GET
-            var urlPut = 'http://185.166.39.117:8080/api/v1/clientes/' + idUserOriginal;
+            var urlPut = 'http://'+serverIP+'/api/v1/clientes/' + idUserOriginal;
 
 
             // Ahora comprobar si se ha introducido una nueva contraseña
@@ -593,7 +581,7 @@ async function actualizarUserCliente(urlPut, objetoUsuario, token) {
 
 async function actualizarPasswdCliente(idUser, usuario,token) {
     try {
-        const response = await fetch(`http://185.166.39.117:8080/api/v1/clientes/update-con-contraseña/${idUser}`, {
+        const response = await fetch('http://'+serverIP+'/api/v1/clientes/update-con-contraseña/${idUser}', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -632,7 +620,7 @@ async function eliminarCliente(boton, objetoUsuario) {
     console.log('id de la fila es : ' + idUser);
 
     // URL para la solicitud DELETE
-    var urlDelete = 'http://185.166.39.117:8080/api/v1/clientes/' + idUser;
+    var urlDelete = 'http://'+serverIP+'/api/v1/clientes/' + idUser;
 
     // Confirmar si el usuario realmente quiere eliminar la incidencia
     Swal.fire({

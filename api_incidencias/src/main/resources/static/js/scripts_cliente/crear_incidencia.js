@@ -1,5 +1,7 @@
 import * as manejadorToken from '../manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
+
 async function crearIncidencia() {
 
     const titulo = document.querySelector('#titulo').value;
@@ -25,7 +27,7 @@ async function crearIncidencia() {
         try {
             const token = manejadorToken.getToken();
 
-            const respuesta = await fetch('http://localhost:8080/api/v1/incidencias', {
+            const respuesta = await fetch('http://'+serverIP+'/api/v1/incidencias', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

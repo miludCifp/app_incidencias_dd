@@ -1,11 +1,13 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
+let serverIP = "http://185.166.39.117:8080";
+
 async function iniciarSesion() {
     const txtEmail = document.getElementById('inputEmail').value;
     const txtPassword = document.getElementById('inputPassword').value;
 
     if (txtEmail && txtPassword) {
-        const url = 'http://185.166.39.117:8080/auth/login';
+        const url = serverIP+'/auth/login';
 
         const data = {
             correoElectronico: txtEmail,
@@ -40,9 +42,9 @@ async function iniciarSesion() {
                 icon: 'success',
                 title: '¡Inicio de sesión exitoso!',
                 text: 'Sesión iniciada correctamente',
-            }).then((result) => {
+            }).then(async (result) => {
                 if (result.isConfirmed || result.isDismissed) {
-                    setTimeout(() => {
+                    setTimeout(async () => {
                         // Obtenemos el rol del usuario logueado
                         const token = manejadorToken.getToken();
                         const rolUser = manejadorToken.getRoleFromToken(token);
