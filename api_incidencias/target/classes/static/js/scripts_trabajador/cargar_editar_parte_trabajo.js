@@ -1,4 +1,4 @@
-
+let serverIP = "185.166.39.117:8080";
 let esModificadoMaterial = false;
 
 // Esta funcion carga la informacion del parte de trabajo a editar en el formulario de editar
@@ -108,7 +108,7 @@ async function editarParteTb(parteTb, token) {
 
 
     // Url para una peticion PUT al servidor
-    var urlPut = 'http://185.166.39.117:8080/api/v1/parte-trabajo/' + idOrden;
+    var urlPut = 'http://'+serverIP+'/api/v1/parte-trabajo/' + idOrden;
 
     // Escuchar el evento submit del formulario Editar parte de trabajo
     document.getElementById("editarParteTbForm").addEventListener("submit", async function (event) {
@@ -333,7 +333,7 @@ async function insertarNuevoMaterial(objetoMaterialAgregado, idOrden, token) {
     };
 
     try {
-        const respuesta = await fetch('http://185.166.39.117:8080/api/v1/material-utilizado', {
+        const respuesta = await fetch('http://'+serverIP+'/api/v1/material-utilizado', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -370,7 +370,7 @@ async function insertarNuevoMaterial(objetoMaterialAgregado, idOrden, token) {
 // Funcion que elimina el material del parte de trabajo de la bbdd
 async function eliminarMaterial(idMaterial, token) {
     // URL para la solicitud DELETE
-    var urlDelete = 'http://185.166.39.117:8080/api/v1/material-utilizado/' + idMaterial;
+    var urlDelete = 'http://'+serverIP+'/api/v1/material-utilizado/' + idMaterial;
 
     // Confirmar si el usuario realmente quiere eliminar la incidencia
     Swal.fire({
@@ -425,7 +425,7 @@ async function eliminarMaterial(idMaterial, token) {
 // Esta funcion actualiza el motivo de la incidencia relacionada con el parte de trabajo
 async function actualizarIncidencia(objetoNuevaIncidencia, idIncidencia, token) {
 
-    var urlPut = 'http://185.166.39.117:8080/api/v1/incidencias/' + idIncidencia;
+    var urlPut = 'http://'+serverIP+'/api/v1/incidencias/' + idIncidencia;
     // Realizamos la solicitud PUT al servidor
     try {
         const response = await fetch(urlPut, {

@@ -1,5 +1,7 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
+
 // Función para obtener el token
 function obtenerToken() {
     return manejadorToken.getToken();
@@ -43,7 +45,7 @@ async function registrarUserTrabajador() {
             };
 
             // URL para la solicitud POST
-            const urlPost = 'http://185.166.39.117:8080/auth/registrar-trabajador';
+            const urlPost = 'http://'+serverIP+'/auth/registrar-trabajador';
 
             try {
                 const response = await fetch(urlPost, {

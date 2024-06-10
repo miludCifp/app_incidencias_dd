@@ -1,3 +1,5 @@
+let serverIP = "185.166.39.117:8080";
+
 export function verDetallesParteTb(parteTb) {
     // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
     var subTituloElemento = document.getElementById("subtitle-ver-partes-tb");
@@ -245,7 +247,7 @@ async function eliminarParteTb(boton, parteTbJson, token) {
 
         console.log("idOrden de la fila seleccionada es  => ", idOrden);
         // URL para la solicitud DELETE
-        var urlDelete = 'http://185.166.39.117:8080/api/v1/parte-trabajo/' + idOrden;
+        var urlDelete = 'http://'+serverIP+'/api/v1/parte-trabajo/' + idOrden;
 
         // Confirmar si el usuario realmente quiere eliminar la incidencia
         Swal.fire({

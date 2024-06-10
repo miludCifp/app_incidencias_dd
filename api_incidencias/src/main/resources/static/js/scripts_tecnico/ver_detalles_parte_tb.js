@@ -1,5 +1,4 @@
 
-
 export function verDetallesParteTb(parteTb) {
     // Obtenemos el elemento subtitulo de la pagina Ver partes de trabajo por su id
     var subTituloElemento = document.getElementById("subtitle-ver-partes-tb");
