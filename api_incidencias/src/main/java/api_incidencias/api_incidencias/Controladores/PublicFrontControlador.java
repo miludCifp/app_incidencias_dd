@@ -1,9 +1,12 @@
 package api_incidencias.api_incidencias.Controladores;
 
+import api_incidencias.api_incidencias.Jwt.JwtService;
 import api_incidencias.api_incidencias.Servicios.Seguridad;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,6 +15,9 @@ public class PublicFrontControlador {
 
     @Autowired
     private Seguridad seguridad;
+
+    @Autowired
+    private JwtService jwtService;
 
     @GetMapping("login")
     public String iniciarSesion() {
@@ -40,17 +46,21 @@ public class PublicFrontControlador {
         return "error_500";
     }
 
-    /**************************/
     @GetMapping("inicio")
     public String inicio() {
+
         if (seguridad.isAdmin()) {
+            System.out.println("---> Ha entrado en la parte ADMIN");
             return "app_trabajador/inicio";
         } else if (seguridad.isTrabajador()) {
+            System.out.println("---> Ha entrado en la parte TECNICO");
             return "app_tecnico/inicio";
         } else if (seguridad.isCliente()) {
+            System.out.println("---> Ha entrado en la parte CLIENTE");
             return "app_cliente/inicio";
         }else {
-            return error404();
+            System.out.println("---> Ha entrado en la parte PAGINA ERROR");
+            return "error_404";
         }
 
     }

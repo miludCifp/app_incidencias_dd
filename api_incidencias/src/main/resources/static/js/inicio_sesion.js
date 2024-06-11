@@ -45,6 +45,7 @@ async function iniciarSesion() {
             }).then(async (result) => {
                 if (result.isConfirmed || result.isDismissed) {
                     setTimeout(async () => {
+                        /*
                         // Obtenemos el rol del usuario logueado
                         const token = manejadorToken.getToken();
                         const rolUser = manejadorToken.getRoleFromToken(token);
@@ -57,6 +58,37 @@ async function iniciarSesion() {
                         }else if(rolUser === 'cliente'){
                             window.location.href = 'app_cliente/inicio';
                         }
+                         */
+
+                        // Obtenemos el rol del usuario logueado
+                        //const token = manejadorToken.getToken();
+                        //const rolUser = manejadorToken.getRoleFromToken(token);
+                        console.warn("Token del response --->"+responseData.token);
+
+                        try {
+                            const response = await fetch(serverIP + '/inicio', {
+                                method: 'GET',
+                                headers: {
+                                    'Authorization': 'Bearer ' + responseData.token,
+                                    'Content-Type': 'application/json'
+                                }
+                            });
+
+                            if (response.ok) {
+                                // Redirigir a la URL 'inicio'
+                                //window.location.href = serverIP + '/inicio';
+
+                                const htmlContent = await response.text();
+                                document.open();
+                                document.write(htmlContent);
+                                document.close();
+                            } else {
+                                console.warn('Error al obtener la página HTML');
+                            }
+                        } catch (error) {
+                            console.error(error);
+                        }
+
 
                     }, 1000); // 1 segundo
                 }
