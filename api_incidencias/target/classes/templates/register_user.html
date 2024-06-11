@@ -68,12 +68,16 @@
                                             <div class="col-md-6">
                                                 <div class="form-floating mb-3 mb-md-0">
                                                     <select class="form-select" id="comboGenero"
-                                                        aria-label="Seleccione su país">
-                                                        <option value="hombre" selected>Hombre</option>
+                                                        aria-label="Seleccione su genero">
+                                                        <option value="sexo" selected>Sexo</option>
+                                                        <option value="hombre">Hombre</option>
                                                         <option value="mujer">Mujer</option>
                                                         <option value="sinGenero">sin Genero</option>
                                                     </select>
                                                     <label for="comboGenero">Género</label>
+                                                    <div id="errorMsgGenero" class="alert alert-danger" role="alert"
+                                                         style="padding: 5px; margin-bottom: 0; word-wrap: break-word; display: none;">
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -233,7 +237,7 @@
                                             <div class="d-grid"><a class="btn btn-primary btn-block" href="login"
                                                     id="btnCrearCuenta">Crear cuenta</a></div>
                                         </div>
-                                        <!-- Botones Google y Apple-->
+                                        <!-- Botones Google y Apple ------
                                         <hr class="my-2">
                                         <div class="text-center mb-3">o registra cuenta con Google o Apple</div>
                                         <div class="row">
@@ -246,7 +250,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <!-- Fin Botones Google y Apple-->
+                                        -------- Fin Botones Google y Apple-->
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
@@ -255,9 +259,11 @@
                                 </div>
                             </div>
                         </div>
+                        <!--
                         <br>
                             <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
                         <br>
+                        -->
                     </div>
                 </div>
             </main>
@@ -266,7 +272,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital <span id="year"></span></div>
                         <div>
                             <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
                             &middot;
@@ -284,6 +290,9 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!--====== Scripts de funcionalidades de la app ======-->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script src="/js/registro_user.js"></script>
 </body>
 

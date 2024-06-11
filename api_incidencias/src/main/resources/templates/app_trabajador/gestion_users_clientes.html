@@ -48,22 +48,24 @@
                             Listado de usuarios
                         </div>
                         <div class="card-body">
-                            <table id="datatablesSimple" class="table">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Documento</th>
-                                        <th>Nombre</th>
-                                        <th>Apellidos</th>
-                                        <th>Email</th>
-                                        <th>Telefono</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Se cargarán dinamicamente aqui los usuarios clientes -->
-                                </tbody>
-                            </table>
+                            <div style="overflow-x: auto;">
+                                <table id="datatablesSimple" class="table" style="min-width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Documento</th>
+                                            <th>Nombre</th>
+                                            <th>Apellidos</th>
+                                            <th>Email</th>
+                                            <th>Telefono</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Se cargarán dinamicamente aqui los usuarios clientes -->
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <!-- Fin Tabla Gestion usuarios -->
@@ -231,7 +233,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital <span id="year"></span></div>
                         <div>
                             <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
                             &middot;
@@ -252,6 +254,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--====== Scripts de funcionalidades de la app ======-->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script type="module" src="/js/scripts_trabajador/gestion_clientes.js"></script>
 
 </body>

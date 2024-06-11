@@ -1,38 +1,9 @@
-localhost
 
-/*
-comboTipoDoc
-inputDoc
-comboGenero
-inputName
-inputFirstName
-inputLastName
-inputEmail
-inputPassword
-inputPasswordConfirm
-inputTlfn
-inputCiudad
-inputCalle
-inputProvincia
-inputPostalCode
-comboPais
-----------------
-errorMsgInputDoc
-errorMsgInputEmail
-errorMsgPasswd
-errorMsgConfirmPasswd
-errorMsgTlfn
-errorMsgCiudad
-errorMsgCalle
-errorMsgProvincia
-errorMsgCp
-errorMsgPais
-*/
+let serverIP = "http://185.166.39.117:8080";
 
-
-
-function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, cp, pais) {
+function validarCampos(tipoDoc, doc,genero, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, cp, pais) {
     var msgErrInputDoc = document.getElementById("errorMsgInputDoc");
+    var msgErrGenero = document.getElementById("errorMsgGenero");
     var msgErrEmail = document.getElementById("errorMsgInputEmail");
     var msgErrPasswd = document.getElementById("errorMsgPasswd");
     var msgErrConfirmPasswd = document.getElementById("errorMsgConfirmPasswd");
@@ -45,6 +16,7 @@ function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad,
 
     // Ocultamos los mensajes de error si estaban visibles
     msgErrInputDoc.style.display = "none";
+    msgErrGenero.style.display = "none";
     msgErrEmail.style.display = "none";
     msgErrPasswd.style.display = "none";
     msgErrConfirmPasswd.style.display = "none";
@@ -89,6 +61,12 @@ function validarCampos(tipoDoc, doc, email, passwd, confirmPasswd, tlfn, ciudad,
     } else if (tipoDoc === 'CIF' && !(cifValido.test(doc))) {
         msgErrInputDoc.style.display = "block";
         msgErrInputDoc.textContent = 'CIF no valido. Formato admitido: A12345678';
+        return false;
+    }
+
+    if (genero === 'sexo') {
+        msgErrGenero.style.display = "block";
+        msgErrGenero.textContent = 'Por favor, selecciona un genero';
         return false;
     }
 
@@ -196,8 +174,8 @@ async function registrarCliente() {
     const pais = document.getElementById('comboPais').value;
 
 
-    if (validarCampos(tipoDocumento, documento, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, codigoPostal, pais)) {
-        const url = 'http://185.166.39.117:8080/auth/registrar-cliente';
+    if (validarCampos(tipoDocumento, documento,genero, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, codigoPostal, pais)) {
+        const url = serverIP+'/auth/registrar-cliente';
 
         const data = {
             tipoDocumento: tipoDocumento,
@@ -234,8 +212,11 @@ async function registrarCliente() {
                 icon: 'success',
                 title: '¡Registro exitoso!',
                 text: 'Ya tienes tu cuenta creada',
+                willClose: function () {
+                    window.location.href = '/login';
+                }
             });
-            console.log('Trabajador registrado exitosamente:', responseData);
+            console.log('Cliente registrado exitosamente:', responseData);
         } catch (error) {
             Swal.fire({
                 icon: 'error',

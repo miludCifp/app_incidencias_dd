@@ -1,6 +1,7 @@
 import * as obtenerInfoUser from './obtener_info_user.js';
 import * as manejadorToken from '../manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
 let fileImagen;
 
 function obtenerToken() {
@@ -223,7 +224,7 @@ async function subirImagen(file) {
         formData.append('file', file);
 
         // Construir la URL para la solicitud POST
-        const url = `http://185.166.39.117:8080/api/v1/usuarios/imagen`;
+        const url = 'http://'+serverIP+'/api/v1/usuarios/imagen';
 
         const token = await obtenerToken();
 

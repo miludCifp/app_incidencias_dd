@@ -49,52 +49,54 @@
                             Listado de partes de trabajo
                         </div>
                         <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Id incidencia</th>
-                                        <th>Motivo</th>
-                                        <th>Diagnóstico</th>
-                                        <th>Trabajo realizado</th>
-                                        <th>Observaciones</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Id</th>
-                                        <th>Id incidencia</th>
-                                        <th>Motivo</th>
-                                        <th>Diagnóstico</th>
-                                        <th>Trabajo realizado</th>
-                                        <th>Observaciones</th>
-                                        <th>Opciones</th>
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <!--
-                                    <tr>
-                                        <td>01</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh hola</td>
-                                        <td>Trabajo 01</td>
-                                        <td>Todo perfecto</td>
-                                        <td>
-                                            <button onclick="verDetallesParteTb(this)" type="button"
-                                                class="btn btn-sm btn-primary" id="btn_detalles_parte_tb">Ver
-                                                detalles</button>
-                                            <button onclick="generarPDFParteTb(this)" type="button"
-                                                class="btn btn-sm btn-info" id="btn_pdf_parte_tb">Generar PDF</button>
-                                            <button onclick="editarParteTb(this)" type="button"
-                                                class="btn btn-sm btn-warning" id="btn_edit_parte_tb">Editar</button>
-                                            <button onclick="eliminarParteTb(this)" type="button"
-                                                class="btn btn-sm btn-danger" id="btn_delete_parte_tb">Eliminar</button>
-                                        </td>
-                                    </tr>
-                                    -->
-                                </tbody>
-                            </table>
+                            <div style="overflow-x: auto;">
+                                <table id="datatablesSimple" class="table" style="min-width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Id incidencia</th>
+                                            <th>Motivo</th>
+                                            <th>Diagnóstico</th>
+                                            <th>Trabajo realizado</th>
+                                            <th>Observaciones</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Id incidencia</th>
+                                            <th>Motivo</th>
+                                            <th>Diagnóstico</th>
+                                            <th>Trabajo realizado</th>
+                                            <th>Observaciones</th>
+                                            <th>Opciones</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <!--
+                                        <tr>
+                                            <td>01</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh hola</td>
+                                            <td>Trabajo 01</td>
+                                            <td>Todo perfecto</td>
+                                            <td>
+                                                <button onclick="verDetallesParteTb(this)" type="button"
+                                                    class="btn btn-sm btn-primary" id="btn_detalles_parte_tb">Ver
+                                                    detalles</button>
+                                                <button onclick="generarPDFParteTb(this)" type="button"
+                                                    class="btn btn-sm btn-info" id="btn_pdf_parte_tb">Generar PDF</button>
+                                                <button onclick="editarParteTb(this)" type="button"
+                                                    class="btn btn-sm btn-warning" id="btn_edit_parte_tb">Editar</button>
+                                                <button onclick="eliminarParteTb(this)" type="button"
+                                                    class="btn btn-sm btn-danger" id="btn_delete_parte_tb">Eliminar</button>
+                                            </td>
+                                        </tr>
+                                        -->
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                     <!-- Fin Tabla listado de partes de trabajo -->
@@ -244,7 +246,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital <span id="year"></span></div>
                         <div>
                             <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
                             &middot;
@@ -265,6 +267,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!--====== Scripts de funcionalidades de la app ======-->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script src="/js/scripts_tecnico/cargar_editar_parte_trabajo.js"></script>
     <script type="module" src="/js/scripts_tecnico/ver_parte_trabajo.js"></script>
     <!--<script src="/js/scripts_tecnico/ver_detalles_parte_tb.js"></script>-->

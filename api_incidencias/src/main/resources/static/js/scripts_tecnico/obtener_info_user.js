@@ -1,5 +1,6 @@
 import * as manejadorToken from '../manejador_token.js';
 
+let serverIP = "185.166.39.117:8080";
 let datosUsuario = null; // Variable para almacenar los datos del usuario
 
 function obtenerToken() {
@@ -15,7 +16,7 @@ export async function obtenerDatosUser() {
     if (!datosUsuario) {
         try {
             const token = await obtenerToken();
-            const response = await fetch('http://185.166.39.117:8080/api/v1/trabajadores/' + obtenerIDUser(token), {
+            const response = await fetch('http://'+serverIP+'/api/v1/trabajadores/' + obtenerIDUser(token), {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -58,7 +59,7 @@ export function cargarNombreUser(objetoDatosUser) {
 export async function cargarImgUser(){
     try {
         const token = await obtenerToken(); // Suponiendo que tienes una función para obtener el token de autorización
-        const response = await fetch('http://185.166.39.117:8080/api/v1/usuarios/obtener-imagen-user', {
+        const response = await fetch('http://'+serverIP+'/api/v1/usuarios/obtener-imagen-user', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

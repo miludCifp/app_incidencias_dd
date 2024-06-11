@@ -1,6 +1,8 @@
 import * as manejadorToken from '../manejador_token.js';
 import * as pagDetallesParteTb from "./ver_detalles_parte_tb.js";
 
+let serverIP = "http://185.166.39.117:8080";
+
 function obtenerToken() {
     return manejadorToken.getToken();
 }
@@ -16,7 +18,7 @@ async function obtenerPartesTrabajo() {
     const idUser = await getIdFromToken(token);
 
     try {
-        const response = await fetch('http://185.166.39.117:8080/api/v1/parte-trabajo/cliente/'+idUser, {
+        const response = await fetch(serverIP+'/api/v1/parte-trabajo/cliente/'+idUser, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

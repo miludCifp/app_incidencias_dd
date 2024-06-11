@@ -1,6 +1,8 @@
 import * as manejadorToken from '../manejador_token.js';
 import * as pagDetallesIncidencia from "./ver_detalles_incidencia.js";
 
+let serverIP = "http://185.166.39.117:8080";
+
 function obtenerToken() {
     return manejadorToken.getToken();
 }
@@ -13,7 +15,7 @@ async function obtenerIncidenciasReabiertas(idIncidencia) {
     const token = await obtenerToken();
 
     try {
-        const response = await fetch('http://185.166.39.117:8080/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
+        const response = await fetch(serverIP+'/api/v1/incidencias/incidencias-reabiertas/' + idIncidencia, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`

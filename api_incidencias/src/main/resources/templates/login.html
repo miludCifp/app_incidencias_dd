@@ -9,7 +9,7 @@
     <meta name="author" content="" />
     <title>Iniciar sesión - Incidencias DonDigital</title>
     <link rel="icon" href="/assets/img/icon_dondigital.png" type="image/png">
-    <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
@@ -69,7 +69,7 @@
                                             </div>
                                         </div>
                                         
-                                        <!-- Botones Google y Apple-->
+                                        <!-- Botones Google y Apple ----
                                         <hr class="my-2">
                                         <div class="text-center mb-3">o inicia sesion con Google o Apple</div>
                                         <div class="row">
@@ -82,7 +82,7 @@
                                                 </a>
                                             </div>
                                         </div>
-                                        <!-- Fin Botones Google y Apple-->
+                                        --- Fin Botones Google y Apple-->
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
@@ -91,11 +91,11 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!--
                         <br>
                             <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
                         <br>
-
+                        -->
                     </div>
                 </div>
             </main>
@@ -104,7 +104,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital 2023</div>
+                        <div class="text-muted">Todos los derechos reservados &copy; DonDigital <span id="year"></span></div>
                         <div>
                             <a href="https://dondigital.es/aviso-legal/">Aviso legal</a>
                             &middot;
@@ -122,6 +122,9 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
     <!--====== Scripts de funcionalidades de la app ======-->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
     <script type="module" src="/js/inicio_sesion.js"></script>
 </body>
 

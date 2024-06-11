@@ -1,35 +1,5 @@
 
-
-/*
-comboTipoDoc
-inputDoc
-comboGenero
-inputName
-inputFirstName
-inputLastName
-inputEmail
-inputPassword
-inputPasswordConfirm
-inputTlfn
-inputCiudad
-inputCalle
-inputProvincia
-inputPostalCode
-comboPais
-----------------
-errorMsgInputDoc
-errorMsgInputEmail
-errorMsgPasswd
-errorMsgConfirmPasswd
-errorMsgTlfn
-errorMsgCiudad
-errorMsgCalle
-errorMsgProvincia
-errorMsgCp
-errorMsgPais
-*/
-
-
+let serverIP = "http://185.166.39.117:8080";
 
 function validarCampos(tipoDoc, doc,genero, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, cp, pais) {
     var msgErrInputDoc = document.getElementById("errorMsgInputDoc");
@@ -205,7 +175,7 @@ async function registrarCliente() {
 
 
     if (validarCampos(tipoDocumento, documento,genero, email, passwd, confirmPasswd, tlfn, ciudad, calle, provincia, codigoPostal, pais)) {
-        const url = 'http://localhost:8080/auth/registrar-cliente';
+        const url = serverIP+'/auth/registrar-cliente';
 
         const data = {
             tipoDocumento: tipoDocumento,
@@ -242,8 +212,11 @@ async function registrarCliente() {
                 icon: 'success',
                 title: '¡Registro exitoso!',
                 text: 'Ya tienes tu cuenta creada',
+                willClose: function () {
+                    window.location.href = '/login';
+                }
             });
-            console.log('Trabajador registrado exitosamente:', responseData);
+            console.log('Cliente registrado exitosamente:', responseData);
         } catch (error) {
             Swal.fire({
                 icon: 'error',
