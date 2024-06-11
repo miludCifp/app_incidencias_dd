@@ -1,6 +1,6 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
-let serverIP = "http://localhost:8080";
+let serverIP = "http://185.166.39.117:8080";
 
 async function iniciarSesion() {
     const txtEmail = document.getElementById('inputEmail').value;
