@@ -46,7 +46,7 @@ public class PublicFrontControlador {
         return "error_500";
     }
 
-    /***********************************
+    /*********************
     @GetMapping("inicio")
     public String inicio() {
         if (seguridad.isAdmin()) {
@@ -72,7 +72,7 @@ public class PublicFrontControlador {
             return "error_404";
         }
     }
-     *************************/
+     **************/
 
 
 
