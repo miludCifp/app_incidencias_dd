@@ -46,6 +46,8 @@ async function iniciarSesion() {
                 if (result.isConfirmed || result.isDismissed) {
                     setTimeout(async () => {
 
+
+
                         // Obtenemos el rol del usuario logueado
                         const token = manejadorToken.getToken();
                         const rolUser = manejadorToken.getRoleFromToken(token);
@@ -60,8 +62,32 @@ async function iniciarSesion() {
                         }
 
 
-                        /*
 
+
+                        /*
+                        // Obtenemos el rol del usuario logueado
+                        const token = manejadorToken.getToken();
+                        const rolUser = manejadorToken.getRoleFromToken(token);
+                        console.log('rol user es ---->' + rolUser);
+
+                        // Comprobamos el rol y mandamos la página de inicio desde el controlador correspondiente
+                        let baseUrl;
+                        if (rolUser === 'administrador') {
+                            baseUrl = 'app_trabajador/inicio';
+                        } else if (rolUser === 'tecnico') {
+                            baseUrl = 'app_tecnico/inicio';
+                        } else if (rolUser === 'cliente') {
+                            baseUrl = 'app_cliente/inicio';
+                        }
+
+                        if (baseUrl) {
+                            window.location.href = `${baseUrl}?token=${token}`;
+                        }
+                        */
+
+
+
+                        /*
                         // Obtenemos el rol del usuario logueado
                         //const token = manejadorToken.getToken();
                         const rolUser = manejadorToken.getRoleFromToken(responseData.token);
@@ -103,6 +129,8 @@ async function iniciarSesion() {
                         }
 
                          */
+
+
 
 
                     }, 1000); // 1 segundo
