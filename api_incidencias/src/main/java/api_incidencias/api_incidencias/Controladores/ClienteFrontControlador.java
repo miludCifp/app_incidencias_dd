@@ -22,7 +22,7 @@ public class ClienteFrontControlador {
 
     @GetMapping("/ajustes_perfil_user")
     public String ajustes_perfil_user() {
-        return "app_cliente/ajuste_perfil_user";
+        return "app_cliente/ajustes_perfil_user";
     }
 
     @GetMapping("/inicio")
