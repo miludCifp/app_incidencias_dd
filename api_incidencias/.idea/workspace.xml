@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="arreglo botones subfilas">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="seguridad">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/AdminFrontControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api_incidencias/api_incidencias/Controladores/AdminFrontControlador.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,14 +161,6 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
-    </task>
-    <task id="LOCAL-00012" summary="ultimos cambios en las clases">
-      <option name="closed" value="true" />
-      <created>1712242464395</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1712242464395</updated>
     </task>
     <task id="LOCAL-00013" summary="cambios añadidos">
       <option name="closed" value="true" />
@@ -553,7 +546,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717488612562</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="seguridad">
+      <option name="closed" value="true" />
+      <created>1718012237104</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1718012237105</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -571,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Crear carpeta Generar PDF ultimos cambios" />
     <MESSAGE value="cambios rotos" />
     <MESSAGE value="cambios no seguros" />
     <MESSAGE value="cambios de esta mañana" />
@@ -596,7 +596,8 @@
     <MESSAGE value="arreglo query findByCliente" />
     <MESSAGE value="arreglo" />
     <MESSAGE value="arreglo botones subfilas" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglo botones subfilas" />
+    <MESSAGE value="seguridad" />
+    <option name="LAST_COMMIT_MESSAGE" value="seguridad" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

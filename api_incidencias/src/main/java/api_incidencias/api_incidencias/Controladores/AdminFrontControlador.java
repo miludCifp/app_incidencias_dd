@@ -84,6 +84,4 @@ public class AdminFrontControlador {
         return "app_trabajador/ver_partes_trabajo";
         return null;
     }
-
-
 }
