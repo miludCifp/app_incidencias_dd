@@ -48,6 +48,7 @@ public class Seguridad {
      * @return cliente,tecnico,tecnico_jefe,admin
      */
     public String getRol() {
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.isAuthenticated() && authentication.getPrincipal() instanceof UserDetails) {
             HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
@@ -58,6 +59,7 @@ public class Seguridad {
 
                 // Obtener el "rol" del token
                 String rol = jwtService.getRoleFromToken(token);
+                System.out.println("---> EL ROL del servidor es --->"+rol);
 
                 // Crear y devolver el objeto Rol con la información obtenida del token
                 return rol;

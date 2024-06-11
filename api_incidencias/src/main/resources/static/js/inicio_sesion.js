@@ -1,6 +1,6 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
-let serverIP = "http://localhost:8080";
+let serverIP = "http://185.166.39.117:8080";
 
 async function iniciarSesion() {
     const txtEmail = document.getElementById('inputEmail').value;
@@ -63,6 +63,7 @@ async function iniciarSesion() {
                         // Obtenemos el rol del usuario logueado
                         //const token = manejadorToken.getToken();
                         //const rolUser = manejadorToken.getRoleFromToken(token);
+                        console.warn("Token del response --->"+responseData.token);
 
                         try {
                             const response = await fetch(serverIP + '/inicio', {
@@ -75,7 +76,12 @@ async function iniciarSesion() {
 
                             if (response.ok) {
                                 // Redirigir a la URL 'inicio'
-                                window.location.href = serverIP + '/inicio';
+                                //window.location.href = serverIP + '/inicio';
+
+                                const htmlContent = await response.text();
+                                document.open();
+                                document.write(htmlContent);
+                                document.close();
                             } else {
                                 console.warn('Error al obtener la página HTML');
                             }

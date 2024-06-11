@@ -46,57 +46,23 @@ public class PublicFrontControlador {
         return "error_500";
     }
 
-    /**************
-    @GetMapping("inicio")
-    public String inicio(HttpServletRequest request) {
-        String token = request.getHeader("Authorization");
-        if (token != null && token.startsWith("Bearer ")) {
-            token = token.substring(7); // Eliminar el prefijo "Bearer "
-        }
-
-        //String rolUser = jwtService.getRoleFromToken(token);
-
-        if (seguridad.isAdmin()) {
-            return "app_trabajador/inicio";
-        } else if (seguridad.isTrabajador()) {
-            return "app_tecnico/inicio";
-        } else if (seguridad.isCliente()) {
-            return "app_cliente/inicio";
-        } else {
-            return "error_404"; // Ajusta esta línea para redirigir a una página de error adecuada
-        }
-    }
-    **********/
     @GetMapping("inicio")
     public String inicio() {
 
         if (seguridad.isAdmin()) {
+            System.out.println("---> Ha entrado en la parte ADMIN");
             return "app_trabajador/inicio";
         } else if (seguridad.isTrabajador()) {
+            System.out.println("---> Ha entrado en la parte TECNICO");
             return "app_tecnico/inicio";
         } else if (seguridad.isCliente()) {
+            System.out.println("---> Ha entrado en la parte CLIENTE");
             return "app_cliente/inicio";
-        } else {
-            return "error_404"; // Ajusta esta línea para redirigir a una página de error adecuada
+        }else {
+            System.out.println("---> Ha entrado en la parte PAGINA ERROR");
+            return "error_404";
         }
+
     }
-
-/*************
-    @GetMapping("inicio/{token}")
-    public String inicio(@PathVariable("token") String token) {
-
-        String rolUser = jwtService.getRoleFromToken(token);
-
-        if ("administrador".equalsIgnoreCase(rolUser)) {
-            return "app_trabajador/inicio";
-        } else if ("tecnico".equalsIgnoreCase(rolUser)) {
-            return "app_tecnico/inicio";
-        } else if ("cliente".equalsIgnoreCase(rolUser)) {
-            return "app_cliente/inicio";
-        } else {
-            return "error_404"; // Ajusta esta línea para redirigir a una página de error adecuada
-        }
-    }
- *************/
 
 }
