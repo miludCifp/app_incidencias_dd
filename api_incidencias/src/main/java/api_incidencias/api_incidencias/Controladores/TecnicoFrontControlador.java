@@ -16,19 +16,17 @@ public class TecnicoFrontControlador {
     public String ajustes_perfil_user() {
         if (seguridad.isTrabajador())
         return "app_tecnico/ajustes_perfil_user";
-        return " error_404";
+        return "/error_404";
     }
     @GetMapping("/inicio")
     public String inicio() {
-        if (seguridad.isTrabajador())
         return "app_tecnico/inicio";
-        return " error_404";
     }
     @GetMapping("/add_incidencias")
     public String add_incidencias() {
         if (seguridad.isTrabajador())
         return "app_tecnico/add_incidencias";
-        return " error_404";
+        return "/error_404";
     }
 
 
@@ -36,7 +34,7 @@ public class TecnicoFrontControlador {
     public String ver_incidencias() {
         if (seguridad.isTrabajador())
         return "app_tecnico/ver_incidencias";
-        return " error_404";
+        return "/error_404";
     }
 
 
@@ -44,7 +42,7 @@ public class TecnicoFrontControlador {
     public String ver_partes_trabajo() {
         if (seguridad.isTrabajador())
         return "app_tecnico/ver_partes_trabajo";
-        return " error_404";
+        return "/error_404";
     }
 
 }

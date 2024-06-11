@@ -18,14 +18,17 @@ public class ClienteFrontControlador {
     public String ajustes_perfil_user() {
         if (seguridad.isCliente())
         return "app_cliente/ajuste_perfil_user";
-        return " error_404";
+        return "/error_404";
     }
 
     @GetMapping("/inicio")
     public String inicio() {
+        return "app_cliente/inicio";
+        /*
         if (seguridad.isCliente())
         return "app_cliente/inicio";
-        return " error_404";
+        return "/error_404";
+         */
     }
 
 
@@ -33,7 +36,7 @@ public class ClienteFrontControlador {
     public String add_incidencias() {
         if (seguridad.isCliente())
         return "app_cliente/add_incidencias";
-        return " error_404";
+        return "/error_404";
     }
 
 
@@ -41,13 +44,13 @@ public class ClienteFrontControlador {
     public String ver_incidencias() {
         if (seguridad.isCliente())
         return "app_cliente/ver_incidencias";
-        return " error_404";
+        return "/error_404";
     }
     @GetMapping("/ver_partes_trabajo")
     public String ver_partes_trabajo() {
         if (seguridad.isCliente())
         return "app_cliente/ver_partes_trabajo";
-        return " error_404";
+        return "/error_404";
     }
 
 
