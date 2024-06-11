@@ -1,6 +1,6 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
-let serverIP = "http://185.166.39.117:8080";
+let serverIP = "http://localhost:8080";
 
 async function iniciarSesion() {
     const txtEmail = document.getElementById('inputEmail').value;
@@ -45,6 +45,7 @@ async function iniciarSesion() {
             }).then(async (result) => {
                 if (result.isConfirmed || result.isDismissed) {
                     setTimeout(async () => {
+                        /*
                         // Obtenemos el rol del usuario logueado
                         const token = manejadorToken.getToken();
                         const rolUser = manejadorToken.getRoleFromToken(token);
@@ -57,6 +58,31 @@ async function iniciarSesion() {
                         }else if(rolUser === 'cliente'){
                             window.location.href = 'app_cliente/inicio';
                         }
+                         */
+
+                        // Obtenemos el rol del usuario logueado
+                        //const token = manejadorToken.getToken();
+                        //const rolUser = manejadorToken.getRoleFromToken(token);
+
+                        try {
+                            const response = await fetch(serverIP + '/inicio', {
+                                method: 'GET',
+                                headers: {
+                                    'Authorization': 'Bearer ' + responseData.token,
+                                    'Content-Type': 'application/json'
+                                }
+                            });
+
+                            if (response.ok) {
+                                // Redirigir a la URL 'inicio'
+                                window.location.href = serverIP + '/inicio';
+                            } else {
+                                console.warn('Error al obtener la página HTML');
+                            }
+                        } catch (error) {
+                            console.error(error);
+                        }
+
 
                     }, 1000); // 1 segundo
                 }
