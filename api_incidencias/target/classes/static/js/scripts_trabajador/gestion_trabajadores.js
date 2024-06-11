@@ -561,7 +561,7 @@ async function actualizarUsuarioTrabajador(urlPut, objetoUsuario,token) {
 
 async function actualizarPasswdTrabajador(idUser, usuario,token) {
     try {
-        const response = await fetch('http://'+serverIP+'/api/v1/trabajadores/update-con-contraseña/${idUser}', {
+        const response = await fetch('http://'+serverIP+'/api/v1/trabajadores/update-con-contraseña/'+idUser, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
