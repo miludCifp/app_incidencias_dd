@@ -87,18 +87,27 @@ public class Seguridad {
     }
 
     public boolean isAdmin(){
-        return getRol().equalsIgnoreCase("administrador");
+        String rol = getRol();
+        if (rol == null )return false;
+        return rol.equalsIgnoreCase("administrador");
     }
     public boolean isTrabajador(){
-        return getRol().equalsIgnoreCase("tecnico") || getRol().equalsIgnoreCase("tecnico_jefe") || getRol().equalsIgnoreCase("administrador");
+        String rol = getRol();
+        if (rol == null )return false;
+        return rol.equalsIgnoreCase("tecnico") || rol.equalsIgnoreCase("tecnico_jefe") || rol.equalsIgnoreCase("administrador");
     }
     public boolean isTecnicoJefe(){
-        return getRol().equalsIgnoreCase("tecnico");
+        String rol = getRol();
+        if (rol == null )return false;
+        return rol.equalsIgnoreCase("tecnico");
+
     }
     public boolean isElMismo(String correo){
         return getCorreoPeticion().equals(correo);
     }
     public boolean isCliente(){
-        return getRol().equalsIgnoreCase("cliente");
+        String rol = getRol();
+        if (rol == null )return false;
+        return rol.equalsIgnoreCase("cliente");
     }
 }
