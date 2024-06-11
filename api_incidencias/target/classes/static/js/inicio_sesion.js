@@ -1,6 +1,6 @@
 import * as manejadorToken from '/js/manejador_token.js';
 
-let serverIP = "http://185.166.39.117:8080";
+let serverIP = "http://localhost:8080";
 
 async function iniciarSesion() {
     const txtEmail = document.getElementById('inputEmail').value;
@@ -62,7 +62,7 @@ async function iniciarSesion() {
 
                         // Obtenemos el rol del usuario logueado
                         //const token = manejadorToken.getToken();
-                        //const rolUser = manejadorToken.getRoleFromToken(token);
+                        const rolUser = manejadorToken.getRoleFromToken(responseData.token);
                         console.warn("Token del response --->"+responseData.token);
 
                         try {
@@ -77,6 +77,17 @@ async function iniciarSesion() {
                             if (response.ok) {
                                 // Redirigir a la URL 'inicio'
                                 //window.location.href = serverIP + '/inicio';
+
+                                // Cambiar la URL sin recargar la página
+
+                                if(rolUser === 'administrador'){
+                                    //window.location.href = 'app_trabajador/inicio'; // Cambia 'nueva_pagina.html' por la ruta de tu nueva página
+                                    window.history.pushState({}, '', serverIP + '/app_trabajador/inicio');
+                                }else if(rolUser === 'tecnico'){
+                                    window.history.pushState({}, '', serverIP + '/app_tecnico/inicio');
+                                }else if(rolUser === 'cliente'){
+                                    window.history.pushState({}, '', serverIP + '/app_cliente/inicio');
+                                }
 
                                 const htmlContent = await response.text();
                                 document.open();
