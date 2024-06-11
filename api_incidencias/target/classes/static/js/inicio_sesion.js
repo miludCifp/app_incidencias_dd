@@ -45,7 +45,7 @@ async function iniciarSesion() {
             }).then(async (result) => {
                 if (result.isConfirmed || result.isDismissed) {
                     setTimeout(async () => {
-                        /*
+
                         // Obtenemos el rol del usuario logueado
                         const token = manejadorToken.getToken();
                         const rolUser = manejadorToken.getRoleFromToken(token);
@@ -58,7 +58,9 @@ async function iniciarSesion() {
                         }else if(rolUser === 'cliente'){
                             window.location.href = 'app_cliente/inicio';
                         }
-                         */
+
+
+                        /*
 
                         // Obtenemos el rol del usuario logueado
                         //const token = manejadorToken.getToken();
@@ -99,6 +101,8 @@ async function iniciarSesion() {
                         } catch (error) {
                             console.error(error);
                         }
+
+                         */
 
 
                     }, 1000); // 1 segundo

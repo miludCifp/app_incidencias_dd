@@ -46,23 +46,34 @@ public class PublicFrontControlador {
         return "error_500";
     }
 
+    /***********************************
     @GetMapping("inicio")
     public String inicio() {
-
         if (seguridad.isAdmin()) {
-            System.out.println("---> Ha entrado en la parte ADMIN");
             return "app_trabajador/inicio";
         } else if (seguridad.isTrabajador()) {
-            System.out.println("---> Ha entrado en la parte TECNICO");
             return "app_tecnico/inicio";
         } else if (seguridad.isCliente()) {
-            System.out.println("---> Ha entrado en la parte CLIENTE");
             return "app_cliente/inicio";
         }else {
-            System.out.println("---> Ha entrado en la parte PAGINA ERROR");
             return "error_404";
         }
-
     }
+
+    @GetMapping("add_incidencias")
+    public String add_incidencias() {
+        if (seguridad.isAdmin()) {
+            return "app_trabajador/add_incidencias";
+        } else if (seguridad.isTrabajador()) {
+            return "app_tecnico/add_incidencias";
+        } else if (seguridad.isCliente()) {
+            return "app_cliente/add_incidencias";
+        }else {
+            return "error_404";
+        }
+    }
+     *************************/
+
+
 
 }
