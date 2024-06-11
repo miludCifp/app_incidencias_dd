@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="Arreglando Ver incidencias desde Parte de trabajo">
+    <list default="true" id="122f4f12-e731-42b4-9646-1965a21c5aaa" name="Changes" comment="seguridad">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,26 +71,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ApiIncidenciasApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Kevin",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/templates/app_cliente",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApiIncidenciasApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.api_incidencias [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.api_incidencias [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Kevin&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MEDO/Desktop/App_incidencias_dd/api_incidencias/src/main/resources/templates/app_cliente&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\MEDO\Desktop\App_incidencias_dd\api_incidencias\src\main\resources\templates\app_cliente" />
@@ -158,70 +160,6 @@
       <updated>1712140874987</updated>
       <workItem from="1716322799469" duration="1459000" />
       <workItem from="1716363068379" duration="4093000" />
-    </task>
-    <task id="LOCAL-00006" summary="Listo">
-      <option name="closed" value="true" />
-      <created>1712156240110</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1712156240110</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Listo">
-      <option name="closed" value="true" />
-      <created>1712156271937</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1712156271937</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Ultimos cambios - Hecho">
-      <option name="closed" value="true" />
-      <created>1712217867180</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1712217867180</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Ultimos cambios - cambios en las clases">
-      <option name="closed" value="true" />
-      <created>1712220487619</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1712220487619</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Creando el Controlador de Incidencias Reabiertas">
-      <option name="closed" value="true" />
-      <created>1712222671442</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1712222671442</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Añadiendo clases">
-      <option name="closed" value="true" />
-      <created>1712242137706</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1712242137706</updated>
-    </task>
-    <task id="LOCAL-00012" summary="ultimos cambios en las clases">
-      <option name="closed" value="true" />
-      <created>1712242464395</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1712242464395</updated>
-    </task>
-    <task id="LOCAL-00013" summary="cambios añadidos">
-      <option name="closed" value="true" />
-      <created>1712245427206</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1712245427206</updated>
     </task>
     <task id="LOCAL-00014" summary="cambios ultimos">
       <option name="closed" value="true" />
@@ -551,7 +489,71 @@
       <option name="project" value="LOCAL" />
       <updated>1716388182534</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="arreglo">
+      <option name="closed" value="true" />
+      <created>1716397439509</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1716397439509</updated>
+    </task>
+    <task id="LOCAL-00056" summary="arreglo">
+      <option name="closed" value="true" />
+      <created>1716397487721</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1716397487721</updated>
+    </task>
+    <task id="LOCAL-00057" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1716453593324</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1716453593324</updated>
+    </task>
+    <task id="LOCAL-00058" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1716462597446</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1716462597446</updated>
+    </task>
+    <task id="LOCAL-00059" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1716972638848</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1716972638848</updated>
+    </task>
+    <task id="LOCAL-00060" summary="arreglo botones subfilas">
+      <option name="closed" value="true" />
+      <created>1717488612562</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1717488612562</updated>
+    </task>
+    <task id="LOCAL-00061" summary="seguridad">
+      <option name="closed" value="true" />
+      <created>1718012237104</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1718012237105</updated>
+    </task>
+    <task id="LOCAL-00062" summary="seguridad">
+      <option name="closed" value="true" />
+      <created>1718099574393</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1718099574395</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,8 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Crear carpeta Generar PDF" />
-    <MESSAGE value="Crear carpeta Generar PDF ultimos cambios" />
     <MESSAGE value="cambios rotos" />
     <MESSAGE value="cambios no seguros" />
     <MESSAGE value="cambios de esta mañana" />
@@ -594,7 +594,9 @@
     <MESSAGE value="querys parte(idCliente) cliente(documento)" />
     <MESSAGE value="arreglo query findByCliente" />
     <MESSAGE value="arreglo" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglo" />
+    <MESSAGE value="arreglo botones subfilas" />
+    <MESSAGE value="seguridad" />
+    <option name="LAST_COMMIT_MESSAGE" value="seguridad" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
