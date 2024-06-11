@@ -581,7 +581,7 @@ async function actualizarUserCliente(urlPut, objetoUsuario, token) {
 
 async function actualizarPasswdCliente(idUser, usuario,token) {
     try {
-        const response = await fetch('http://'+serverIP+'/api/v1/clientes/update-con-contraseña/${idUser}', {
+        const response = await fetch('http://'+serverIP+'/api/v1/clientes/update-con-contraseña/'+idUser, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
